@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "name": "Hiking",
+    "codeName": "hiking",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 1,
+    "name": "Biking",
+    "codeName": "biking",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 2,
+    "name": "Running",
+    "codeName": "running",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 3,
+    "name": "Camping",
+    "codeName": "camping",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 4,
+    "name": "Fishing",
+    "codeName": "fishing",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 5,
+    "name": "Gardening",
+    "codeName": "gardening",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 6,
+    "name": "Mountain Climbing",
+    "codeName": "mountain Climbing",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 7,
+    "name": "Surfing",
+    "codeName": "surfing",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 8,
+    "name": "Horseback Riding",
+    "codeName": "horseback Riding",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 9,
+    "name": "Bird Watching",
+    "codeName": "bird Watching",
+    "categoryId": 1,
+    "category": "Outdoor"
+  },
+  {
+    "id": 10,
+    "name": "Board Games",
+    "codeName": "board Games",
+    "categoryId": 2,
+    "category": "Indoor"
+  },
+  {
+    "id": 11,
+    "name": "Reading",
+    "codeName": "reading",
+    "categoryId": 2,
+    "category": "Indoor"
+  },
+  {
+    "id": 12,
+    "name": "Watching Movies/TV",
+    "codeName": "watching Movies/TV",
+    "categoryId": 2,
+    "category": "Indoor"
+  },
+  {
+    "id": 13,
+    "name": "Playing Video Games",
+    "codeName": "playing Video Games",
+    "categoryId": 2,
+    "category": "Indoor"
+  },
+  {
+    "id": 14,
+    "name": "Cooking",
+    "codeName": "cooking",
+    "categoryId": 2,
+    "category": "Indoor"
+  },
+  {
+    "id": 15,
+    "name": "Meditation",
+    "codeName": "meditation",
+    "categoryId": 3,
+    "category": "Wellness"
+  },
+  {
+    "id": 16,
+    "name": "Pilates",
+    "codeName": "pilates",
+    "categoryId": 3,
+    "category": "Wellness"
+  },
+  {
+    "id": 17,
+    "name": "Yoga",
+    "codeName": "yoga",
+    "categoryId": 3,
+    "category": "Wellness"
+  },
+  {
+    "id": 18,
+    "name": "Fitness Classes",
+    "codeName": "fitness Classes",
+    "categoryId": 3,
+    "category": "Wellness"
+  },
+  {
+    "id": 19,
+    "name": "Playing an Instrument",
+    "codeName": "playing an Instrument",
+    "categoryId": 4,
+    "category": "Music"
+  },
+  {
+    "id": 20,
+    "name": "Karaoke",
+    "codeName": "karaoke",
+    "categoryId": 4,
+    "category": "Music"
+  },
+  {
+    "id": 21,
+    "name": "Concerts",
+    "codeName": "concerts",
+    "categoryId": 4,
+    "category": "Music"
+  },
+  {
+    "id": 22,
+    "name": "Dancing",
+    "codeName": "dancing",
+    "categoryId": 5,
+    "category": "Performing Arts"
+  },
+  {
+    "id": 23,
+    "name": "Theater",
+    "codeName": "theater",
+    "categoryId": 5,
+    "category": "Performing Arts"
+  },
+  {
+    "id": 24,
+    "name": "Stand-up Comedy",
+    "codeName": "stand-up Comedy",
+    "categoryId": 5,
+    "category": "Performing Arts"
+  },
+  {
+    "id": 25,
+    "name": "Writing",
+    "codeName": "writing",
+    "categoryId": 6,
+    "category": "Creative Hobbies"
+  },
+  {
+    "id": 26,
+    "name": "Photography",
+    "codeName": "photography",
+    "categoryId": 6,
+    "category": "Creative Hobbies"
+  },
+  {
+    "id": 27,
+    "name": "Pottery",
+    "codeName": "pottery",
+    "categoryId": 6,
+    "category": "Creative Hobbies"
+  },
+  {
+    "id": 28,
+    "name": "DIY Home Projects",
+    "codeName": "dIY Home Projects",
+    "categoryId": 6,
+    "category": "Creative Hobbies"
+  },
+  {
+    "id": 29,
+    "name": "Cooking Classes",
+    "codeName": "cooking Classes",
+    "categoryId": 7,
+    "category": "Learning"
+  },
+  {
+    "id": 30,
+    "name": "Online Courses",
+    "codeName": "online Courses",
+    "categoryId": 7,
+    "category": "Learning"
+  },
+  {
+    "id": 31,
+    "name": "Workshops",
+    "codeName": "workshops",
+    "categoryId": 7,
+    "category": "Learning"
+  },
+  {
+    "id": 32,
+    "name": "Language Learning",
+    "codeName": "language Learning",
+    "categoryId": 7,
+    "category": "Learning"
+  },
+  {
+    "id": 33,
+    "name": "Coding",
+    "codeName": "coding",
+    "categoryId": 7,
+    "category": "Learning"
+  },
+  {
+    "id": 34,
+    "name": "Networking",
+    "codeName": "networking",
+    "categoryId": 8,
+    "category": "Social"
+  },
+  {
+    "id": 35,
+    "name": "Attending Events",
+    "codeName": "attending Events",
+    "categoryId": 8,
+    "category": "Social"
+  },
+  {
+    "id": 36,
+    "name": "Meeting New People",
+    "codeName": "meeting New People",
+    "categoryId": 8,
+    "category": "Social"
+  },
+  {
+    "id": 37,
+    "name": "Volunteering",
+    "codeName": "volunteering",
+    "categoryId": 8,
+    "category": "Social"
+  },
+  {
+    "id": 38,
+    "name": "Traveling",
+    "codeName": "traveling",
+    "categoryId": 9,
+    "category": "Adventure"
+  },
+  {
+    "id": 39,
+    "name": "Water Sports",
+    "codeName": "water Sports",
+    "categoryId": 9,
+    "category": "Adventure"
+  },
+  {
+    "id": 40,
+    "name": "Winter Sports",
+    "codeName": "winter Sports",
+    "categoryId": 9,
+    "category": "Adventure"
+  },
+  {
+    "id": 41,
+    "name": "Scuba Diving",
+    "codeName": "scuba Diving",
+    "categoryId": 9,
+    "category": "Adventure"
+  },
+  {
+    "id": 42,
+    "name": "Virtual Reality Gaming",
+    "codeName": "virtual Reality Gaming",
+    "categoryId": 10,
+    "category": "Gaming"
+  },
+  {
+    "id": 43,
+    "name": "Chess",
+    "codeName": "chess",
+    "categoryId": 10,
+    "category": "Gaming"
+  },
+  {
+    "id": 44,
+    "name": "Board Game Nights",
+    "codeName": "board Game Nights",
+    "categoryId": 10,
+    "category": "Gaming"
+  },
+  {
+    "id": 45,
+    "name": "Wine Tasting",
+    "codeName": "wine Tasting",
+    "categoryId": 11,
+    "category": "Culinary"
+  },
+  {
+    "id": 46,
+    "name": "Cooking Competitions",
+    "codeName": "cooking Competitions",
+    "categoryId": 11,
+    "category": "Culinary"
+  },
+  {
+    "id": 47,
+    "name": "Museums/Art Galleries",
+    "codeName": "museums/Art Galleries",
+    "categoryId": 12,
+    "category": "Cultural"
+  },
+  {
+    "id": 48,
+    "name": "Astronomy",
+    "codeName": "astronomy",
+    "categoryId": 13,
+    "category": "Science"
+  },
+  {
+    "id": 49,
+    "name": "Book Club",
+    "codeName": "book Club",
+    "categoryId": 14,
+    "category": "Literature"
+  }
+]
