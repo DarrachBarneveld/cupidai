@@ -44,7 +44,7 @@
   {
     "id": 6,
     "name": "Mountain Climbing",
-    "codeName": "mountain Climbing",
+    "codeName": "mountainClimbing",
     "categoryId": 1,
     "category": "Outdoor"
   },
@@ -58,21 +58,21 @@
   {
     "id": 8,
     "name": "Horseback Riding",
-    "codeName": "horseback Riding",
+    "codeName": "horsebackRiding",
     "categoryId": 1,
     "category": "Outdoor"
   },
   {
     "id": 9,
     "name": "Bird Watching",
-    "codeName": "bird Watching",
+    "codeName": "birdWatching",
     "categoryId": 1,
     "category": "Outdoor"
   },
   {
     "id": 10,
     "name": "Board Games",
-    "codeName": "board Games",
+    "codeName": "boardGames",
     "categoryId": 2,
     "category": "Indoor"
   },
@@ -85,15 +85,15 @@
   },
   {
     "id": 12,
-    "name": "Watching Movies/TV",
-    "codeName": "watching Movies/TV",
+    "name": "Watching Movies or TV",
+    "codeName": "watchingMoviesorTV",
     "categoryId": 2,
     "category": "Indoor"
   },
   {
     "id": 13,
     "name": "Playing Video Games",
-    "codeName": "playing Video Games",
+    "codeName": "playingVideoGames",
     "categoryId": 2,
     "category": "Indoor"
   },
@@ -128,14 +128,14 @@
   {
     "id": 18,
     "name": "Fitness Classes",
-    "codeName": "fitness Classes",
+    "codeName": "fitnessClasses",
     "categoryId": 3,
     "category": "Wellness"
   },
   {
     "id": 19,
     "name": "Playing an Instrument",
-    "codeName": "playing an Instrument",
+    "codeName": "playinganInstrument",
     "categoryId": 4,
     "category": "Music"
   },
@@ -170,7 +170,7 @@
   {
     "id": 24,
     "name": "Stand-up Comedy",
-    "codeName": "stand-up Comedy",
+    "codeName": "stand-upComedy",
     "categoryId": 5,
     "category": "Performing Arts"
   },
@@ -198,21 +198,21 @@
   {
     "id": 28,
     "name": "DIY Home Projects",
-    "codeName": "dIY Home Projects",
+    "codeName": "dIYHomeProjects",
     "categoryId": 6,
     "category": "Creative Hobbies"
   },
   {
     "id": 29,
     "name": "Cooking Classes",
-    "codeName": "cooking Classes",
+    "codeName": "cookingClasses",
     "categoryId": 7,
     "category": "Learning"
   },
   {
     "id": 30,
     "name": "Online Courses",
-    "codeName": "online Courses",
+    "codeName": "onlineCourses",
     "categoryId": 7,
     "category": "Learning"
   },
@@ -226,7 +226,7 @@
   {
     "id": 32,
     "name": "Language Learning",
-    "codeName": "language Learning",
+    "codeName": "languageLearning",
     "categoryId": 7,
     "category": "Learning"
   },
@@ -247,14 +247,14 @@
   {
     "id": 35,
     "name": "Attending Events",
-    "codeName": "attending Events",
+    "codeName": "attendingEvents",
     "categoryId": 8,
     "category": "Social"
   },
   {
     "id": 36,
     "name": "Meeting New People",
-    "codeName": "meeting New People",
+    "codeName": "meetingNewPeople",
     "categoryId": 8,
     "category": "Social"
   },
@@ -275,28 +275,28 @@
   {
     "id": 39,
     "name": "Water Sports",
-    "codeName": "water Sports",
+    "codeName": "waterSports",
     "categoryId": 9,
     "category": "Adventure"
   },
   {
     "id": 40,
     "name": "Winter Sports",
-    "codeName": "winter Sports",
+    "codeName": "winterSports",
     "categoryId": 9,
     "category": "Adventure"
   },
   {
     "id": 41,
     "name": "Scuba Diving",
-    "codeName": "scuba Diving",
+    "codeName": "scubaDiving",
     "categoryId": 9,
     "category": "Adventure"
   },
   {
     "id": 42,
     "name": "Virtual Reality Gaming",
-    "codeName": "virtual Reality Gaming",
+    "codeName": "virtualRealityGaming",
     "categoryId": 10,
     "category": "Gaming"
   },
@@ -310,28 +310,28 @@
   {
     "id": 44,
     "name": "Board Game Nights",
-    "codeName": "board Game Nights",
+    "codeName": "boardGameNights",
     "categoryId": 10,
     "category": "Gaming"
   },
   {
     "id": 45,
     "name": "Wine Tasting",
-    "codeName": "wine Tasting",
+    "codeName": "wineTasting",
     "categoryId": 11,
     "category": "Culinary"
   },
   {
     "id": 46,
     "name": "Cooking Competitions",
-    "codeName": "cooking Competitions",
+    "codeName": "cookingCompetitions",
     "categoryId": 11,
     "category": "Culinary"
   },
   {
     "id": 47,
-    "name": "Museums/Art Galleries",
-    "codeName": "museums/Art Galleries",
+    "name": "Museums or Art Galleries",
+    "codeName": "museumsorArtGalleries",
     "categoryId": 12,
     "category": "Cultural"
   },
@@ -345,7 +345,7 @@
   {
     "id": 49,
     "name": "Book Club",
-    "codeName": "book Club",
+    "codeName": "bookClub",
     "categoryId": 14,
     "category": "Literature"
   }
