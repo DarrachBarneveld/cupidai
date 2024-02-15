@@ -3,11 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AI Planner</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello World From Erik!</h1>
-    <h2>Hi form Kiki</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
+    <header>
+      <h1>Hello World From Erik!</h1>
+      <h2>Hi form Kiki</h2>
+    </header>
+
+    <main>
+      <h2>Drink Preferences</h2>
+      <form action="#" method="post" id="drinkForm">
+        <label for="coffee">Coffee:</label>
+        <input type="checkbox" id="coffee" name="drink" value="coffee" /><br />
+
+        <label for="tea">Tea:</label>
+        <input type="checkbox" id="tea" name="drink" value="tea" /><br />
+
+        <label for="juice">Juice:</label>
+        <input type="checkbox" id="juice" name="drink" value="juice" /><br />
+
+        <label for="soda">Soda:</label>
+        <input type="checkbox" id="soda" name="drink" value="soda" /><br />
+
+        <label for="alcohol">Alcohol:</label>
+        <input
+          type="checkbox"
+          id="alcohol"
+          name="drink"
+          value="alcohol"
+        /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <h2>Food Preferences</h2>
+      <form id="foodForm" action="#" method="post">
+        <label for="pizza">Pizza:</label>
+        <input type="checkbox" id="pizza" name="food" value="pizza" /><br />
+
+        <label for="burger">Burger:</label>
+        <input type="checkbox" id="burger" name="food" value="burger" /><br />
+
+        <label for="sushi">Sushi:</label>
+        <input type="checkbox" id="sushi" name="food" value="sushi" /><br />
+
+        <label for="pasta">Pasta:</label>
+        <input type="checkbox" id="pasta" name="food" value="pasta" /><br />
+
+        <label for="salad">Salad:</label>
+        <input type="checkbox" id="salad" name="food" value="salad" /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <h2>Activity Preferences</h2>
+      <form id="activityForm" action="#" method="post">
+        <label for="hiking">Hiking:</label>
+        <input
+          type="checkbox"
+          id="hiking"
+          name="activity"
+          value="hiking"
+        /><br />
+
+        <label for="biking">Biking:</label>
+        <input
+          type="checkbox"
+          id="biking"
+          name="activity"
+          value="biking"
+        /><br />
+
+        <label for="swimming">Swimming:</label>
+        <input
+          type="checkbox"
+          id="swimming"
+          name="activity"
+          value="swimming"
+        /><br />
+
+        <label for="reading">Reading:</label>
+        <input
+          type="checkbox"
+          id="reading"
+          name="activity"
+          value="reading"
+        /><br />
+
+        <label for="dancing">Dancing:</label>
+        <input
+          type="checkbox"
+          id="dancing"
+          name="activity"
+          value="dancing"
+        /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <button id="promptBtn" disabled>Ask for prompt</button>
+
+      <p id="aiPrompt"></p>
+    </main>
+
+    <footer>
+      <p>AI Planner &copy; 2020</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>
