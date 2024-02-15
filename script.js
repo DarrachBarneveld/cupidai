@@ -12,16 +12,6 @@ const APIKEY2 = "P8oWW2pPKz2hJT3BlbkF";
 const APIKEY3 = "JPBP6CdnUnrAjPNqoxTCb";
 const APIKEYTOTAL = APIKEY1 + APIKEY2 + APIKEY3;
 
-let openai;
-
-async function init() {
-  openai = new OpenAI({
-    apiKey: APIKEYTOTAL,
-    dangerouslyAllowBrowser: true,
-  });
-}
-init();
-
 const selectedDrinks = [];
 const selectedFood = [];
 const selectedActivity = [];
