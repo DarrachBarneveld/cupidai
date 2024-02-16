@@ -14,3 +14,7 @@ html {
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+main {
+  width: 100vh;
+}
