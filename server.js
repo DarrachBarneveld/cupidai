@@ -25,10 +25,34 @@ app.post("/", async (req, res) => {
   }
 
   try {
-    const apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radius}&key=${apiKey}`;
-    const response = await fetch(apiUrl);
+    // const apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radius}&key=${apiKey}`;
+
+    const response = await fetch(
+      "https://places.googleapis.com/v1/places:searchText",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Goog-Api-Key": `${apiKey}`,
+          "X-Goog-FieldMask": "*",
+        },
+        body: JSON.stringify({
+          textQuery: "Hot Yoga Studio",
+          maxResultCount: 10,
+          languageCode: "en",
+          locationBias: {
+            circle: {
+              center: { latitude: lat, longitude: lng },
+              radius,
+            },
+          },
+        }),
+      }
+    );
+
     const data = await response.json();
-    res.json(data.results);
+
+    res.json(data);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal server error" });

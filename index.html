@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Romantic planning assistant for dates."
-    >
-    <meta name="keywords" content="date, plan, idea">
+      content="Romantic planning assistant for Valentine's Days Ideas."
+    />
+    <meta name="keywords" content="Valentine, plans, ideas" />
     <!-- CSS Stylesheet link-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/css/style.css" />
     <!-- Title -->
     <title>Website's Name</title>
     <!-- Favicon -->
@@ -18,19 +17,19 @@
       rel="apple-touch-icon"
       sizes="180x180"
       href="assets/favicon/apple-touch-icon.png"
-    >
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="assets/favicon/favicon-32x32.png"
-    >
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="assets/favicon/favicon-16x16.png"
-    >
+    />
   </head>
   <body>
     <!-- Header -->
@@ -38,16 +37,16 @@
       <!-- Logo -->
       <a href="index.html"><h1>Website's Name</h1></a>
       <!-- NavBar -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-<!-- Main content -->
+    <!-- Main content -->
     <main>
       <h2 id="location" style="color: red; text-decoration: underline">
         Location not set
@@ -67,7 +66,12 @@
         <input type="checkbox" id="soda" name="drink" value="soda" /><br />
 
         <label for="alcohol">Alcohol:</label>
-        <input type="checkbox" id="alcohol" name="drink" value="alcohol" /><br />
+        <input
+          type="checkbox"
+          id="alcohol"
+          name="drink"
+          value="alcohol"
+        /><br />
 
         <input type="submit" value="Submit" />
       </form>
@@ -95,19 +99,44 @@
       <h2>Activity Preferences</h2>
       <form id="activityForm" action="#" method="post">
         <label for="hiking">Hiking:</label>
-        <input type="checkbox" id="hiking" name="activity" value="hiking" /><br />
+        <input
+          type="checkbox"
+          id="hiking"
+          name="activity"
+          value="hiking"
+        /><br />
 
         <label for="biking">Biking:</label>
-        <input type="checkbox" id="biking" name="activity" value="biking" /><br />
+        <input
+          type="checkbox"
+          id="biking"
+          name="activity"
+          value="biking"
+        /><br />
 
         <label for="swimming">Swimming:</label>
-        <input type="checkbox" id="swimming" name="activity" value="swimming" /><br />
+        <input
+          type="checkbox"
+          id="swimming"
+          name="activity"
+          value="swimming"
+        /><br />
 
         <label for="reading">Reading:</label>
-        <input type="checkbox" id="reading" name="activity" value="reading" /><br />
+        <input
+          type="checkbox"
+          id="reading"
+          name="activity"
+          value="reading"
+        /><br />
 
         <label for="dancing">Dancing:</label>
-        <input type="checkbox" id="dancing" name="activity" value="dancing" /><br />
+        <input
+          type="checkbox"
+          id="dancing"
+          name="activity"
+          value="dancing"
+        /><br />
 
         <input type="submit" value="Submit" />
       </form>
@@ -115,10 +144,11 @@
       <button id="promptBtn" disabled>Ask for prompt</button>
 
       <button id="geolocationBtn">Get Geolocation For better advice</button>
+      <button id="placesBtn">Fetch Google places</button>
 
       <p id="aiPrompt"></p>
     </main>
-<!-- Footer -->
+    <!-- Footer -->
     <footer>
       <p>AI Planner &copy; 2020</p>
     </footer>
