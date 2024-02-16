@@ -4,349 +4,1770 @@
     "name": "Hiking",
     "codeName": "hiking",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
     "id": 1,
     "name": "Biking",
     "codeName": "biking",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
     "id": 2,
     "name": "Running",
     "codeName": "running",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
     "id": 3,
     "name": "Camping",
     "codeName": "camping",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
     "id": 4,
-    "name": "Fishing",
-    "codeName": "fishing",
-    "categoryId": 1,
-    "category": "Outdoor"
-  },
-  {
-    "id": 5,
     "name": "Gardening",
     "codeName": "gardening",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Mountain Climbing",
     "codeName": "mountainClimbing",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "Surfing",
     "codeName": "surfing",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "Horseback Riding",
     "codeName": "horsebackRiding",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "Bird Watching",
     "codeName": "birdWatching",
     "categoryId": 1,
-    "category": "Outdoor"
+    "category": "Activity"
+  },
+  {
+    "id": 9,
+    "name": "Board Games",
+    "codeName": "boardGames",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 10,
-    "name": "Board Games",
-    "codeName": "boardGames",
-    "categoryId": 2,
-    "category": "Indoor"
+    "name": "Reading",
+    "codeName": "reading",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 11,
-    "name": "Reading",
-    "codeName": "reading",
-    "categoryId": 2,
-    "category": "Indoor"
+    "name": "Watching Movies or TV",
+    "codeName": "watchingMoviesorTV",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 12,
-    "name": "Watching Movies or TV",
-    "codeName": "watchingMoviesorTV",
-    "categoryId": 2,
-    "category": "Indoor"
+    "name": "Playing Video Games",
+    "codeName": "playingVideoGames",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 13,
-    "name": "Playing Video Games",
-    "codeName": "playingVideoGames",
-    "categoryId": 2,
-    "category": "Indoor"
+    "name": "Cooking",
+    "codeName": "cooking",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 14,
-    "name": "Cooking",
-    "codeName": "cooking",
-    "categoryId": 2,
-    "category": "Indoor"
+    "name": "Meditation",
+    "codeName": "meditation",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 15,
-    "name": "Meditation",
-    "codeName": "meditation",
-    "categoryId": 3,
-    "category": "Wellness"
+    "name": "Pilates",
+    "codeName": "pilates",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 16,
-    "name": "Pilates",
-    "codeName": "pilates",
-    "categoryId": 3,
-    "category": "Wellness"
+    "name": "Yoga",
+    "codeName": "yoga",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 17,
-    "name": "Yoga",
-    "codeName": "yoga",
-    "categoryId": 3,
-    "category": "Wellness"
+    "name": "Fitness Classes",
+    "codeName": "fitnessClasses",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 18,
-    "name": "Fitness Classes",
-    "codeName": "fitnessClasses",
-    "categoryId": 3,
-    "category": "Wellness"
+    "name": "Playing an Instrument",
+    "codeName": "playinganInstrument",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 19,
-    "name": "Playing an Instrument",
-    "codeName": "playinganInstrument",
-    "categoryId": 4,
-    "category": "Music"
+    "name": "Karaoke",
+    "codeName": "karaoke",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 20,
-    "name": "Karaoke",
-    "codeName": "karaoke",
-    "categoryId": 4,
-    "category": "Music"
+    "name": "Concerts",
+    "codeName": "concerts",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 21,
-    "name": "Concerts",
-    "codeName": "concerts",
-    "categoryId": 4,
-    "category": "Music"
+    "name": "Dancing",
+    "codeName": "dancing",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 22,
-    "name": "Dancing",
-    "codeName": "dancing",
-    "categoryId": 5,
-    "category": "Performing Arts"
+    "name": "Theater",
+    "codeName": "theater",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 23,
-    "name": "Theater",
-    "codeName": "theater",
-    "categoryId": 5,
-    "category": "Performing Arts"
+    "name": "Stand-up Comedy",
+    "codeName": "stand-upComedy",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 24,
-    "name": "Stand-up Comedy",
-    "codeName": "stand-upComedy",
-    "categoryId": 5,
-    "category": "Performing Arts"
+    "name": "Writing",
+    "codeName": "writing",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 25,
-    "name": "Writing",
-    "codeName": "writing",
-    "categoryId": 6,
-    "category": "Creative Hobbies"
+    "name": "Photography",
+    "codeName": "photography",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 26,
-    "name": "Photography",
-    "codeName": "photography",
-    "categoryId": 6,
-    "category": "Creative Hobbies"
+    "name": "Pottery",
+    "codeName": "pottery",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 27,
-    "name": "Pottery",
-    "codeName": "pottery",
-    "categoryId": 6,
-    "category": "Creative Hobbies"
+    "name": "DIY Home Projects",
+    "codeName": "dIYHomeProjects",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 28,
-    "name": "DIY Home Projects",
-    "codeName": "dIYHomeProjects",
-    "categoryId": 6,
-    "category": "Creative Hobbies"
+    "name": "Cooking Classes",
+    "codeName": "cookingClasses",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 29,
-    "name": "Cooking Classes",
-    "codeName": "cookingClasses",
-    "categoryId": 7,
-    "category": "Learning"
+    "name": "Online Courses",
+    "codeName": "onlineCourses",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 30,
-    "name": "Online Courses",
-    "codeName": "onlineCourses",
-    "categoryId": 7,
-    "category": "Learning"
+    "name": "Workshops",
+    "codeName": "workshops",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 31,
-    "name": "Workshops",
-    "codeName": "workshops",
-    "categoryId": 7,
-    "category": "Learning"
+    "name": "Language Learning",
+    "codeName": "languageLearning",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 32,
-    "name": "Language Learning",
-    "codeName": "languageLearning",
-    "categoryId": 7,
-    "category": "Learning"
+    "name": "Coding",
+    "codeName": "coding",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 33,
-    "name": "Coding",
-    "codeName": "coding",
-    "categoryId": 7,
-    "category": "Learning"
+    "name": "Networking",
+    "codeName": "networking",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 34,
-    "name": "Networking",
-    "codeName": "networking",
-    "categoryId": 8,
-    "category": "Social"
+    "name": "Attending Events",
+    "codeName": "attendingEvents",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 35,
-    "name": "Attending Events",
-    "codeName": "attendingEvents",
-    "categoryId": 8,
-    "category": "Social"
+    "name": "Meeting New People",
+    "codeName": "meetingNewPeople",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 36,
-    "name": "Meeting New People",
-    "codeName": "meetingNewPeople",
-    "categoryId": 8,
-    "category": "Social"
+    "name": "Volunteering",
+    "codeName": "volunteering",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 37,
-    "name": "Volunteering",
-    "codeName": "volunteering",
-    "categoryId": 8,
-    "category": "Social"
+    "name": "Traveling",
+    "codeName": "traveling",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 38,
-    "name": "Traveling",
-    "codeName": "traveling",
-    "categoryId": 9,
-    "category": "Adventure"
+    "name": "Water Sports",
+    "codeName": "waterSports",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 39,
-    "name": "Water Sports",
-    "codeName": "waterSports",
-    "categoryId": 9,
-    "category": "Adventure"
+    "name": "Winter Sports",
+    "codeName": "winterSports",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 40,
-    "name": "Winter Sports",
-    "codeName": "winterSports",
-    "categoryId": 9,
-    "category": "Adventure"
+    "name": "Scuba Diving",
+    "codeName": "scubaDiving",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 41,
-    "name": "Scuba Diving",
-    "codeName": "scubaDiving",
-    "categoryId": 9,
-    "category": "Adventure"
+    "name": "Virtual Reality Gaming",
+    "codeName": "virtualRealityGaming",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 42,
-    "name": "Virtual Reality Gaming",
-    "codeName": "virtualRealityGaming",
-    "categoryId": 10,
-    "category": "Gaming"
+    "name": "Chess",
+    "codeName": "chess",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 43,
-    "name": "Chess",
-    "codeName": "chess",
-    "categoryId": 10,
-    "category": "Gaming"
+    "name": "Board Game Nights",
+    "codeName": "boardGameNights",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 44,
-    "name": "Board Game Nights",
-    "codeName": "boardGameNights",
-    "categoryId": 10,
-    "category": "Gaming"
+    "name": "Museums or Art Galleries",
+    "codeName": "museumsorArtGalleries",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 45,
-    "name": "Wine Tasting",
-    "codeName": "wineTasting",
-    "categoryId": 11,
-    "category": "Culinary"
+    "name": "Astronomy",
+    "codeName": "astronomy",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 46,
-    "name": "Cooking Competitions",
-    "codeName": "cookingCompetitions",
-    "categoryId": 11,
-    "category": "Culinary"
+    "name": "Book Club",
+    "codeName": "bookClub",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 47,
-    "name": "Museums or Art Galleries",
-    "codeName": "museumsorArtGalleries",
-    "categoryId": 12,
-    "category": "Cultural"
+    "name": "Cinema",
+    "codeName": "cinema",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 48,
-    "name": "Astronomy",
-    "codeName": "astronomy",
-    "categoryId": 13,
-    "category": "Science"
+    "name": "Opera",
+    "codeName": "opera",
+    "categoryId": 1,
+    "category": "Activity"
   },
   {
     "id": 49,
-    "name": "Book Club",
-    "codeName": "bookClub",
-    "categoryId": 14,
-    "category": "Literature"
+    "name": "Theater play",
+    "codeName": "theaterplay",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 50,
+    "name": "Zoo",
+    "codeName": "zoo",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 51,
+    "name": "Laser Tag",
+    "codeName": "laserTag",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 52,
+    "name": "Escape the room",
+    "codeName": "escapetheroom",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 53,
+    "name": "Skydiving",
+    "codeName": "skydiving",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 54,
+    "name": "Wakeboarding",
+    "codeName": "wakeboarding",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 55,
+    "name": "Parasailing",
+    "codeName": "parasailing",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 56,
+    "name": "Paragliding",
+    "codeName": "paragliding",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 57,
+    "name": "Stargazing",
+    "codeName": "stargazing",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 58,
+    "name": "Spa",
+    "codeName": "spa",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 59,
+    "name": "Massage",
+    "codeName": "massage",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 60,
+    "name": "Painting classes",
+    "codeName": "paintingclasses",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 61,
+    "name": "Botanical garden",
+    "codeName": "botanicalgarden",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 62,
+    "name": "Hot air balloon ride",
+    "codeName": "hotairballoonride",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 63,
+    "name": "Mini golf",
+    "codeName": "minigolf",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 64,
+    "name": "Go-kart racing",
+    "codeName": "go-kartracing",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 65,
+    "name": "Archery tag",
+    "codeName": "archerytag",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 66,
+    "name": "Paintball",
+    "codeName": "paintball",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 67,
+    "name": "Bowling",
+    "codeName": "bowling",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 68,
+    "name": "Face painting",
+    "codeName": "facepainting",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 69,
+    "name": "Campfire",
+    "codeName": "campfire",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 70,
+    "name": "Photo shoot",
+    "codeName": "photoshoot",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 71,
+    "name": "Open Houses",
+    "codeName": "openHouses",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 72,
+    "name": "Library visit",
+    "codeName": "libraryvisit",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 73,
+    "name": "Art museum visit",
+    "codeName": "artmuseumvisit",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 74,
+    "name": "Fundraiser",
+    "codeName": "fundraiser",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 75,
+    "name": "Walk in the nearby forest",
+    "codeName": "walkinthenearbyforest",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 76,
+    "name": "Chalking on the sidewalk",
+    "codeName": "chalkingonthesidewalk",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 77,
+    "name": "Cat sanctuary visit",
+    "codeName": "catsanctuaryvisit",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 78,
+    "name": "Music quiz",
+    "codeName": "musicquiz",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 79,
+    "name": "Rollerblading",
+    "codeName": "rollerblading",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 80,
+    "name": "Ice-skating",
+    "codeName": "ice-skating",
+    "categoryId": 1,
+    "category": "Activity"
+  },
+  {
+    "id": 81,
+    "name": "Italian",
+    "codeName": "italian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 82,
+    "name": "Indian",
+    "codeName": "indian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 83,
+    "name": "Greek",
+    "codeName": "greek",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 84,
+    "name": "Lebanese",
+    "codeName": "lebanese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 85,
+    "name": "Russian",
+    "codeName": "russian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 86,
+    "name": "Hawaiian",
+    "codeName": "hawaiian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 87,
+    "name": "Swedish",
+    "codeName": "swedish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 88,
+    "name": "Cuban",
+    "codeName": "cuban",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 89,
+    "name": "Australian",
+    "codeName": "australian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 90,
+    "name": "Pakistani",
+    "codeName": "pakistani",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 91,
+    "name": "Afghan",
+    "codeName": "afghan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 92,
+    "name": "Czech",
+    "codeName": "czech",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 93,
+    "name": "Middle Eastern",
+    "codeName": "middleEastern",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 94,
+    "name": "Iraqi",
+    "codeName": "iraqi",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 95,
+    "name": "Dutch",
+    "codeName": "dutch",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 96,
+    "name": "Canadian",
+    "codeName": "canadian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 97,
+    "name": "Maltese",
+    "codeName": "maltese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 98,
+    "name": "Chilean",
+    "codeName": "chilean",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 99,
+    "name": "Ecuadorian",
+    "codeName": "ecuadorian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 100,
+    "name": "Mongolian",
+    "codeName": "mongolian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 101,
+    "name": "Laotian",
+    "codeName": "laotian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 102,
+    "name": "Japanese",
+    "codeName": "japanese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 103,
+    "name": "Thai",
+    "codeName": "thai",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 104,
+    "name": "Spanish",
+    "codeName": "spanish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 105,
+    "name": "Turkish",
+    "codeName": "turkish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 106,
+    "name": "Ethiopian",
+    "codeName": "ethiopian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 107,
+    "name": "Jamaican",
+    "codeName": "jamaican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 108,
+    "name": "Portuguese",
+    "codeName": "portuguese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 109,
+    "name": "Egyptian",
+    "codeName": "egyptian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 110,
+    "name": "Swiss",
+    "codeName": "swiss",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 111,
+    "name": "Nepalese",
+    "codeName": "nepalese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 112,
+    "name": "Iranian",
+    "codeName": "iranian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 113,
+    "name": "South American",
+    "codeName": "southAmerican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 114,
+    "name": "North African",
+    "codeName": "northAfrican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 115,
+    "name": "Armenian",
+    "codeName": "armenian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 116,
+    "name": "Finnish",
+    "codeName": "finnish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 117,
+    "name": "New Zealand",
+    "codeName": "newZealand",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 118,
+    "name": "Ukrainian",
+    "codeName": "ukrainian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 119,
+    "name": "Venezuelan",
+    "codeName": "venezuelan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 120,
+    "name": "Paraguayan",
+    "codeName": "paraguayan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 121,
+    "name": "Central Asian",
+    "codeName": "centralAsian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 122,
+    "name": "Cambodian",
+    "codeName": "cambodian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 123,
+    "name": "Mexican",
+    "codeName": "mexican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 124,
+    "name": "French",
+    "codeName": "french",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 125,
+    "name": "Brazilian",
+    "codeName": "brazilian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 126,
+    "name": "Vietnamese",
+    "codeName": "vietnamese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 127,
+    "name": "Peruvian",
+    "codeName": "peruvian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 128,
+    "name": "Irish",
+    "codeName": "irish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 129,
+    "name": "Malaysian",
+    "codeName": "malaysian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 130,
+    "name": "South African",
+    "codeName": "southAfrican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 131,
+    "name": "Indonesian",
+    "codeName": "indonesian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 132,
+    "name": "Tibetan",
+    "codeName": "tibetan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 133,
+    "name": "Polish",
+    "codeName": "polish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 134,
+    "name": "Central American",
+    "codeName": "centralAmerican",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 135,
+    "name": "Ethiopian",
+    "codeName": "ethiopian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 136,
+    "name": "Georgian",
+    "codeName": "georgian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 137,
+    "name": "Scandinavian",
+    "codeName": "scandinavian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 138,
+    "name": "Israeli",
+    "codeName": "israeli",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 139,
+    "name": "Uzbek",
+    "codeName": "uzbek",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 140,
+    "name": "Guatemalan",
+    "codeName": "guatemalan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 141,
+    "name": "Uruguayan",
+    "codeName": "uruguayan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 142,
+    "name": "Kazakh",
+    "codeName": "kazakh",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 143,
+    "name": "Bhutanese",
+    "codeName": "bhutanese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 144,
+    "name": "Chinese",
+    "codeName": "chinese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 145,
+    "name": "Mediterranean",
+    "codeName": "mediterranean",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 146,
+    "name": "Korean",
+    "codeName": "korean",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 147,
+    "name": "Moroccan",
+    "codeName": "moroccan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 148,
+    "name": "Cajun/Creole",
+    "codeName": "cajun/Creole",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 149,
+    "name": "German",
+    "codeName": "german",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 150,
+    "name": "Argentinian",
+    "codeName": "argentinian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 151,
+    "name": "Filipino",
+    "codeName": "filipino",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 152,
+    "name": "Bangladeshi",
+    "codeName": "bangladeshi",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 153,
+    "name": "Sri Lankan",
+    "codeName": "sriLankan",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 154,
+    "name": "Hungarian",
+    "codeName": "hungarian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 155,
+    "name": "Caribbean",
+    "codeName": "caribbean",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 156,
+    "name": "Kurdish",
+    "codeName": "kurdish",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 157,
+    "name": "Belgian",
+    "codeName": "belgian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 158,
+    "name": "Austrian",
+    "codeName": "austrian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 159,
+    "name": "Singaporean",
+    "codeName": "singaporean",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 160,
+    "name": "Bolivian",
+    "codeName": "bolivian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 161,
+    "name": "Salvadoran",
+    "codeName": "salvadoran",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 162,
+    "name": "Maldivian",
+    "codeName": "maldivian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 163,
+    "name": "Burmese",
+    "codeName": "burmese",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 164,
+    "name": "Mauritian",
+    "codeName": "mauritian",
+    "categoryId": 2,
+    "category": "Food"
+  },
+  {
+    "id": 165,
+    "name": "Coffee",
+    "codeName": "coffee",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 166,
+    "name": "Lemonade",
+    "codeName": "lemonade",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 167,
+    "name": "Fruit Juice",
+    "codeName": "fruitJuice",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 168,
+    "name": "Soy Milk",
+    "codeName": "soyMilk",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 169,
+    "name": "Black Tea",
+    "codeName": "blackTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 170,
+    "name": "Chai Tea",
+    "codeName": "chaiTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 171,
+    "name": "Espresso",
+    "codeName": "espresso",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 172,
+    "name": "White Wine",
+    "codeName": "whiteWine",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 173,
+    "name": "Craft Beer",
+    "codeName": "craftBeer",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 174,
+    "name": "Martini",
+    "codeName": "martini",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 175,
+    "name": "Piña Colada",
+    "codeName": "piñaColada",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 176,
+    "name": "Sangria",
+    "codeName": "sangria",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 177,
+    "name": "Soju",
+    "codeName": "soju",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 178,
+    "name": "Fruit Punch",
+    "codeName": "fruitPunch",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 179,
+    "name": "Ginger Beer",
+    "codeName": "gingerBeer",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 180,
+    "name": "Coconut Milkshake",
+    "codeName": "coconutMilkshake",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 181,
+    "name": "Agua Fresca",
+    "codeName": "aguaFresca",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 182,
+    "name": "Elderflower Cordial",
+    "codeName": "elderflowerCordial",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 183,
+    "name": "Aloe Vera Juice",
+    "codeName": "aloeVeraJuice",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 184,
+    "name": "Cold Brew",
+    "codeName": "coldBrew",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 185,
+    "name": "Cranberry Juice",
+    "codeName": "cranberryJuice",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 186,
+    "name": "Lavender Lemonade",
+    "codeName": "lavenderLemonade",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 187,
+    "name": "Tea",
+    "codeName": "tea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 188,
+    "name": "Iced Tea",
+    "codeName": "icedTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 189,
+    "name": "Smoothie",
+    "codeName": "smoothie",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 190,
+    "name": "Coconut Water",
+    "codeName": "coconutWater",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 191,
+    "name": "White Tea",
+    "codeName": "whiteTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 192,
+    "name": "Matcha",
+    "codeName": "matcha",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 193,
+    "name": "Americano",
+    "codeName": "americano",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 194,
+    "name": "Rosé Wine",
+    "codeName": "roséWine",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 195,
+    "name": "Cocktails",
+    "codeName": "cocktails",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 196,
+    "name": "Old Fashioned",
+    "codeName": "oldFashioned",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 197,
+    "name": "Daiquiri",
+    "codeName": "daiquiri",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 198,
+    "name": "Mint Julep",
+    "codeName": "mintJulep",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 199,
+    "name": "Baijiu",
+    "codeName": "baijiu",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 200,
+    "name": "Iced Lemon Tea",
+    "codeName": "icedLemonTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 201,
+    "name": "Kombucha",
+    "codeName": "kombucha",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 202,
+    "name": "Root Beer Float",
+    "codeName": "rootBeerFloat",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 203,
+    "name": "Frappuccino",
+    "codeName": "frappuccino",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 204,
+    "name": "Hot Apple Cider",
+    "codeName": "hotAppleCider",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 205,
+    "name": "Pineapple Coconut Water",
+    "codeName": "pineappleCoconutWater",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 206,
+    "name": "Mocha",
+    "codeName": "mocha",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 207,
+    "name": "Grapefruit Juice",
+    "codeName": "grapefruitJuice",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 208,
+    "name": "Thai Iced Tea",
+    "codeName": "thaiIcedTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 209,
+    "name": "Water",
+    "codeName": "water",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 210,
+    "name": "Iced Coffee",
+    "codeName": "icedCoffee",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 211,
+    "name": "Milk",
+    "codeName": "milk",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 212,
+    "name": "Sparkling Water",
+    "codeName": "sparklingWater",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 213,
+    "name": "Herbal Tea",
+    "codeName": "herbalTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 214,
+    "name": "Cappuccino",
+    "codeName": "cappuccino",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 215,
+    "name": "Macchiato",
+    "codeName": "macchiato",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 216,
+    "name": "Champagne",
+    "codeName": "champagne",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 217,
+    "name": "Margarita",
+    "codeName": "margarita",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 218,
+    "name": "Whiskey Sour",
+    "codeName": "whiskeySour",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 219,
+    "name": "Bloody Mary",
+    "codeName": "bloodyMary",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 220,
+    "name": "Hot Toddy",
+    "codeName": "hotToddy",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 221,
+    "name": "Shochu",
+    "codeName": "shochu",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 222,
+    "name": "Bubble Tea",
+    "codeName": "bubbleTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 223,
+    "name": "Sports Drink",
+    "codeName": "sportsDrink",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 224,
+    "name": "Irish Coffee",
+    "codeName": "irishCoffee",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 225,
+    "name": "Agave Nectar Water",
+    "codeName": "agaveNectarWater",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 226,
+    "name": "Turkish Coffee",
+    "codeName": "turkishCoffee",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 227,
+    "name": "Infused Water",
+    "codeName": "infusedWater",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 228,
+    "name": "Tomato Juice",
+    "codeName": "tomatoJuice",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 229,
+    "name": "Mint Tea",
+    "codeName": "mintTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 230,
+    "name": "Prosecco",
+    "codeName": "prosecco",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 231,
+    "name": "Soda",
+    "codeName": "soda",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 232,
+    "name": "Hot Chocolate",
+    "codeName": "hotChocolate",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 233,
+    "name": "Almond Milk",
+    "codeName": "almondMilk",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 234,
+    "name": "Green Tea",
+    "codeName": "greenTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 235,
+    "name": "Oolong Tea",
+    "codeName": "oolongTea",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 236,
+    "name": "Latte",
+    "codeName": "latte",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 237,
+    "name": "Red Wine",
+    "codeName": "redWine",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 238,
+    "name": "Beer",
+    "codeName": "beer",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 239,
+    "name": "Mojito",
+    "codeName": "mojito",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 240,
+    "name": "Moscow Mule",
+    "codeName": "moscowMule",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 241,
+    "name": "Mimosa",
+    "codeName": "mimosa",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 242,
+    "name": "Sake",
+    "codeName": "sake",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 243,
+    "name": "Cider",
+    "codeName": "cider",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 244,
+    "name": "Horchata",
+    "codeName": "horchata",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 245,
+    "name": "Energy Drink",
+    "codeName": "energyDrink",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 246,
+    "name": "Arnold Palmer",
+    "codeName": "arnoldPalmer",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 247,
+    "name": "Aperol Spritz",
+    "codeName": "aperolSpritz",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 248,
+    "name": "Lassi",
+    "codeName": "lassi",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 249,
+    "name": "Chai Latte",
+    "codeName": "chaiLatte",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 250,
+    "name": "Chocolate Milk",
+    "codeName": "chocolateMilk",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 251,
+    "name": "Alcoholic Ginger Beer",
+    "codeName": "alcoholicGingerBeer",
+    "categoryId": 3,
+    "category": "Drink"
+  },
+  {
+    "id": 252,
+    "name": "Iced Matcha Latte",
+    "codeName": "icedMatchaLatte",
+    "categoryId": 3,
+    "category": "Drink"
   }
 ]

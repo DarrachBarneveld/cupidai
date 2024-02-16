@@ -1,0 +1,14 @@
+#modalPanel2,
+#modalPanel3,
+#modalPanel4 {
+  display: none;
+}
+
+.btn-selection {
+  background-color: aqua;
+}
+
+.btn-selection.selected {
+  background-color: #ff00b7;
+  color: #000;
+}
