@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="edel-styles.css">
+    <title>Open AU</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="front-page.html">Front Page</a></li>
+            <li><a href="openai.html">OpenAI</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>OpenAI</h1>
+        
+        <p>Click on the links above to navigate to the OpenAI page</p>
+
+        <h1>Process ChatGPT API response</h1>
+
+
+        <input type="text" id="message" />
+        <button type="button" onclick="startChat()">Start</button>
+
+        <p id="demo" style="border: 1px solid red;"></p>
+    </div>
+    <script src="env.js"></script>
+    <script src="openai.js"></script>
+</body>
+
+</html>
