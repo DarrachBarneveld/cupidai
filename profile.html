@@ -6,6 +6,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/profile.css" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -18,19 +19,43 @@
     <title>User Profile</title>
   </head>
   <body>
-    <div class="profile-container">
-      <h1>User Profile</h1>
-      <form action="#" method="post" id="profile-form">
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" placeholder="Enter your age" required />
+    <!-- main modal for choices -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#choicesModal">
+      lounch modal
+    </button>
 
-        <label for="children">Number of Children:</label>
-        <input type="number" id="children" name="children" placeholder="Enter the number of children" required />
-
-        <div id="categories-container" class="categories-container"></div>
-
-        <button type="submit">Save Changes</button>
-      </form>
+    <!-- Modal -->
+    <div class="modal fade" id="choicesModal" tabindex="-1" aria-labelledby="choicesModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="choicesModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="modalPanel1">
+              <h4>Are you ready to discover new ideas for your date?</h4>
+              <div class="choices"></div>
+            </div>
+            <div id="modalPanel2">
+              <h4>What is your best choice for a drink?</h4>
+              <div class="choices"></div>
+            </div>
+            <div id="modalPanel3">
+              <h4>What is your best choice for a food?</h4>
+              <div class="choices"></div>
+            </div>
+            <div id="modalPanel4">
+              <h4>What is your best choice for an activity?</h4>
+              <div class="choices"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="acceptModalButton" class="btn btn-primary">Accept</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Main JS file -->
