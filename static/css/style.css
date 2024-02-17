@@ -5,7 +5,6 @@
   /* PUT THEME IN HERE */
 }
 
-
 *,
 *::before,
 *::after {
@@ -22,4 +21,26 @@ html {
 h1 {
   font-family: WindSong, cursive;
   font-weight: 500;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: white;
+  color: black;
+  padding: 0 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 2px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
