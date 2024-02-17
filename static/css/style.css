@@ -53,7 +53,6 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
-  box-shadow: 0 2px 2px black;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -83,7 +82,6 @@ ul {
   position: absolute;
   background-color: white;
   width: 100%;
-  box-shadow: 0 2px 2px black;
   padding: 0 1rem;
   left: 0;
   display: none;
@@ -113,20 +111,14 @@ main {
 
 /* The hero section */
 #hero {
-  background-color: pink;
-  height: 600px;
+  background-image: url("../../assets/images/hero-heart.webp");
+  height: 450px;
   width: 100%;
+  margin-top: 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-
-#hero-text {
-  position: absolute;
-  bottom: 20px;
-  color: black;
-  text-align: center;
 }
 
 /* Intro section */
