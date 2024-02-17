@@ -1,6 +1,10 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap');
+
 :root {
   /* PUT THEME IN HERE */
 }
+
 
 *,
 *::before,
@@ -12,5 +16,10 @@
 
 html {
   height: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Montserrat, Verdana, sans-serif;
+}
+
+h1 {
+  font-family: WindSong, cursive;
+  font-weight: 500;
 }
