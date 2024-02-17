@@ -26,13 +26,13 @@
             <!-- NavBar -->
             <div id="menu-nav">
                 <input type="checkbox" id="nav-toggle" name="nav-toggle"/>
-                <label for="nav-toggle" class="nav-toggle-label"> <i class="fa-solid fa-bars"></i>
+                <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i>
                 </label>
                 <nav id="menu">
                     <ul id="menu-items">
-                        <li><a href="index.html" class="active" aria-label="Go to the home page">Home</a></li>
-                        <li><a href="about.html" aria-label="Go to About page">About</a></li>
-                        <li><a href="contact.html" aria-label="Go to Contact page">Contact</a></li>
+                        <li><a href="index.html" aria-label="Go to the home page">Home</a></li>
+                        <li><a href="about.html"  aria-label="Go to About page">About</a></li>
+                        <li><a href="contact.html" class="active" aria-label="Go to Contact page">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,24 +41,29 @@
 
         <!-- Main content -->
         <main>
-            <section>
-                <!-- Hero -->
-                <div id="hero"></div>
-                <div id="slogan">
-                    <h2>Start planning your next romantic adventure now!</h2>
-                </div>
+            <section id="contact">
+                <div class="form-center">
+                <form action="thankyou.html" id="contact-form" method="get"> 
+                    <h4>Let's get in touch!</h4>
+                    <label for="flname">First & Last Name</label>
+                    <input type="text" name="firstandlastname" id="flname" class="text-input" placeholder="Your name & surname..." required pattern="\S(.*\S)?" title="This field is required">
+                <br>
+                    <label for="email_address">Email Address</label>
+                    <input type="email" name="email_address" id="email_address" class="text-input" placeholder="Your email adress..." required pattern="\S(.*\S)?" title="This field is required">
+                <br>
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" class="text-input" placeholder="Message" required style="height:150px" ></textarea>
+                <br>
+                <button type="submit" class="join-button"><i class="fa-regular fa-envelope"></i><br>SEND MESSAGE</button> 
+                
+                </form>
+            </div>
             </section>
-            <section id="intro" class="container">
-                <p>
-                    Welcome to Date Sparkle, we bring romance and creativity to your love
-                    life! Whether you're planning a first date, a special anniversary
-                    celebration, or searching for the perfect Valentine's Day surprise,
-                    we'll bring your date idea creativity to life. At Date Sparkle, we
-                    understand that every relationship is special, and that's why we
-                    inspire you to create magical moments with your partner.
-                </p>
-            </section>
+
+
         </main>
+
+
         <!-- Footer -->
         <footer>
             <p>AI Planner &copy; 2020</p>
@@ -66,4 +71,3 @@
         <!-- Font awasome kit  -->
         <script src="https://kit.fontawesome.com/e87966439a.js" crossorigin="anonymous"></script>
     </body>
-</html>
