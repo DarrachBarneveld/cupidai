@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap');
+
 :root {
   /* PUT THEME IN HERE */
 }
@@ -12,5 +15,170 @@
 
 html {
   height: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Montserrat, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: WindSong, cursive;
+  font-weight: 500;
+  text-transform: capitalize;
+  word-spacing: 0.4rem;
+}
+
+h1 {
+  font-size: 28px;
+  color: #481550;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+body {
+  min-height: 100vh;
+  color: #06040F;
+  background-color: #FEECEA;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: #FEECEA;
+  color: #481550;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header ul > li {
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Marks the active web page */
+.active {
+  border-bottom: 1px solid #04041C;
+}
+
+/* Navbar styles with dropdown toggle */
+#menu {
+  position: absolute;
+  background-color: #FEECEA;
+  width: 100%;
+  padding: 0 1rem;
+  left: 0;
+  display: none;
+  top: 100%;
+}
+
+#nav-toggle:checked ~ nav {
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 2rem;
+  padding-right: 2px;
+  position: relative;
+  color: #481550;
+}
+
+/* Main content */
+main {
+  flex: 1 0 auto;
+  margin-top: 45px;
+}
+
+/* The hero section */
+#hero {
+  background-image: url("../../assets/images/hero-heart.webp");
+  height: 450px;
+  width: 100%;
+  margin-top: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#slogan {
+  margin: 35px 15px 15px;
+  color: #481550;
+  text-align: center;
+}
+
+/* Intro section */
+.container {
+  padding: 20px;
+  max-width: 100%;
+  margin: 5px 15px;
+}
+
+#intro p {
+  text-align: justify;
+}
+
+/* Footer */
+footer {
+  background-color: #06040F;
+  color: #FEECEA;
+}
+
+/* Media query fot tablets and up (from 768px and larger screens) */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  /* Make menu always visible*/
+  #menu {
+    position: relative;
+    width: fit-content;
+    padding-right: 1rem;
+    box-shadow: none;
+    display: block;
+  }
+
+  #menu-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* To make menu items show side by side */
+  #menu-items {
+    display: flex;
+  }
+
+  #menu-items > li {
+    padding-left: 1rem;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
 }
