@@ -139,6 +139,70 @@ main {
   text-align: justify;
 }
 
+
+/* Contact page */
+
+#contact {
+  background-size: cover;
+  background-position: 75%;
+  flex-grow: 1;
+  padding: 20%;     
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#contact-form { 
+  color: #fbfbe3;
+  background-color: #592331;
+  padding: 20px;
+  border: 1px solid #fbfbe3;
+  border-radius: 10px;        
+}
+
+#contact-form > h4 {
+  color: #fbfbe3;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text-input {
+  background: transparent;
+  color: #fbfbe39;
+  border: 0.5px dotted #fbfbe3;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 25px;
+  margin: 5px 0 20px;
+  padding: 0 5px;
+}
+
+::placeholder {
+  color: rgba(254, 250, 224, 0.6);
+}
+
+.join-button {
+  align-self: center;
+  margin-top: 20px;
+  border: 0.5px dotted #fbfbe3;
+  border-radius: 5px;
+  padding: 5px 30px;
+  background-color: #592331;
+  color: #fbfbe3;
+  font-size: 100%;
+  text-transform: lowercase;   
+}
+
+.join-button:hover {
+      background-color: #fbfbe3;
+      color: #592331;
+  }
+
 /* Footer */
 footer {
   background-color: #06040F;
@@ -181,4 +245,13 @@ footer {
   .nav-toggle-label {
     display: none;
   }
+}
+
+
+@media screen and (min-width: 992px) {
+  /* To give the user a feedback of hovering over that specific link */
+  #menu-items a:hover {
+    border-bottom: 1px solid #04041C;
+  } 
+
 }
