@@ -1,8 +1,18 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap");
 
 :root {
-  /* PUT THEME IN HERE */
+  /* fonts */
+  --title: "Lato", sans-serif;
+  --main-font: "Montserrat", Verdana, sans-serif;
+
+  /* Colours */
+  --header-text: #481550;
+  --main-text: #06040f;
+  --background: #feecea;
+  --primary: #f085f2;
+  --accent: #592331;
+  --secondary: #04041c;
 }
 
 *,
@@ -18,7 +28,9 @@ html {
   font-family: Montserrat, Verdana, sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: WindSong, cursive;
   font-weight: 500;
   text-transform: capitalize;
@@ -40,15 +52,15 @@ h3 {
 
 body {
   min-height: 100vh;
-  color: #06040F;
-  background-color: #FEECEA;
+  color: #06040f;
+  background-color: #feecea;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
 header {
-  background-color: #FEECEA;
+  background-color: #feecea;
   color: #481550;
   padding: 0.5rem;
   position: fixed;
@@ -75,13 +87,13 @@ ul {
 
 /* Marks the active web page */
 .active {
-  border-bottom: 1px solid #04041C;
+  border-bottom: 1px solid #04041c;
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
   position: absolute;
-  background-color: #FEECEA;
+  background-color: #feecea;
   width: 100%;
   padding: 0 1rem;
   left: 0;
@@ -139,29 +151,27 @@ main {
   text-align: justify;
 }
 
-
 /* Contact page */
 
 #contact {
   background-size: cover;
   background-position: 75%;
   flex-grow: 1;
-  padding: 20%;     
+  padding: 20%;
 }
 
 .form-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-#contact-form { 
+#contact-form {
   color: #fbfbe3;
   background-color: #592331;
   padding: 20px;
   border: 1px solid #fbfbe3;
-  border-radius: 10px;        
+  border-radius: 10px;
 }
 
 #contact-form > h4 {
@@ -172,7 +182,7 @@ main {
 
 .text-input {
   background: transparent;
-  color: #fbfbe39;
+  color: #fbfbe3;
   border: 0.5px dotted #fbfbe3;
   border-radius: 5px;
   cursor: pointer;
@@ -195,18 +205,18 @@ main {
   background-color: #592331;
   color: #fbfbe3;
   font-size: 100%;
-  text-transform: lowercase;   
+  text-transform: lowercase;
 }
 
 .join-button:hover {
-      background-color: #fbfbe3;
-      color: #592331;
-  }
+  background-color: #fbfbe3;
+  color: #592331;
+}
 
 /* Footer */
 footer {
-  background-color: #06040F;
-  color: #FEECEA;
+  background-color: #06040f;
+  color: #feecea;
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
@@ -247,11 +257,9 @@ footer {
   }
 }
 
-
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
   #menu-items a:hover {
-    border-bottom: 1px solid #04041C;
-  } 
-
+    border-bottom: 1px solid #04041c;
+  }
 }
