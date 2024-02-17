@@ -18,7 +18,7 @@ html {
   font-family: Montserrat, Verdana, sans-serif;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: WindSong, cursive;
   font-weight: 500;
 }
@@ -88,5 +88,23 @@ ul {
 /* Main content */
 main {
   flex: 1 0 auto;
-  margin-top: 61.5px;
+  margin-top: 45px;
+}
+
+/* The hero section */
+#hero {
+  background-color: pink;
+  height: 600px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#hero-text {
+  position: absolute;
+  bottom: 20px;
+  color: black;
+  text-align: center;
 }
