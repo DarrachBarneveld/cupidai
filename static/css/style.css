@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap&family=Gwendolyn:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap");
 
 :root {
   /* PUT THEME IN HERE */
@@ -18,8 +18,10 @@ html {
   font-family: Montserrat, Verdana, sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: Gwendolyn, cursive;
+h1,
+h2,
+h3 {
+  font-family: WindSong, cursive;
   font-weight: 500;
   text-transform: capitalize;
   word-spacing: 0.4rem;
@@ -40,18 +42,17 @@ h3 {
 
 body {
   min-height: 100vh;
-  color: #06040F;
-  background-color: #FEECEA;
+  color: #06040f;
+  background-color: #feecea;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
 header {
-  background-color: #FEECEA;
+  background-color: #feecea;
   color: #481550;
   padding: 0.5rem;
-  position: fixed;
   width: 100%;
   z-index: 10;
   display: flex;
@@ -75,13 +76,13 @@ ul {
 
 /* Marks the active web page */
 .active {
-  border-bottom: 1px solid #04041C;
+  border-bottom: 1px solid #04041c;
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
   position: absolute;
-  background-color: #FEECEA;
+  background-color: #feecea;
   width: 100%;
   padding: 0 1rem;
   left: 0;
@@ -139,29 +140,27 @@ main {
   text-align: justify;
 }
 
-
 /* Contact page */
 
 #contact {
   background-size: cover;
   background-position: 75%;
   flex-grow: 1;
-  padding: 20%;     
+  padding: 20%;
 }
 
 .form-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-#contact-form { 
+#contact-form {
   color: #fbfbe3;
   background-color: #592331;
   padding: 20px;
   border: 1px solid #fbfbe3;
-  border-radius: 10px;        
+  border-radius: 10px;
 }
 
 #contact-form > h4 {
@@ -195,18 +194,18 @@ main {
   background-color: #592331;
   color: #fbfbe3;
   font-size: 100%;
-  text-transform: lowercase;   
+  text-transform: lowercase;
 }
 
 .join-button:hover {
-      background-color: #fbfbe3;
-      color: #592331;
-  }
+  background-color: #fbfbe3;
+  color: #592331;
+}
 
 /* Footer */
 footer {
-  background-color: #06040F;
-  color: #FEECEA;
+  background-color: #06040f;
+  color: #feecea;
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
@@ -250,37 +249,32 @@ footer {
 
   #contact {
     background-position: center;
-    position: relative;        
-}
+    position: relative;
+  }
 
-.form-center {
+  .form-center {
     display: flex;
     justify-content: center;
-}
+  }
 
-#contact-form {
+  #contact-form {
     position: absolute;
-    top: 80px;               
-}
+    top: 80px;
+  }
 
-.text-input:hover {
+  .text-input:hover {
     border-color: #fbfbe3;
-}
+  }
 
-.join-button:hover {
+  .join-button:hover {
     background-color: #fbfbe3;
     color: #592331;
+  }
 }
-
-
-
-}
-
 
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
   #menu-items a:hover {
-    border-bottom: 1px solid #04041C;
-  } 
-
+    border-bottom: 1px solid #04041c;
+  }
 }

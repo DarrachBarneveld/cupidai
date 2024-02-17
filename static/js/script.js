@@ -147,8 +147,6 @@ async function getGooglePlaces(location) {
       body: JSON.stringify({ lat: 53.3546667, lng: -6.2616667, text: "pub" }),
     });
 
-    console.log("Response:", response);
-
     const data = await response.json();
 
     console.log("Places:", data);

@@ -21,7 +21,7 @@ def stream_response(completion_stream):
         yield content
 
 class AskGptView(APIView):
-    
+
     def post(self, req):
 
         req_data = GptSerializer(data=req.data)
