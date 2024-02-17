@@ -172,7 +172,7 @@ main {
 
 .text-input {
   background: transparent;
-  color: #fbfbe39;
+  color: #fbfbe3;
   border: 0.5px dotted #fbfbe3;
   border-radius: 5px;
   cursor: pointer;
@@ -245,6 +245,35 @@ footer {
   .nav-toggle-label {
     display: none;
   }
+
+  /* Contact page */
+
+  #contact {
+    background-position: center;
+    position: relative;        
+}
+
+.form-center {
+    display: flex;
+    justify-content: center;
+}
+
+#contact-form {
+    position: absolute;
+    top: 80px;               
+}
+
+.text-input:hover {
+    border-color: #fbfbe3;
+}
+
+.join-button:hover {
+    background-color: #fbfbe3;
+    color: #592331;
+}
+
+
+
 }
 
 
