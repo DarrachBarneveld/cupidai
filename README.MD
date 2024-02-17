@@ -71,9 +71,24 @@ You should now see the application running in your browser!
     { "message": "your message here" }
     ```
   - **Response**:
-    ```json
-    { "message": "gpt_message" }
-    ```
+   Responds with a stream of text. Can be read using *fetch* as in the following [article](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream).
+
+      Example of implementation can be seen below:
+
+      ```javascript
+      async function readData(url) {
+         const response = await fetch(url);
+         const reader = response.body.getReader();
+         while (true) {
+            const { done, value } = await reader.read();
+            if (done) {
+               // Do something with last chunk of data then exit reader
+               return;
+            }
+            // Otherwise do something here to process current chunk
+         }
+      }
+      ```
 
 - ### Google Places endpoint
 
