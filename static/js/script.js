@@ -139,12 +139,12 @@ placesBtn.addEventListener("click", getGooglePlaces);
 
 async function getGooglePlaces(location) {
   try {
-    const response = await fetch("http://localhost:3000/", {
+    const response = await fetch("http://localhost:8000/api/places", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ lat: 53.3546667, lng: -6.2616667 }),
+      body: JSON.stringify({ lat: 53.3546667, lng: -6.2616667, text: "pub" }),
     });
 
     console.log("Response:", response);

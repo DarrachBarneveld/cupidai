@@ -41,8 +41,8 @@ class AskGptView(APIView):
             # Return 400 and validation errors
             return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
 
-       
-    
+
+
 class GeolocationView(APIView):
     def post(self, req):
 
