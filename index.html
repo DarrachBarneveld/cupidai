@@ -37,15 +37,26 @@
       <!-- Logo -->
       <a href="index.html"><h1>Date Sparkle</h1></a>
       <!-- NavBar -->
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html" aria-label="Go to the home page">Home</a>
-          </li>
-          <li><a href="#" aria-label="Go to About page">About</a></li>
-          <li><a href="#" aria-label="Go to Contact page">Contact</a></li>
-        </ul>
-      </nav>
+      <div id="menu-nav">
+        <input type="checkbox" id="nav-toggle" name="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label"
+          ><i class="fa-solid fa-bars"></i
+        ></label>
+        <nav id="menu">
+          <ul id="menu-items">
+            <li>
+              <a
+                href="index.html"
+                class="active"
+                aria-label="Go to the home page"
+                >Home</a
+              >
+            </li>
+            <li><a href="#" aria-label="Go to About page">About</a></li>
+            <li><a href="#" aria-label="Go to Contact page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Main content -->
@@ -73,5 +84,10 @@
     <footer>
       <p>AI Planner &copy; 2020</p>
     </footer>
+    <!-- Font awasome kit  -->
+    <script
+      src="https://kit.fontawesome.com/e87966439a.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
