@@ -6,6 +6,7 @@ const foodForm = document.getElementById("foodForm");
 const activityForm = document.getElementById("activityForm");
 const promptBtn = document.getElementById("promptBtn");
 const geolocationBtn = document.getElementById("geolocationBtn");
+const placesBtn = document.getElementById("placesBtn");
 
 const aiPrompt = document.getElementById("aiPrompt");
 const locationElement = document.getElementById("location");
@@ -134,6 +135,8 @@ async function askgpt(prompt) {
   }
 }
 
+placesBtn.addEventListener("click", getGooglePlaces);
+
 async function getGooglePlaces(location) {
   try {
     const response = await fetch("http://localhost:3000/", {
@@ -141,8 +144,10 @@ async function getGooglePlaces(location) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(location),
+      body: JSON.stringify({ lat: 53.3546667, lng: -6.2616667 }),
     });
+
+    console.log("Response:", response);
 
     const data = await response.json();
 
