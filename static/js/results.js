@@ -50,6 +50,60 @@ function createResultsCard(result) {
   });
 }
 
+function createPlaceCard(place) {
+  const columnElement = document.createElement("div");
+  columnElement.classList.add("col-md-3");
+
+  const isOpen = place?.regularOpeningHours?.openNow;
+
+  const photo = place.photos[0];
+  const cardHtml = `  <div class="card-sl bg-white fade-in-bounce">
+  <div class="card-image">
+    <img
+      src="https://places.googleapis.com/v1/${
+        photo.name
+      }/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyAQD37gEBZUU9QFrndU9QxukjhQ3t8qRWU"
+    />
+  </div>
+
+  <div class="card-heading">${place.displayName.text}</div>
+
+  <div class="d-flex align-items-center justify-content-center p-0">
+    <p class="card-text fw-bold m-0 text-dark">
+      <i class="fa-solid fa-star text-warning"></i> ${place.rating}
+    </p>
+    <p class="card-text fw-bold m-0 text-dark">
+      <i class="fa-solid fa-user text-info"></i> ${place.userRatingCount}
+    </p>
+
+    <p class="card-text ${isOpen ? "text-success" : "text-danger"} fw-bold">
+      <i class="fa-solid fa-door-open"></i> ${isOpen ? "Open" : "Closed"}
+    </p>
+  </div>
+  <a
+    href="${place.googleMapsUri}"
+    target="_blank"
+  >
+    <address class="card-address">
+      ${place.formattedAddress}
+    </address>
+  </a>
+
+  <a
+    href="${place.websiteUri}"
+    target="_blank"
+    class="card-button"
+    >Website</a
+  >
+</div>`;
+
+  columnElement.innerHTML = cardHtml;
+
+  resultsContainerElement.innerHTML = "";
+
+  resultsContainerElement.appendChild(columnElement);
+}
+
 async function getGooglePlaces(location, drink, food, activity) {
   const text = `${drink} ${food} ${activity}`;
 
@@ -66,9 +120,17 @@ async function getGooglePlaces(location, drink, food, activity) {
       }),
     });
 
-    const data = await response.json();
+    const { places } = await response.json();
+    console.log(places);
 
-    console.log("Places:", data);
+    if (places.length === 0) {
+      console.log("No places found");
+      return;
+    } else {
+      places.forEach((place) => createPlaceCard(place));
+    }
+
+    console.log("Places:", places);
   } catch (error) {
     console.error("Error fetching data:", error);
   }

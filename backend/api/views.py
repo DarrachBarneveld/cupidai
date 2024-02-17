@@ -71,8 +71,10 @@ class GeolocationView(APIView):
             headers = {
                 "Content-Type": "application/json",
                 "X-Goog-Api-Key": places_api_key,
-                "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.primaryType,places.rating,places.internationalPhoneNumber,places.googleMapsUri",
+                "X-Goog-FieldMask": "*",
             }
+
+            # places.displayName,places.formattedAddress,places.primaryType,places.rating,places.internationalPhoneNumber,places.googleMapsUri
 
             res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data)
 
