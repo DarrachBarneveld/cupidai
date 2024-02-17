@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edel-styles.css">
+    <script src="env.js"></script>
+    <script src="openai.js"></script>
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+    <title>front-page</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="front-page.html">Front Page</a></li>
+            <li><a href="openai.html">OpenAI</a></li>
+        </ul>
+    </nav>
+
+    <button id="get-location" onclick="getCurrentLocationLatLng()">Get Location</button>
+
+    <div class="content">
+        <h1>Activity Adviser</h1>
+        <p>If you are open to cool suggestions as to where to go out, then you are in the right place!</p>
+        <p>Simply aswer a few questions about your interests and we will ppoint you in the right direction.</p>
+
+        <div class="form">
+            <select id="age">
+                <option value="">Please select your age</option>
+                <option value="0-18">0-18</option>
+                <option value="19-30">19-30</option>
+                <option value="31-50">31-50</option>
+                <option value="51-70">51-70</option>
+                <option value="71+">71+</option>
+            </select>
+            <br><br>
+            <select id="interests">
+                <option value="">Please select your interests</option>
+                <option value="sports">Sports</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+                <option value="food">Food</option>
+                <option value="outdoors">Outdoors</option>
+                <option value="indoors">Indoors</option>
+            </select>
+            <br><br>
+            <select id="drinks">
+                <option value="">What kind of drinks do you like?</option>
+                <option value="Soda">Soda</option>
+                <option value="Cocktails">Cocktails</option>
+                <option value="Beer">Beer</option>
+                <option value="Wine">Wine</option>
+                <option value="Vodka">Vodka</option>
+                <option value="Whiskey">Whiskey</option>
+            </select>
+            <br><br>
+            <select id="foods">
+                <option value="">What kind of food do you like?</option>
+                <option value="Italian">Italian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Japanese">Japanese</option>
+                <option value="American">American</option>
+                <option value="French">French</option>
+            </select>
+            <br><br>
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" name="location"><br><br>
+            <button type="button" onclick="submitQueries()">Start</button>
+            <button type="button" onclick="getLocationData()">Get Location</button>
+        </div>
+
+        <div class="activities-panel" id="activities-panel">
+            <div class="activity-slides">
+                <h2 class="activity-title">Title 1</h2>
+                <p class="activity-description">Description one</p>
+            </div>
+            <div class="activity-slides">
+                <h2 class="activity-title">Title 2</h2>
+                <p class="activity-description">Description two</p>
+            </div>
+            <div class="activity-slides">
+                <h2 class="activity-title">Title 3</h2>
+                <p class="activity-description">Description three</p>
+            </div>
+            <div class="activity-slides">
+                <h2 class="activity-title">Title 4</h2>
+                <p class="activity-description">Description four</p>
+            </div>
+            <div class="activity-slides">
+                <h2 class="activity-title">Title 5</h2>
+                <p class="activity-description">Description five</p>
+            </div>
+            <button type="button" class="prev" onclick="plusSlides('activity-slides',-1)">&#10094;</button>
+            <button type="button" class="prev" onclick="plusSlides('activity-slides',1)">&#10095;</button>
+        </div>
+
+        <div id="drinks-panel" class="drinks-panel">
+            <div class="drink-slides">
+                <h2 class="drink-title">Title 1</h2>
+                <p class="drink-description">Description one</p>
+            </div>
+            <div class="drink-slides">
+                <h2 class="drink-title">Title 2</h2>
+                <p class="drink-description">Description two</p>
+            </div>
+            <div class="drink-slides">
+                <h2 class="drink-title">Title 3</h2>
+                <p class="drink-description">Description three</p>
+            </div>
+            <div class="drink-slides">
+                <h2 class="drink-title">Title 4</h2>
+                <p class="drink-description">Description four</p>
+            </div>
+            <div class="drink-slides">
+                <h2 class="drink-title">Title 5</h2>
+                <p class="drink-description">Description five</p>
+            </div>
+            <button type="button" class="prev" onclick="plusSlides('drink-slides',-1)">&#10094;</button>
+            <button type="button" class="prev" onclick="plusSlides('drink-slides',1)">&#10095;</button>
+        </div>
+
+        <div id="foods-panel" class="food-panel">
+            <div class="food-slides">
+                <h2 class="food-title">Title 1</h2>
+                <p class="food-description">Description one</p>
+            </div>
+            <div class="food-slides">
+                <h2 class="food-title">Title 2</h2>
+                <p class="food-description">Description two</p>
+            </div>
+            <div class="food-slides">
+                <h2 class="food-title">Title 3</h2>
+                <p class="food-description">Description three</p>
+            </div>
+            <div class="food-slides">
+                <h2 class="food-title">Title 4</h2>
+                <p class="food-description">Description four</p>
+            </div>
+            <div class="food-slides">
+                <h2 class="food-title">Title 5</h2>
+                <p class="food-description">Description five</p>
+            </div>
+            <button type="button" class="prev" onclick="plusSlides('food-slides',-1)">&#10094;</button>
+            <button type="button" class="prev" onclick="plusSlides('food-slides',1)">&#10095;</button>
+        </div>
+
+       
+</body>
+
+</html>

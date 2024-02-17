@@ -52,6 +52,7 @@ You should now see the application running in your browser!
    import os
 
    os.environ["OPENAI_API_KEY"] = "your key here"
+   os.environ['PLACES_API_KEY'] = "your key here"
    ```
 
 4. Run the following command to start the server:\
@@ -70,6 +71,53 @@ You should now see the application running in your browser!
     { "message": "your message here" }
     ```
   - **Response**:
-    ```json
-    { "message": "gpt_message" }
+   Responds with a stream of text. Can be read using *fetch* as in the following [article](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream).
+
+      Example of implementation can be seen below:
+
+      ```javascript
+      async function readData(url) {
+         const response = await fetch(url);
+         const reader = response.body.getReader();
+         while (true) {
+            const { done, value } = await reader.read();
+            if (done) {
+               // Do something with last chunk of data then exit reader
+               return;
+            }
+            // Otherwise do something here to process current chunk
+         }
+      }
+      ```
+
+- ### Google Places endpoint
+
+  - **Method**: POST
+
+  - **URL**: `/api/places`
+
+  - **Body**:
+   ```json
+   {
+      "lat": 51.5072,
+      "lng": 0.1276,
+      "text": "music"
+   }
     ```
+  - **Response**:
+   ```json
+   {
+      "places": [
+         {
+            "internationalPhoneNumber": "+44 7427 709209",
+            "formattedAddress": "Unit 705, Exeter House, 41 Academy Way, Dagenham RM8 2FP, UK",
+            "rating": 5,
+            "googleMapsUri": "https://maps.google.com/?cid=9812856155803149089",
+            "displayName": {
+                "text": "M music for life",
+                "languageCode": "en"
+            },
+         }
+      ]
+   }
+   ```

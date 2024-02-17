@@ -26,11 +26,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%9*3lbsk-+c&+20g$tr*x7v!bg2x+-lwg#2&$a97dg*&ijo#ba'
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+PLACES_API_KEY = os.environ.get("PLACES_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+ACCESS_CONTROL_ALLOW_ORIGIN = '*'
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
+ACCESS_CONTROL_ALLOW_CREDENTIALS = True
+ACCESS_CONTROL_ALLOW_METHODS = '*'
+ACCESS_CONTROL_ALLOW_HEADERS = '*'
 
+CSRF_TRUSTED_ORIGINS = [ "http://127.0.0.1:63753",'http://127.0.0.1:8000', "http://localhost:63753"]
 
 # Application definition
 
@@ -41,10 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
 ]
 
+
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
