@@ -124,4 +124,38 @@ main {
 /* Footer */
 footer {
   background-color: black;
+  color: white;
+}
+
+/* Media query fot tablets and up (from 768px and larger screens) */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  /* Make menu always visible*/
+  #menu {
+    position: relative;
+    width: fit-content;
+    padding-right: 1rem;
+    box-shadow: none;
+    display: block;
+  }
+
+  /* To make menu items show side by side */
+  #menu-items {
+    display: flex;
+  }
+
+  #menu-items > li {
+    padding-left: 1rem;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
 }
