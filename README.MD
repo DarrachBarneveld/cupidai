@@ -52,6 +52,7 @@ You should now see the application running in your browser!
    import os
 
    os.environ["OPENAI_API_KEY"] = "your key here"
+   os.environ['PLACES_API_KEY'] = "your key here"
    ```
 
 4. Run the following command to start the server:\
@@ -73,3 +74,35 @@ You should now see the application running in your browser!
     ```json
     { "message": "gpt_message" }
     ```
+
+- ### Google Places endpoint
+
+  - **Method**: POST
+
+  - **URL**: `/api/places`
+
+  - **Body**:
+   ```json
+   {
+      "lat": 51.5072,
+      "lng": 0.1276,
+      "text": "music"
+   }
+    ```
+  - **Response**:
+   ```json
+   {
+      "places": [
+         {
+            "internationalPhoneNumber": "+44 7427 709209",
+            "formattedAddress": "Unit 705, Exeter House, 41 Academy Way, Dagenham RM8 2FP, UK",
+            "rating": 5,
+            "googleMapsUri": "https://maps.google.com/?cid=9812856155803149089",
+            "displayName": {
+                "text": "M music for life",
+                "languageCode": "en"
+            },
+         }
+      ]
+   }
+   ```
