@@ -26,11 +26,12 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 28px;
+  color: #481550;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 25px;
 }
 
 h3 {
@@ -39,16 +40,16 @@ h3 {
 
 body {
   min-height: 100vh;
-  color: white;
-  background-color: purple;
+  color: #06040F;
+  background-color: #FEECEA;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
 header {
-  background-color: white;
-  color: black;
+  background-color: #FEECEA;
+  color: #481550;
   padding: 0.5rem;
   position: fixed;
   width: 100%;
@@ -74,13 +75,13 @@ ul {
 
 /* Marks the active web page */
 .active {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #04041C;
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
   position: absolute;
-  background-color: white;
+  background-color: #FEECEA;
   width: 100%;
   padding: 0 1rem;
   left: 0;
@@ -100,7 +101,7 @@ ul {
   font-size: 2rem;
   padding-right: 2px;
   position: relative;
-  color: black;
+  color: #481550;
 }
 
 /* Main content */
@@ -121,12 +122,19 @@ main {
   position: relative;
 }
 
+#hero-text {
+  position: absolute;
+  bottom: -75px;
+  color: #481550;
+  text-align: center;
+}
+
+
 /* Intro section */
 .container {
   padding: 20px;
   max-width: 100%;
-  margin: 15px;
-  background-color: rgba(255, 255, 255, 0.2);
+  margin: 60px 15px 15px;
 }
 
 #intro p {
@@ -135,8 +143,8 @@ main {
 
 /* Footer */
 footer {
-  background-color: black;
-  color: white;
+  background-color: #06040F;
+  color: #FEECEA;
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
@@ -174,5 +182,14 @@ footer {
 
   .nav-toggle-label {
     display: none;
+  }
+
+  #hero-text {
+    max-width:30%;
+    padding-right: 15px;
+    bottom: 20px;
+    right: 5px;
+    color: #FEECEA;
+    text-align: right;
   }
 }
