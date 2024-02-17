@@ -99,8 +99,6 @@ function createPlaceCard(place) {
 
   columnElement.innerHTML = cardHtml;
 
-  resultsContainerElement.innerHTML = "";
-
   resultsContainerElement.appendChild(columnElement);
 }
 
@@ -127,6 +125,8 @@ async function getGooglePlaces(location, drink, food, activity) {
       console.log("No places found");
       return;
     } else {
+      resultsContainerElement.innerHTML = "";
+
       places.forEach((place) => createPlaceCard(place));
     }
 
