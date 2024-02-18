@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Romantic planning assistant for dates and Valentine's day ideas."
+    />
+    <meta name="keywords" content="date, Valentine's Day, ideas, plans" />
+    <!-- CSS Stylesheet link-->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/results.css" />
+
+    <!-- Title -->
+    <title>Date Sparkle</title>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- BOOTSTRAP LINKS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FONT AWESOME ICONS -->
+    <script
+      src="https://kit.fontawesome.com/27545168c5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Logo -->
+      <a href="index.html" aria-label="Go to the home page">
+        <h1>Date Sparkle</h1>
+      </a>
+      <!-- NavBar -->
+      <div id="menu-nav">
+        <input type="checkbox" id="nav-toggle" name="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <nav id="menu">
+          <ul id="menu-items">
+            <li>
+              <a
+                href="index.html"
+                class="active"
+                aria-label="Go to the home page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="about.html" aria-label="Go to About page">About</a>
+            </li>
+            <li>
+              <a href="contact.html" aria-label="Go to Contact page">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+      <div id="resultsContainer" class="row gx-2 gy-2">
+        <!-- <div class="col-md-3">
+          <div class="card-sl bg-white">
+            <div class="card-image">
+              <img
+                src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              />
+            </div>
+
+            <div class="card-heading">Dublin City Hot Yoga</div>
+
+            <div class="d-flex align-items-center justify-content-center p-0">
+              <p class="card-text fw-bold m-0 text-dark">
+                <i class="fa-solid fa-star text-warning"></i> 5
+              </p>
+              <p class="card-text fw-bold m-0 text-dark">
+                <i class="fa-solid fa-user text-info"></i> 46
+              </p>
+
+              <p class="card-text text-success fw-bold">
+                <i class="fa-solid fa-door-open"></i> Open
+              </p>
+            </div>
+            <a
+              href="https://maps.google.com/?cid=12494797739657713660"
+              target="_blank"
+            >
+              <address class="card-address">
+                Drury Court, 56-58 Drury St, Dublin 2, D02 HT29, Ireland
+              </address>
+            </a>
+
+            <a
+              href="http://www.dublincityhotyoga.com/"
+              target="_blank"
+              class="card-button"
+              >Website</a
+            >
+          </div>
+        </div> -->
+        <!-- <div class="col-md-6 mt-sm-4">
+          <div class="shadow rounded pt-4 p-3 position-relative fade-in-bounce">
+            <blockquote class="blockquote bg-white blockquote-custom">
+              <div class="blockquote-custom-icon bg-info shadow-sm">
+                <i class="fa fa-quote-left text-white"></i>
+              </div>
+              <p class="mb-0 mt-2 font-italic">
+                A sunset walk on the beach with a slice of pizza and a local
+                beer listening to the greatest hits of the 90s
+              </p>
+            </blockquote>
+            <div class="pt-2 mt-2 border-top">
+              <div class="d-flex gap-1 my-1">
+                <span class="badge rounded-pill bg-dark">Pizza</span
+                ><span class="badge rounded-pill bg-dark">Walk</span
+                ><span class="badge rounded-pill bg-dark">Beer</span>
+              </div>
+              <p class="mb-1">
+                <small class="text-primary">Help Me Plan!</small>
+              </p>
+              <button id="findPlaces" class="mx-auto btn btn-info">
+                <i class="fa-solid fa-map-location-dot"></i> Find places!
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-sm-4">
+          <div class="shadow rounded pt-4 p-3 position-relative fade-in-bounce">
+            <blockquote class="blockquote bg-white blockquote-custom">
+              <div class="blockquote-custom-icon bg-info shadow-sm">
+                <i class="fa fa-quote-left text-white"></i>
+              </div>
+              <p class="mb-0 mt-2 font-italic">
+                A sunset walk on the beach with a slice of pizza and a local
+                beer listening to the greatest hits of the 90s
+              </p>
+            </blockquote>
+            <div class="pt-2 mt-2 border-top">
+              <div class="d-flex gap-1 my-1">
+                <span class="badge rounded-pill bg-dark">Pizza</span
+                ><span class="badge rounded-pill bg-dark">Walk</span
+                ><span class="badge rounded-pill bg-dark">Beer</span>
+              </div>
+              <p class="mb-1">
+                <small class="text-primary">Help Me Plan!</small>
+              </p>
+              <button id="findPlaces" class="mx-auto btn btn-info">
+                <i class="fa-solid fa-map-location-dot"></i> Find places!
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- Heart Animation -->
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>AI Planner &copy; 2020</p>
+    </footer>
+    <!-- Font awasome kit  -->
+
+    <script type="module" src="static/js/results.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e87966439a.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

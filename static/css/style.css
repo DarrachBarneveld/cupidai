@@ -39,7 +39,7 @@ h3 {
 
 h1 {
   font-size: 28px;
-  color: #481550;
+  color: #feecea;
 }
 
 h2 {
@@ -63,12 +63,15 @@ header {
   background-color: #feecea;
   color: #481550;
   padding: 0.5rem;
-  position: fixed;
   width: 100%;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+header h1 {
+  font-size: 40px;
+  text-shadow: 0 0 0.2em black;
 }
 
 header ul > li {
@@ -113,7 +116,8 @@ ul {
   font-size: 2rem;
   padding-right: 2px;
   position: relative;
-  color: #481550;
+  color: #feecea;
+  text-shadow: 0 0 0.2em black;
 }
 
 /* Main content */
@@ -122,12 +126,11 @@ main {
   margin-top: 45px;
 }
 
-/* The hero section */
 #hero {
-  background-image: url("../../assets/images/hero-heart.webp");
-  height: 450px;
+  background-image: url("../../assets/images/couple-forest.webp");
+  background-color: #481550;
+  height: 100vh;
   width: 100%;
-  margin-top: 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,13 +138,29 @@ main {
 }
 
 #slogan {
-  margin: 35px 15px 15px;
-  color: #481550;
+  margin: 0 30px;
+  color: #feecea;
   text-align: center;
+  position: absolute;
+  bottom: 43%;
+  text-shadow: 0 0 0.2em black;
+}
+
+#slogan > h2 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
 /* Intro section */
 .container {
+  background-color: #c698a1;
+  padding: 20px;
+  max-width: 100%;
+  padding: 20px;
+}
+
+#intro i {
+  color: inherit;
   padding: 20px;
   max-width: 100%;
   margin: 5px 15px;
@@ -149,6 +168,7 @@ main {
 
 #intro p {
   text-align: justify;
+  color: #feecea;
 }
 
 /* Contact page */
@@ -256,34 +276,47 @@ footer {
     display: none;
   }
 
+  /*About*/
+
+  #about-sparkle,
+  #team-sparkle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-sparkle > div,
+  #team-sparkle > div {
+    width: 75%;
+    text-align: left;
+    align-self: center;
+  }
+
   /* Contact page */
 
   #contact {
     background-position: center;
-    position: relative;        
-}
+    position: relative;
+  }
 
-.form-center {
+  .form-center {
     display: flex;
     justify-content: center;
-}
+  }
 
-#contact-form {
+  #contact-form {
     position: absolute;
-    top: 80px;               
-}
+    top: 80px;
+  }
 
-.text-input:hover {
+  .text-input:hover {
     border-color: #fbfbe3;
-}
+  }
 
-.join-button:hover {
+  .join-button:hover {
     background-color: #fbfbe3;
     color: #592331;
-}
-
-
-
+  }
 }
 
 @media screen and (min-width: 992px) {
