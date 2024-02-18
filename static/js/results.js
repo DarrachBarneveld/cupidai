@@ -2,7 +2,16 @@ import DUMMY_AI_RESPONSE from "../data/dummyAIResponse.json";
 
 const resultsContainerElement = document.getElementById("resultsContainer");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+  var urlParams = new URLSearchParams(window.location.search);
+  var promptString = urlParams.get("prompt");
+  if (promptString) {
+    const array = await getAIRecommendations(promptString);
+
+    array.forEach((result) => createResultsCard(result));
+
+    return;
+  }
   DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
 });
 
@@ -11,30 +20,30 @@ function createResultsCard(result) {
   columnElement.classList.add("col-md-6", "mt-4");
 
   const cardhtml = `
-    <div class="shadow rounded pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
+    <div class="shadow  pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
       <blockquote class="blockquote bg-white blockquote-custom">
         <div class="blockquote-custom-icon bg-info shadow-sm">
           <i class="fa fa-quote-left text-white"></i>
         </div>
         <p class="mb-0 mt-2 font-italic bg-light">
-          ${result.text}
+          ${result.recommendation}
         </p>
       </blockquote>
       <div class="pt-2 mt-2 border-top">
-        <div class="d-flex gap-1 my-1">
-          <span class="badge rounded-pill bg-dark text-capitalize">${result.activity}</span>
-          <span class="badge rounded-pill bg-dark text-capitalize">${result.drink}</span>
+        <div class="d-flex gap-1 my-1 flex-wrap">
           <span class="badge rounded-pill bg-dark text-capitalize">${result.food}</span>
+          <span class="badge rounded-pill bg-dark text-capitalize">${result.drink}</span>
+          <span class="badge rounded-pill bg-dark text-capitalize">${result.activity}</span>
         </div>
         <p class="mb-1">
           <small class="text-primary">Help Me Plan!</small>
         </p>
-        <button id="findPlaces" class="mx-auto btn btn-info">
-          <i class="fa-solid fa-map-location-dot"></i> Find places!
+        <button id="findPlaces" class="mx-auto btn btn-danger">
+          <i class="fa-solid fa-map-location-dot"></i> <small> Find places! </small>
         </button>
       </div>
-    </div>`;
-
+    </div>
+    `;
   columnElement.innerHTML = cardhtml;
 
   resultsContainerElement.appendChild(columnElement);
@@ -131,6 +140,30 @@ async function getGooglePlaces(location, drink, food, activity) {
     }
 
     console.log("Places:", places);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+async function getAIRecommendations(prompt) {
+  try {
+    const response = await fetch("http://localhost:8000/api/ask-gpt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: prompt,
+      }),
+    });
+
+    const { message } = await response.json();
+
+    const objectArray = JSON.parse(message);
+
+    console.log(objectArray);
+
+    return objectArray;
   } catch (error) {
     console.error("Error fetching data:", error);
   }

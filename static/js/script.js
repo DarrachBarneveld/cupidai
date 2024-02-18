@@ -1,15 +1,7 @@
-import OpenAI from "openai";
-import { getCurrentLocationLatLng } from "./geolocation";
-
 const drinkForm = document.getElementById("drinkForm");
 const foodForm = document.getElementById("foodForm");
 const activityForm = document.getElementById("activityForm");
 const promptBtn = document.getElementById("promptBtn");
-const geolocationBtn = document.getElementById("geolocationBtn");
-const placesBtn = document.getElementById("placesBtn");
-
-const aiPrompt = document.getElementById("aiPrompt");
-const locationElement = document.getElementById("location");
 
 const APIKEY1 = "sk-xpy0IWg";
 const APIKEY2 = "P8oWW2pPKz2hJT3BlbkF";
@@ -79,78 +71,18 @@ function generateRandomPrompt() {
   const foodString = selectedFood.join(" ");
   const activityString = selectedActivity.join(" ");
 
-  let prompt = `I like all of the following: ${drinkString}, ${foodString}, and ${activityString}, create a fun random activity for me and my partner with this information in 125 words or less. Display in a list`;
+  const interests = drinkString + foodString + activityString;
 
-  console.log("Location:", location);
+  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object containing a text recommendation, along with associated drink, food, and activity keywords.`;
 
-  if (location) {
-    prompt += `I am currently at coordinates: ${location.lat}, ${location.lng}`;
-    getGooglePlaces(location);
-  }
-
-  askgpt(prompt);
+  var url = "results.html?prompt=" + encodeURIComponent(promptString);
+  window.location.href = url;
 }
 
-async function findMe() {
-  const result = await getCurrentLocationLatLng();
-
-  location = result;
-
-  locationElement.innerHTML = `Location: ${result.lat}, ${result.lng}`;
-
-  console.log("Location:", result);
-}
+promptBtn.addEventListener("click", generateRandomPrompt);
 
 drinkForm.addEventListener("submit", setSelectedDrinks);
 
 foodForm.addEventListener("submit", setSelectedFood);
 
 activityForm.addEventListener("submit", setSelectedActivity);
-
-promptBtn.addEventListener("click", generateRandomPrompt);
-
-geolocationBtn.addEventListener("click", findMe);
-
-const openai = new OpenAI({
-  apiKey: APIKEYTOTAL,
-  dangerouslyAllowBrowser: true,
-});
-
-async function askgpt(prompt) {
-  try {
-    const stream = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
-      stream: true,
-      max_tokens: 200,
-    });
-    let string = "";
-
-    for await (const chunk of stream) {
-      string += chunk.choices[0]?.delta?.content || "";
-      aiPrompt.textContent = string;
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-placesBtn.addEventListener("click", getGooglePlaces);
-
-async function getGooglePlaces(location) {
-  try {
-    const response = await fetch("http://localhost:8000/api/places", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ lat: 53.3546667, lng: -6.2616667, text: "pub" }),
-    });
-
-    const data = await response.json();
-
-    console.log("Places:", data);
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}

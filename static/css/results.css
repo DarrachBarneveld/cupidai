@@ -22,6 +22,7 @@ body {
   top: -25px;
   left: 50px;
   font-size: 1.2rem !important;
+  border: 1px solid rgb(90, 153, 255);
 }
 
 /* PLACES CARD */
@@ -82,6 +83,11 @@ body {
   opacity: 0;
   transform: scale(0.5);
   animation: fadeInBounce 0.3s ease-in-out forwards;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(#f8f9fa 0 0) padding-box,
+    /*this is your grey background*/
+      linear-gradient(to bottom right, #f85183, #9c20aa) border-box;
 }
 
 @keyframes fadeInBounce {
