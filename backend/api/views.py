@@ -75,6 +75,8 @@ class AskGptView(APIView):
             # Access GPT message
             gpt_message = choices[0]['message']['content']
 
+            print(gpt_message)
+
             # Return GPT message
             return Response({'message': gpt_message})
         else:
