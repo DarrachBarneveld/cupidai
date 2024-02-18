@@ -50,9 +50,10 @@ You should now see the application running in your browser!
 
    ```python
    import os
-
+   
+   os.environ["DEV"] = "True"
    os.environ["OPENAI_API_KEY"] = "your key here"
-   os.environ['PLACES_API_KEY'] = "your key here"
+   os.environ["PLACES_API_KEY"] = "your key here"
    ```
 
 4. Run the following command to start the server:\
