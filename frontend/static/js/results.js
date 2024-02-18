@@ -127,17 +127,20 @@ async function getGooglePlaces(location, drink, food, activity) {
   const text = `${drink} ${food} ${activity}`;
 
   try {
-    const response = await fetch("http://localhost:8000/api/places", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        lat: location.lat,
-        lng: location.lng,
-        text,
-      }),
-    });
+    const response = await fetch(
+      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          lat: location.lat,
+          lng: location.lng,
+          text,
+        }),
+      }
+    );
 
     const { places } = await response.json();
     console.log(places);
@@ -159,15 +162,18 @@ async function getGooglePlaces(location, drink, food, activity) {
 
 async function getAIRecommendations(prompt) {
   try {
-    const response = await fetch("http://localhost:8000/api/ask-gpt", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: prompt,
-      }),
-    });
+    const response = await fetch(
+      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: prompt,
+        }),
+      }
+    );
 
     console.log(response);
 
