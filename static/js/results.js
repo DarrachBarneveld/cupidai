@@ -1,12 +1,24 @@
 import DUMMY_AI_RESPONSE from "../data/dummyAIResponse.json";
 
+console.log("fire");
+
 const resultsContainerElement = document.getElementById("resultsContainer");
 
 document.addEventListener("DOMContentLoaded", async function () {
   var urlParams = new URLSearchParams(window.location.search);
-  var promptString = urlParams.get("prompt");
-  if (promptString) {
+  var interests = urlParams.get("prompt");
+
+  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
+    "recommendation": recommendation,
+    "drink": drink,
+    "food": food,
+    "activity": activity keywords
+  },
+  containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
+
+  if (interests) {
     const array = await getAIRecommendations(promptString);
+    console.log(array);
 
     array.forEach((result) => createResultsCard(result));
 
@@ -157,9 +169,12 @@ async function getAIRecommendations(prompt) {
       }),
     });
 
-    const { message } = await response.json();
+    console.log(response);
 
-    const objectArray = JSON.parse(message);
+    const data = await response.json();
+
+    console.log(data);
+    const objectArray = JSON.parse(data.message);
 
     console.log(objectArray);
 

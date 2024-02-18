@@ -73,9 +73,7 @@ function generateRandomPrompt() {
 
   const interests = drinkString + foodString + activityString;
 
-  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object containing a text recommendation, along with associated drink, food, and activity keywords.`;
-
-  var url = "results.html?prompt=" + encodeURIComponent(promptString);
+  var url = "results.html?prompt=" + encodeURIComponent(interests);
   window.location.href = url;
 }
 
