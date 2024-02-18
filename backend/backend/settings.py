@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-%9*3lbsk-+c&+20g$tr*x7v!bg2x+-lwg#2&$a97dg*&ijo#ba
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 PLACES_API_KEY = os.environ.get("PLACES_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['*']
 ACCESS_CONTROL_ALLOW_ORIGIN = '*'
