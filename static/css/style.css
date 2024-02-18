@@ -2,7 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital, wght@0, 100..900;1, 100..900 &family=WindSong:wght@400;500&display=swap&family=Gwendolyn:wght@400;700&display=swap");
 
 :root {
-  /* PUT THEME IN HERE */
+  /* Colours */
+  --header-text: #481550;
+  --main-text: #06040f;
+  --background: #feecea;
+  --primary: #f085f2;
+  --accent: #592331;
+  --secondary: #04041c;
 }
 
 *,
@@ -378,3 +384,4 @@ footer {
     text-align: left;
   }
 }
+

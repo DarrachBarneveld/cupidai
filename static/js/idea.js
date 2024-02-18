@@ -1,13 +1,13 @@
 "use strict";
 
-const modalPanel1 = document.getElementById("modalPanel1");
-const modalPanel2 = document.getElementById("modalPanel2");
-const modalPanel3 = document.getElementById("modalPanel3");
-const modalPanel4 = document.getElementById("modalPanel4");
+const choicesPanel1 = document.getElementById("choicesPanel1");
+const choicesPanel2 = document.getElementById("choicesPanel2");
+const choicesPanel3 = document.getElementById("choicesPanel3");
+const choicesPanel4 = document.getElementById("choicesPanel4");
 
 const acceptModalButton = document.getElementById("acceptModalButton");
 
-const modalPanelsArray = [modalPanel1, modalPanel2, modalPanel3, modalPanel4];
+const choicesPanelsArray = [choicesPanel1, choicesPanel2, choicesPanel3, choicesPanel4];
 
 let vissiblePanel = 0;
 
@@ -76,7 +76,7 @@ function createButtonHTML(panelID) {
 
 function cleanAndReplaceButtons(panelID, elementsList) {
   const buttonHTML = createButtonList(elementsList);
-  const choices = modalPanelsArray[panelID].querySelector(".choices");
+  const choices = choicesPanelsArray[panelID].querySelector(".choices");
   choices.innerHTML = "";
   choices.innerHTML = buttonHTML;
 
@@ -119,13 +119,13 @@ function highlightButton(button) {
 // function to show one element and hide others
 function showOnlyOne(showID) {
   // Make the specified element visible
-  modalPanelsArray[showID].style.display = "block";
+  choicesPanelsArray[showID].style.display = "block";
 
   vissiblePanel = showID;
 
   // Hide the other elements
-  modalPanelsArray.forEach((element) => {
-    if (element !== modalPanelsArray[showID]) {
+  choicesPanelsArray.forEach((element) => {
+    if (element !== choicesPanelsArray[showID]) {
       element.style.display = "none";
     }
   });
@@ -134,7 +134,7 @@ function showOnlyOne(showID) {
 // function to show next element
 function showNextPannel() {
   vissiblePanel++;
-  if (vissiblePanel > modalPanelsArray.length - 1) {
+  if (vissiblePanel > choicesPanelsArray.length - 1) {
     vissiblePanel = 0;
   }
   showOnlyOne(vissiblePanel);
