@@ -1,73 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Romantic planning assistant for dates and Valentine's day ideas."/>
-        <meta
-        name="keywords" content="date, Valentine's Day, ideas, plans"/>
-        <!-- CSS Stylesheet link-->
-        <link rel="stylesheet" href="static/css/style.css"/>
-        <link rel="stylesheet" href="static/css/about.css">
-        <!-- Title -->
-        <title>Date Sparkle</title>
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png"/>
-    </head>
-    <body>
-        <!-- Header -->
-        <header>
-            <!-- Logo -->
-            <a href="index.html" aria-label="Go to the home page">
-                <h1>Date Sparkle</h1>
-            </a>
-            <!-- NavBar -->
-            <div id="menu-nav">
-                <input type="checkbox" id="nav-toggle" name="nav-toggle"/>
-                <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i>
-                </label>
-                <nav id="menu">
-                    <ul id="menu-items">
-                        <li><a href="index.html" aria-label="Go to the home page">Home</a></li>
-                        <li><a href="about.html"  aria-label="Go to About page">About</a></li>
-                        <li><a href="contact.html" class="active" aria-label="Go to Contact page">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Romantic planning assistant for dates and Valentine's day ideas."
+    />
+    <meta name="keywords" content="date, Valentine's Day, ideas, plans" />
+    <!-- CSS Stylesheet link-->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/about.css" />
+    <link rel="stylesheet" href="static/css/heart-animation.css" />
+    <!-- Title -->
+    <title>Date Sparkle</title>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+  </head>
+  <body class="animation-wrapper">
+    <!-- Header -->
+    <header>
+      <!-- Logo -->
+      <a href="index.html" aria-label="Go to the home page">
+        <h1>Date Sparkle</h1>
+      </a>
+      <!-- NavBar -->
+      <div id="menu-nav">
+        <input type="checkbox" id="nav-toggle" name="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label"
+          ><i class="fa-solid fa-bars"></i>
+        </label>
+        <nav id="menu">
+          <ul id="menu-items">
+            <li>
+              <a href="index.html" aria-label="Go to the home page">Home</a>
+            </li>
+            <li>
+              <a href="about.html" aria-label="Go to About page">About</a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="active"
+                aria-label="Go to Contact page"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
+    <!-- Main content -->
+    <main>
+      <div class="heart x1"></div>
+      <div class="heart x2"></div>
+      <div class="heart x3"></div>
+      <div class="heart x4"></div>
+      <div class="heart x5"></div>
+      <div class="altheart x6"></div>
 
-        <!-- Main content -->
-        <main>
-            <section id="contact">
-                <div class="form-center">
-                <form action="thankyou.html" id="contact-form" method="get"> 
-                    <h4>Let's get in touch!</h4>
-                    <label for="flname">First & Last Name</label>
-                    <input type="text" name="firstandlastname" id="flname" class="text-input" placeholder="Your name & surname..." required pattern="\S(.*\S)?" title="This field is required">
-                <br>
-                    <label for="email_address">Email Address</label>
-                    <input type="email" name="email_address" id="email_address" class="text-input" placeholder="Your email adress..." required pattern="\S(.*\S)?" title="This field is required">
-                <br>
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" class="text-input" placeholder="Message" required style="height:150px" ></textarea>
-                <br>
-                <button type="submit" class="join-button"><i class="fa-regular fa-envelope"></i><br>SEND MESSAGE</button> 
-                
-                </form>
-            </div>
-            </section>
+      <section id="contact">
+        <div class="form-center">
+          <form action="thankyou.html" id="contact-form" method="get">
+            <h4>Let's get in touch!</h4>
+            <label for="flname">First & Last Name</label>
+            <input
+              type="text"
+              name="firstandlastname"
+              id="flname"
+              class="text-input"
+              placeholder="Your name & surname..."
+              required
+              pattern="\S(.*\S)?"
+              title="This field is required"
+            />
+            <br />
+            <label for="email_address">Email Address</label>
+            <input
+              type="email"
+              name="email_address"
+              id="email_address"
+              class="text-input"
+              placeholder="Your email adress..."
+              required
+              pattern="\S(.*\S)?"
+              title="This field is required"
+            />
+            <br />
+            <label for="subject">Subject</label>
+            <textarea
+              id="subject"
+              name="subject"
+              class="text-input"
+              placeholder="Message"
+              required
+              style="height: 150px"
+            ></textarea>
+            <br />
+            <button type="submit" class="join-button">
+              <i class="fa-regular fa-envelope"></i><br />SEND MESSAGE
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
 
-
-        </main>
-
-
-        <!-- Footer -->
-        <footer>
-            <p>AI Planner &copy; 2020</p>
-        </footer>
-        <!-- Font awasome kit  -->
-        <script src="https://kit.fontawesome.com/e87966439a.js" crossorigin="anonymous"></script>
-    </body>
+    <!-- Footer -->
+    <footer>
+      <p>AI Planner &copy; 2020</p>
+    </footer>
+    <!-- Font awasome kit  -->
+    <script
+      src="https://kit.fontawesome.com/e87966439a.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

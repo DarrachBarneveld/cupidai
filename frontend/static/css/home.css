@@ -1,11 +1,12 @@
 /* Hero */
 #hero-text {
-    margin: 0 30px;
+    padding: 0 30px;
     color: #feecea;
     text-align: center;
     position: absolute;
     bottom: 43%;
     text-shadow: 0 0 0.2em black;
+    width: 100%;
   }
   
   #hero-text > h2 {
@@ -14,20 +15,20 @@
   }
 
   /* Intro section */
-.container {
+  #intro {
     background-color: #c698a1;
-    max-width: 100%;
+
   }
   
   #intro i {
     color: inherit;
-    max-width: 100%;
   }
   
   #intro p {
-    text-align: justify;
+    text-align: center;
     color: #feecea;
     text-shadow: 0 0 0.1em black;
+
   }
 
   /* Media query fot tablets and up (from 768px and larger screens) */
@@ -45,9 +46,5 @@
       height: 60vh;
     }
   
-    #intro {
-      max-width: 100%;
-      padding: 20px;
-    }
 }
   
