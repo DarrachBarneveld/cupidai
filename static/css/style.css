@@ -1,43 +1,43 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital, wght@0, 100..900;1, 100..900 &family=WindSong:wght@400;500&display=swap&family=Gwendolyn:wght@400;700&display=swap");:root {
-    ;
-    /* PUT THEME IN HERE */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital, wght@0, 100..900;1, 100..900 &family=WindSong:wght@400;500&display=swap&family=Gwendolyn:wght@400;700&display=swap");
+
+:root {
+  /* PUT THEME IN HERE */
 }
 
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    font-family: Montserrat, Verdana, sans-serif;
+  height: 100%;
+  font-family: Montserrat, Verdana, sans-serif;
 }
 
 h1,
 h2,
 h3 {
-    font-family: Gwendolyn, cursive;
-    font-weight: 500;
-    text-transform: capitalize;
-    word-spacing: 0.4rem;
+  font-family: Gwendolyn, cursive;
+  font-weight: 500;
+  text-transform: capitalize;
+  word-spacing: 0.4rem;
 }
 
 h1 {
   font-size: 28px;
   color: #feecea;
-
 }
 
 h2 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 h3 {
-    font-size: 19px;
+  font-size: 19px;
 }
 
 body {
@@ -46,7 +46,6 @@ body {
   background-color: #feecea;
   display: flex;
   flex-direction: column;
-
 }
 
 /* Header */
@@ -65,23 +64,22 @@ header h1 {
 }
 
 header ul > li {
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /* Marks the active web page */
 .active {
   border-bottom: 1px solid #feecea;
-
 }
 
 /* Navbar styles with dropdown toggle */
@@ -92,15 +90,14 @@ ul {
   left: 0;
   display: none;
   top: 100%;
-
 }
 
 #nav-toggle:checked ~ nav {
-    display: block;
+  display: block;
 }
 
 #nav-toggle {
-    display: none;
+  display: none;
 }
 
 .nav-toggle-label {
@@ -109,13 +106,12 @@ ul {
   position: relative;
   color: #feecea;
   text-shadow: 0 0 0.2em black;
-
 }
 
 /* Main content */
 main {
-    flex: 1 0 auto;
-    margin-top: 45px;
+  flex: 1 0 auto;
+  margin-top: 45px;
 }
 
 #hero {
@@ -141,7 +137,6 @@ main {
 #slogan > h2 {
   font-size: 28px;
   font-weight: 700;
-
 }
 
 /* Intro section */
@@ -152,164 +147,164 @@ main {
   padding: 20px;
 }
 
-
 #intro i {
   color: inherit;
-    padding: 20px;
-    max-width: 100%;
-    margin: 5px 15px;
+  padding: 20px;
+  max-width: 100%;
+  margin: 5px 15px;
 }
 
 #intro p {
-    text-align: justify;
+  text-align: justify;
   color: #feecea;
 }
-
 
 /*About*/
 
 #about-sparkle-container {
-    width: 90%;
-    margin: 20px auto;
+  width: 90%;
+  margin: 20px auto;
 }
 
 #about-sparkle-container h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 280%;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 280%;
 }
 
 #about-sparkle > div,
 #team-sparkle > div {
-    line-height: 20px;
-    margin-bottom: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
 }
 
 #background p {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 #background hr {
-    border-top: 1px dotted #031226;
-    margin: 5px 0;
+  border-top: 1px dotted #031226;
+  margin: 5px 0;
 }
 
 #circle-cover-bg-end {
-    background: url('../images/rhand-mccoy-VAfNctgbreA-unsplash.webp') no-repeat top center / cover;
-    height: 90vw;
-    width: 90vw;
-    margin-bottom: 20px;
-    /*Makes the square image into a circle*/
-    border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
-    border: 1px solid #031226;
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
+    top center / cover;
+  height: 90vw;
+  width: 90vw;
+  margin-bottom: 20px;
+  /*Makes the square image into a circle*/
+  border-radius: 50%;
+  max-width: 300px;
+  max-height: 300px;
+  border: 1px solid #031226;
 }
 
 #sparkle-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*The group section*/
 
 #sparkle-spoiler {
-    background: url('../images/rhand-mccoy-VAfNctgbreA-unsplash.webp') no-repeat center / cover;
-    /*Handles rensponsivity without the need for a media query*/
-    display: flex;
-    flex-wrap: wrap;
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
+    center / cover;
+  /*Handles rensponsivity without the need for a media query*/
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #sparkle-spoiler div {
-    color: #ECE3CE;
-    background-color: rgba(27, 19, 73, 0.3);
-    padding: 20px;
-    text-align: center;
-    /*this will not wrap on screens of less than 400px wide.
+  color: #ece3ce;
+  background-color: rgba(27, 19, 73, 0.3);
+  padding: 20px;
+  text-align: center;
+  /*this will not wrap on screens of less than 400px wide.
     Each div will expand to fill the available space on its row*/
-    flex-basis: 200px;
-    flex-grow: 1;
-    /*creates a grid of group member divs over the background image*/
-    border: 2px solid #ECE3CE;
+  flex-basis: 200px;
+  flex-grow: 1;
+  /*creates a grid of group member divs over the background image*/
+  border: 2px solid #ece3ce;
 }
 
 #sparkle-spoiler h3 {
-    /*Override the heading color set in general styles*/
-    color: #ECE3CE;
+  /*Override the heading color set in general styles*/
+  color: #ece3ce;
 }
 
 #spoiler h2 {
-    text-align: center;
-    text-transform: capitalize;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 /* Contact page */
 
 #contact {
-    background-size: cover;
-    background-position: 75%;
-    flex-grow: 1;
-    padding: 20%;
+  background-size: cover;
+  background-position: 75%;
+  flex-grow: 1;
+  padding: 20%;
 }
 
 .form-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact-form {
-    color: #fbfbe3;
-    background-color: #592331;
-    padding: 20px;
-    border: 1px solid #fbfbe3;
-    border-radius: 10px;
+  color: #fbfbe3;
+  background-color: #592331;
+  padding: 20px;
+  border: 1px solid #fbfbe3;
+  border-radius: 10px;
 }
 
 #contact-form > h4 {
-    color: #fbfbe3;
-    margin-bottom: 20px;
-    text-align: center;
+  color: #fbfbe3;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .text-input {
-    background: transparent;
-    color: #fbfbe3;
-    border: 0.5px dotted #fbfbe3;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    height: 25px;
-    margin: 5px 0 20px;
-    padding: 0 5px;
+  background: transparent;
+  color: #fbfbe3;
+  border: 0.5px dotted #fbfbe3;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 25px;
+  margin: 5px 0 20px;
+  padding: 0 5px;
 }
 
 ::placeholder {
-    color: rgba(254, 250, 224, 0.6);
+  color: rgba(254, 250, 224, 0.6);
 }
 
 .join-button {
-    align-self: center;
-    margin-top: 20px;
-    border: 0.5px dotted #fbfbe3;
-    border-radius: 5px;
-    padding: 5px 30px;
-    background-color: #592331;
-    color: #fbfbe3;
-    font-size: 100%;
-    text-transform: lowercase;
+  align-self: center;
+  margin-top: 20px;
+  border: 0.5px dotted #fbfbe3;
+  border-radius: 5px;
+  padding: 5px 30px;
+  background-color: #592331;
+  color: #fbfbe3;
+  font-size: 100%;
+  text-transform: lowercase;
 }
 
 .join-button:hover {
-    background-color: #fbfbe3;
-    color: #592331;
+  background-color: #fbfbe3;
+  color: #592331;
 }
 
 /* Footer */
 footer {
-    background-color: #06040f;
-    color: #feecea;
+  background-color: #06040f;
+  color: #feecea;
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
@@ -343,12 +338,92 @@ footer {
     padding-right: 1rem;
     box-shadow: none;
     display: block;
-
   }
 
-  #about-sparkle > div, #team-sparkle > div {
-      align-self: center;
-      text-align: left;
+  #about-sparkle > div,
+  #team-sparkle > div {
+    align-self: center;
+    text-align: left;
+  }
+
+  /* Contact page */
+
+  #contact {
+    background-position: center;
+    position: relative;
+  }
+
+  .form-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  #contact-form {
+    position: absolute;
+    top: 80px;
+  }
+
+  .text-input:hover {
+    border-color: #fbfbe3;
+  }
+
+  .join-button:hover {
+    background-color: #fbfbe3;
+    color: #592331;
+  }
+}
+
+/* Media query fot tablets and up (from 768px and larger screens) */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  /* Make menu always visible*/
+  #menu {
+    position: relative;
+    width: fit-content;
+    padding-right: 1rem;
+    box-shadow: none;
+    display: block;
+  }
+
+  #menu-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* To make menu items show side by side */
+  #menu-items {
+    display: flex;
+  }
+
+  #menu-items > li {
+    padding-left: 1rem;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  /*About*/
+
+  #about-sparkle,
+  #team-sparkle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about-sparkle > div,
+  #team-sparkle > div {
+    width: 75%;
+    text-align: left;
+    align-self: center;
   }
 
   /* Contact page */
@@ -381,10 +456,30 @@ footer {
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
   #menu-items a:hover {
-    border-bottom: 1px solid #feecea;
-  }
-  header h1 {
-    font-size: 50px;
+    border-bottom: 1px solid #04041c;
   }
 
+  /*About*/
+  #background {
+    flex-direction: row;
+    display: flex;
+  }
+
+  #background > div {
+    flex: 1;
+  }
+
+  #sparkle-image {
+    order: 0;
+  }
+
+  #team-sparkle {
+    order: 1;
+  }
+
+  #about-sparkle > div,
+  #team-sparkle > div {
+    align-self: center;
+    text-align: left;
+  }
 }
