@@ -1,6 +1,6 @@
-/* Code borrowed from https://medium.com/@nitin_26346/using-chatgpt-api-with-event-streaming-in-javascript-b8d719c58195 */
-
 async function startChat() {
+    /* function for testing the chatGPT API */
+
     let message = $('#message').val();
 
     let messages = sessionStorage.getItem("bot-message");
@@ -33,102 +33,132 @@ async function startChat() {
 }
 
 async function submitQueries() {
+    /* function for submitting the queries to the chatGPT API and retrieving the suggestions */
+
+    /* Dummy variables that represent the choices that the user has picked in the modals */
     var age = document.getElementById("age").value;
     var interests = document.getElementById("interests").value;
     var location = document.getElementById("location").value;
     var drinks = document.getElementById("drinks").value;
     var foods = document.getElementById("foods").value;
-    console.log(sessionStorage.getItem("bot-message"));
-
+    // Number of options to be returned by the chatGPT API
     const number_of_options = 5;
 
-    await submitActivities();
-    await submitDrinks();
-    await submitFoods();
+    // Ask to suggest activities, based on user choices
+    submitActivities();
+    // Ask to suggest drinks, based on user choices
+    submitDrinks();
+    // Ask to suggest foods, based on user choices
+    submitFoods();
 
     async function submitActivities() {
+        /* Function for creating queries for asking the API to suggest activities  */
         let message = "where can a person of  " + age + " years of age, with following interests: " + interests +
             "  go out in the city? Assume that they live in " + location +
             " Give me " + number_of_options + " options, please. Respond in html ordered list format.";
-
-        // Create a string to store the class name of the slides for activities
-        const slideClassName = "activity-slides";
+        // Call the OpenAI API with the message and get the response
         var res = await callOpenAI(message);
-
+        // Transform the response to JSON
         const data = await res.json();
+        // Convert the data to a JSON string
         json_data = JSON.stringify(data);
-
+        // Put the options(suggestions from chatGPT) from the response into an array
         var options = getOptionsArray(data.choices[0].message.content);
 
-        let titles = document.getElementsByClassName("activity-title");
-        for (let i = 0, k = 0; i < options.length; i += 2, k++) {
-            titles[k].innerHTML = options[i];
-        }
+        // Call the function to plot the options in the HTML document
+        plotHTML();
 
-        let descriptions = document.getElementsByClassName("activity-description");
-        for (let i = 1, k = 0; i < options.length; i += 2, k++) {
-            descriptions[k].innerHTML = options[i];
-        }
+        function plotHTML() {
+            /* Present the suggestion inside the HTML document */
+            let titles = document.getElementsByClassName("activity-title");
+            // Create a string to store the class name of the slides for activities
+            const slideClassName = "activity-slides";
 
-        // Show the slides for activities
-        currentSlide(slideClassName, 1);
+            for (let i = 0, k = 0; i < options.length; i += 2, k++) {
+                titles[k].innerHTML = options[i];
+            }
+
+            let descriptions = document.getElementsByClassName("activity-description");
+            for (let i = 1, k = 0; i < options.length; i += 2, k++) {
+                descriptions[k].innerHTML = options[i];
+            }
+
+            // Show the slides for activities
+            currentSlide(slideClassName, 1);
+        }
     }
 
     async function submitDrinks() {
         let message = "Which drinks do you recommend? They like " + drinks +
             " Give me " + number_of_options + " options, please. Respond in html ordered list format.";
-
-        // Create a string to store the class name of the slides for drinks
-        const slideClassName = "drink-slides";
-
+        // Call the OpenAI API with the message and get the response
         var res = await callOpenAI(message);
-
+        // Transform the response to JSON
         const data = await res.json();
+        // Convert the data to a JSON string
         json_data = JSON.stringify(data);
-
+        // Put the options(suggestions from chatGPT) from the response into an array
         var options = getOptionsArray(data.choices[0].message.content);
-        console.log(options);
 
-        let titles = document.getElementsByClassName("drink-title");
-        for (let i = 0, k = 0; i < options.length; i += 2, k++) {
-            titles[k].innerHTML = options[i];
+        // Call the function to plot the options in the HTML document
+        plotHTML();
+
+
+        function plotHTML() {
+            /* Present the suggestion inside the HTML document */
+            let titles = document.getElementsByClassName("drink-title");
+            // Create a string to store the class name of the slides for drinks
+            const slideClassName = "drink-slides";
+
+            for (let i = 0, k = 0; i < options.length; i += 2, k++) {
+                titles[k].innerHTML = options[i];
+            }
+
+            let descriptions = document.getElementsByClassName("drink-description");
+            for (let i = 1, k = 0; i < options.length; i += 2, k++) {
+                descriptions[k].innerHTML = options[i];
+            }
+
+            // Show the slides for drinks
+            currentSlide(slideClassName, 1);
         }
-
-        let descriptions = document.getElementsByClassName("drink-description");
-        for (let i = 1, k = 0; i < options.length; i += 2, k++) {
-            descriptions[k].innerHTML = options[i];
-        }
-
-        // Show the slides for drinks
-        currentSlide(slideClassName, 1);
     }
 
     async function submitFoods() {
         let message = "Which foods do you recommend? They like " + foods +
             " Give me " + number_of_options + " options. Respond in html ordered list format. ";
 
-        // Create a string to store the class name of the food-slides
-        const slideClassName = "food-slides";
-
+        // Call the OpenAI API with the message and get the response
         var res = await callOpenAI(message);
-
+        // Transform the response to JSON
         const data = await res.json();
+        // Convert the data to a JSON string
         json_data = JSON.stringify(data);
-
+        // Put the options(suggestions from chatGPT) from the response into an array
         var options = getOptionsArray(data.choices[0].message.content);
+        // Call the function to plot the options in the HTML document
+        plotHTML();
 
-        let titles = document.getElementsByClassName("food-title");
-        for (let i = 0, k = 0; i < options.length; i += 2, k++) {
-            titles[k].innerHTML = options[i];
+        function plotHTML() {
+            /* Present the suggestion inside the HTML document */
+
+            // Get the titles of the food slides
+            let titles = document.getElementsByClassName("food-title");
+            // Create a string to store the class name of the food-slides
+            const slideClassName = "food-slides";
+
+            for (let i = 0, k = 0; i < options.length; i += 2, k++) {
+                titles[k].innerHTML = options[i];
+            }
+
+            let descriptions = document.getElementsByClassName("food-description");
+            for (let i = 1, k = 0; i < options.length; i += 2, k++) {
+                descriptions[k].innerHTML = options[i];
+            }
+
+            // Show the slides for foods
+            currentSlide(slideClassName, 1);
         }
-
-        let descriptions = document.getElementsByClassName("food-description");
-        for (let i = 1, k = 0; i < options.length; i += 2, k++) {
-            descriptions[k].innerHTML = options[i];
-        }
-
-        // Show the slides for foods
-        currentSlide(slideClassName, 1);
     }
 
     function getOptionsArray(options) {
@@ -175,7 +205,7 @@ async function submitQueries() {
         return optionsArray;
     }
 
-    
+
 }
 
 async function getLocationData() {
@@ -184,7 +214,7 @@ async function getLocationData() {
         let location_data = [];
         let location = data;
         // Strip the curly braces from the string
-        let location_stripped = location.replace('{','').replace('}','').trim();
+        let location_stripped = location.replace('{', '').replace('}', '').trim();
         // Split the string by the comma to separate the settlement and country
         let location_array = location_stripped.split(',');
         // Split the filedname and the value by the colon
@@ -203,7 +233,7 @@ async function getLocationData() {
         // 1 - country
         return location_data;
     }
-    let {lat, lng} = await getCurrentLocationLatLng();
+    let { lat, lng } = await getCurrentLocationLatLng();
 
     let message = `where is it located  lat: ${lat} lng: ${lng}? Respond in JASON format with fields: settlement, country.`;
 
@@ -217,11 +247,14 @@ async function getLocationData() {
     let location_details = extractLocation(data.choices[0].message.content);
     // Set the location field to the settlement and country
     document.getElementById("location").value = `${location_details[0]}, ${location_details[1]}`;
-    
+
 }
 
 async function callOpenAI(message) {
-    /* Call the OpenAI API with the message and return the response */
+    /* 
+    Call the OpenAI API with the message and return the response 
+    Code borrowed from https://medium.com/@nitin_26346/using-chatgpt-api-with-event-streaming-in-javascript-b8d719c58195 
+    */
     let messages = sessionStorage.getItem("bot-message");
     if (messages == null) {
         messages = [{ role: "system", content: "You are ChatGPT, a large language model trained by OpenAI." }];
@@ -270,33 +303,33 @@ function showSlides(className, n) {
     }
 
     slides[slideIndex - 1].style.display = "block";
-}   
+}
 
 // Geolocation ------------------------------------------------
 // Converts location into lat.lng
 async function getCurrentLocationLatLng() {
     try {
-      const position = await getCurrentLocation();
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
-  
-      return { lat, lng };
+        const position = await getCurrentLocation();
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        return { lat, lng };
     } catch (error) {
-      alert("Unable to find location - default to Dublin");
-      return { lat: 53.34, lng: -6.26 };
+        alert("Unable to find location - default to Dublin");
+        return { lat: 53.34, lng: -6.26 };
     }
-  }
-  
-  async function getCurrentLocation() {
+}
+
+async function getCurrentLocation() {
     return new Promise((resolve, reject) => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => resolve(position),
-          (error) => reject(error),
-          { enableHighAccuracy: true, maximumAge: 10000 }
-        );
-      } else {
-        reject(new Error("Geolocation is not supported by the browser."));
-      }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => resolve(position),
+                (error) => reject(error),
+                { enableHighAccuracy: true, maximumAge: 10000 }
+            );
+        } else {
+            reject(new Error("Geolocation is not supported by the browser."));
+        }
     });
-  }
+}
