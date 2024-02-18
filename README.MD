@@ -16,7 +16,7 @@ git clone https://github.com/DarrachBarneveld/cupidai.git
 Navigate to the project directory and install the project dependencies using npm:
 
 ```
-cd <project_directory>
+cd <project_directory> frontend
 npm install
 
 ```
