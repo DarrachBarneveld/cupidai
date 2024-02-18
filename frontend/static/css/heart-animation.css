@@ -1,6 +1,5 @@
 .animation-wrapper {
   width: 100%;
-  background: #f3f4f4;
   min-height: 100%;
   overflow: hidden;
   text-align: center;
@@ -74,19 +73,19 @@
 
 @-webkit-keyframes moveclouds {
   0% {
-    top: 500px;
+    top: 100vh;
   }
   100% {
-    top: -500px;
+    top: -10vh;
   }
 }
 
 @keyframes moveclouds {
   0% {
-    top: 500px;
+    top: 100vh;
   }
   100% {
-    top: -500px;
+    top: -10px;
   }
 }
 
