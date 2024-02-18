@@ -1,50 +1,86 @@
-/* Hero */
-#hero-text {
-    padding: 0 30px;
-    color: #feecea;
-    text-align: center;
-    position: absolute;
-    bottom: 43%;
-    text-shadow: 0 0 0.2em black;
-    width: 100%;
-  }
-  
-  #hero-text > h2 {
-    font-size: 28px;
-    font-weight: 700;
-  }
-
-  /* Intro section */
-  #intro {
-    background-color: #c698a1;
-
-  }
-  
-  #intro i {
-    color: inherit;
-  }
-  
-  #intro p {
-    text-align: center;
-    color: #feecea;
-    text-shadow: 0 0 0.1em black;
-
-  }
-
-  /* Media query fot tablets and up (from 768px and larger screens) */
-@media screen and (min-width: 768px) {
-    #slogan > h2 {
-      font-size: 30px;
-      margin: 0 30px;
-    }
-  
-    #slogan {
-      bottom: 1%;
-    }
-  
-    #hero {
-      height: 60vh;
-    }
-  
+#menu-items a {
+  text-shadow: 0 0 0.2em black;
 }
-  
+
+/* Hero */
+
+#hero h1 {
+  font-weight: 700;
+}
+
+#hero a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#hero-text {
+  color: #feecea;
+  position: absolute;
+  bottom: 43%;
+  padding: 0 20px;
+}
+
+#hero-text > h2 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 0.2em black;
+}
+
+/* Intro section */
+.container {
+  background-color: #c698a1;
+  max-width: 100%;
+}
+
+#intro i {
+  color: inherit;
+  max-width: 100%;
+}
+
+#intro p {
+  text-align: justify;
+  color: #feecea;
+  text-shadow: 0 0 0.1em black;
+}
+
+/* Media query fot tablets and up (from 768px and larger screens) */
+@media screen and (min-width: 768px) {
+  #hero h1 {
+    font-size: 35px;
+  }
+
+  #hero-text > h2 {
+    font-size: 25px;
+  }
+
+  #hero-text {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #hero {
+    height: 70vh;
+  }
+
+  #intro {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Media query for laptops and up (from 992px and larger screens) */
+@media screen and (min-width: 992px) {
+  #menu-items a:hover {
+    border-bottom: 1px solid #feecea;
+  }
+
+  #hero h1 {
+    font-size: 50px;
+  }
+
+  #hero-text > h2 {
+    font-size: 35px;
+  }
+}
