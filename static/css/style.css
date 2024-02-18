@@ -29,7 +29,7 @@ h3 {
 
 h1 {
   font-size: 28px;
-  color: #481550;
+  color: #feecea;
 }
 
 h2 {
@@ -42,7 +42,7 @@ h3 {
 
 body {
   min-height: 100vh;
-  color: #06040f;
+  color: #481550;
   background-color: #feecea;
   display: flex;
   flex-direction: column;
@@ -50,14 +50,17 @@ body {
 
 /* Header */
 header {
-  background-color: #feecea;
-  color: #481550;
+  color: #feecea;
   padding: 0.5rem;
   width: 100%;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+header h1 {
+  font-size: 40px;
+  text-shadow: 0 0 0.2em black;
 }
 
 header ul > li {
@@ -76,13 +79,12 @@ ul {
 
 /* Marks the active web page */
 .active {
-  border-bottom: 1px solid #04041c;
+  border-bottom: 1px solid #feecea;
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
   position: absolute;
-  background-color: #feecea;
   width: 100%;
   padding: 0 1rem;
   left: 0;
@@ -102,7 +104,8 @@ ul {
   font-size: 2rem;
   padding-right: 2px;
   position: relative;
-  color: #481550;
+  color: #feecea;
+  text-shadow: 0 0 0.2em black;
 }
 
 /* Main content */
@@ -111,12 +114,11 @@ main {
   margin-top: 45px;
 }
 
-/* The hero section */
 #hero {
   background-image: url("../../assets/images/couple-forest.webp");
-  height: 450px;
+  background-color: #481550;
+  height: 100vh;
   width: 100%;
-  margin-top: 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,20 +126,34 @@ main {
 }
 
 #slogan {
-  margin: 35px 15px 15px;
-  color: #481550;
+  margin: 0 30px;
+  color: #feecea;
   text-align: center;
+  position: absolute;
+  bottom: 43%;
+  text-shadow: 0 0 0.2em black;
+}
+
+#slogan > h2 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
 /* Intro section */
 .container {
+  background-color: #c698a1;
   padding: 20px;
   max-width: 100%;
-  margin: 5px 15px;
+  padding: 20px;
 }
 
 #intro p {
   text-align: justify;
+  color: #feecea;
+}
+
+#intro i {
+  color: inherit;
 }
 
 /* Contact page */
@@ -210,12 +226,26 @@ footer {
 
 /* Media query fot tablets and up (from 768px and larger screens) */
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 42px;
+  header h1 {
+    font-size: 40px;
   }
 
-  h2 {
-    font-size: 35px;
+  #slogan > h2 {
+    font-size: 30px;
+    margin: 0 30px;
+  }
+
+  #slogan {
+    bottom: 1%;
+  }
+
+  #hero {
+    height: 60vh;
+  }
+
+  #intro {
+    max-width: 100%;
+    padding: 20px;
   }
 
   /* Make menu always visible*/
@@ -275,6 +305,9 @@ footer {
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
   #menu-items a:hover {
-    border-bottom: 1px solid #04041c;
+    border-bottom: 1px solid #feecea;
+  }
+  header h1 {
+    font-size: 50px;
   }
 }
