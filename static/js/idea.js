@@ -1,5 +1,7 @@
 "use strict";
 
+import ROOT_DATA from "../data/preferences.json";
+
 const choicesPanel1 = document.getElementById("choicesPanel1");
 const choicesPanel2 = document.getElementById("choicesPanel2");
 const choicesPanel3 = document.getElementById("choicesPanel3");
@@ -7,7 +9,12 @@ const choicesPanel4 = document.getElementById("choicesPanel4");
 
 const acceptModalButton = document.getElementById("acceptModalButton");
 
-const choicesPanelsArray = [choicesPanel1, choicesPanel2, choicesPanel3, choicesPanel4];
+const choicesPanelsArray = [
+  choicesPanel1,
+  choicesPanel2,
+  choicesPanel3,
+  choicesPanel4,
+];
 
 let vissiblePanel = 0;
 
@@ -16,14 +23,21 @@ let activity, food, drinks;
 // Variables to store the user's choices
 let activityChoice, foodChoice, drinkChoice;
 
-// takes jason data
-fetch("/static/data/preferences.json")
-  .then((response) => response.json())
-  .then((json) => {
-    activity = filterByCategoryId(json, 1);
-    food = filterByCategoryId(json, 2);
-    drinks = filterByCategoryId(json, 3);
-  });
+ROOT_DATA.forEach((element) => {
+  activity = filterByCategoryId(ROOT_DATA, 1);
+  food = filterByCategoryId(ROOT_DATA, 2);
+  drinks = filterByCategoryId(ROOT_DATA, 3);
+});
+
+console.log(activity, food, drinks);
+// // takes jason data
+// fetch("/static/data/preferences.json")
+//   .then((response) => response.json())
+//   .then((json) => {
+//     activity = filterByCategoryId(json, 1);
+//     food = filterByCategoryId(json, 2);
+//     drinks = filterByCategoryId(json, 3);
+//   });
 
 window.addEventListener("load", function () {});
 
