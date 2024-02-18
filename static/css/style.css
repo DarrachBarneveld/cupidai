@@ -27,8 +27,9 @@ h3 {
 }
 
 h1 {
-    font-size: 28px;
-    color: #481550;
+  font-size: 28px;
+  color: #feecea;
+
 }
 
 h2 {
@@ -40,23 +41,27 @@ h3 {
 }
 
 body {
-    min-height: 100vh;
-    color: #06040f;
-    background-color: #feecea;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  color: #481550;
+  background-color: #feecea;
+  display: flex;
+  flex-direction: column;
+
 }
 
 /* Header */
 header {
-    background-color: #feecea;
-    color: #481550;
-    padding: 0.5rem;
-    width: 100%;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  color: #feecea;
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header h1 {
+  font-size: 40px;
+  text-shadow: 0 0 0.2em black;
 }
 
 header ul > li {
@@ -75,18 +80,19 @@ ul {
 
 /* Marks the active web page */
 .active {
-    border-bottom: 1px solid #04041c;
+  border-bottom: 1px solid #feecea;
+
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
-    position: absolute;
-    background-color: #feecea;
-    width: 100%;
-    padding: 0 1rem;
-    left: 0;
-    display: none;
-    top: 100%;
+  position: absolute;
+  width: 100%;
+  padding: 0 1rem;
+  left: 0;
+  display: none;
+  top: 100%;
+
 }
 
 #nav-toggle:checked ~ nav {
@@ -98,10 +104,12 @@ ul {
 }
 
 .nav-toggle-label {
-    font-size: 2rem;
-    padding-right: 2px;
-    position: relative;
-    color: #481550;
+  font-size: 2rem;
+  padding-right: 2px;
+  position: relative;
+  color: #feecea;
+  text-shadow: 0 0 0.2em black;
+
 }
 
 /* Main content */
@@ -110,26 +118,43 @@ main {
     margin-top: 45px;
 }
 
-/* The hero section */
 #hero {
-    background-image: url("../../assets/images/hero-heart.webp");
-    height: 450px;
-    width: 100%;
-    margin-top: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  background-image: url("../../assets/images/couple-forest.webp");
+  background-color: #481550;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 #slogan {
-    margin: 35px 15px 15px;
-    color: #481550;
-    text-align: center;
+  margin: 0 30px;
+  color: #feecea;
+  text-align: center;
+  position: absolute;
+  bottom: 43%;
+  text-shadow: 0 0 0.2em black;
+}
+
+#slogan > h2 {
+  font-size: 28px;
+  font-weight: 700;
+
 }
 
 /* Intro section */
 .container {
+  background-color: #c698a1;
+  padding: 20px;
+  max-width: 100%;
+  padding: 20px;
+}
+
+
+#intro i {
+  color: inherit;
     padding: 20px;
     max-width: 100%;
     margin: 5px 15px;
@@ -137,6 +162,7 @@ main {
 
 #intro p {
     text-align: justify;
+  color: #feecea;
 }
 
 
@@ -287,107 +313,37 @@ footer {
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
-@media screen and(min-width: 768px) {
-    h1 {
-        font-size: 42px;
-    }
+@media screen and (min-width: 768px) {
+  header h1 {
+    font-size: 40px;
+  }
 
-    h2 {
-        font-size: 35px;
-    }
+  #slogan > h2 {
+    font-size: 30px;
+    margin: 0 30px;
+  }
 
-    /* Make menu always visible*/
-    #menu {
-        position: relative;
-        width: fit-content;
-        padding-right: 1rem;
-        box-shadow: none;
-        display: block;
-    }
+  #slogan {
+    bottom: 1%;
+  }
 
-    #menu-nav {
-        display: flex;
-        justify-content: flex-end;
-    }
+  #hero {
+    height: 60vh;
+  }
 
-    /* To make menu items show side by side */
-    #menu-items {
-        display: flex;
-    }
+  #intro {
+    max-width: 100%;
+    padding: 20px;
+  }
 
-    #menu-items > li {
-        padding-left: 1rem;
-    }
+  /* Make menu always visible*/
+  #menu {
+    position: relative;
+    width: fit-content;
+    padding-right: 1rem;
+    box-shadow: none;
+    display: block;
 
-    .nav-toggle-label {
-        display: none;
-    }
-
-    /*About*/
-
-    #about-sparkle,
-    #team-sparkle {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #about-sparkle > div, #team-sparkle > div {
-        width: 75%;
-        text-align: left;
-        align-self: center;
-    }
-
-
-    /* Contact page */
-
-    #contact {
-        background-position: center;
-        position: relative;
-    }
-
-    .form-center {
-        display: flex;
-        justify-content: center;
-    }
-
-    #contact-form {
-        position: absolute;
-        top: 80px;
-    }
-
-    .text-input:hover {
-        border-color: #fbfbe3;
-    }
-
-    .join-button:hover {
-        background-color: #fbfbe3;
-        color: #592331;
-    }
-}
-
-@media screen and(min-width: 992px) {
-    /* To give the user a feedback of hovering over that specific link */
-    #menu-items a:hover {
-        border-bottom: 1px solid #04041c;
-    }
-
-    /*About*/
-    #background {
-        flex-direction: row;
-        display: flex;
-    }
-
-    #background > div {
-        flex: 1;
-    }
-
-    #sparkle-image {
-        order: 0;
-    }
-
-    #team-sparkle {
-      order: 1;
   }
 
   #about-sparkle > div, #team-sparkle > div {
@@ -395,5 +351,40 @@ footer {
       text-align: left;
   }
 
+  /* Contact page */
+
+  #contact {
+    background-position: center;
+    position: relative;
+  }
+
+  .form-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  #contact-form {
+    position: absolute;
+    top: 80px;
+  }
+
+  .text-input:hover {
+    border-color: #fbfbe3;
+  }
+
+  .join-button:hover {
+    background-color: #fbfbe3;
+    color: #592331;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* To give the user a feedback of hovering over that specific link */
+  #menu-items a:hover {
+    border-bottom: 1px solid #feecea;
+  }
+  header h1 {
+    font-size: 50px;
+  }
 
 }
