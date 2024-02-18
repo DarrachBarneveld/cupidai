@@ -1,0 +1,57 @@
+#slogan {
+    margin: 0 30px;
+    color: #feecea;
+    text-align: center;
+    position: absolute;
+    bottom: 43%;
+    text-shadow: 0 0 0.2em black;
+  }
+  
+  #slogan > h2 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  /* Intro section */
+.container {
+    background-color: #c698a1;
+    padding: 20px;
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  #intro i {
+    color: inherit;
+    padding: 20px;
+    max-width: 100%;
+    margin: 5px 15px;
+  }
+  
+  #intro p {
+    text-align: justify;
+    color: #feecea;
+  }
+
+
+
+  /* Media query fot tablets and up (from 768px and larger screens) */
+@media screen and (min-width: 768px) {
+    #slogan > h2 {
+      font-size: 30px;
+      margin: 0 30px;
+    }
+  
+    #slogan {
+      bottom: 1%;
+    }
+  
+    #hero {
+      height: 60vh;
+    }
+  
+    #intro {
+      max-width: 100%;
+      padding: 20px;
+    }
+}
+  
