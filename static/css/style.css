@@ -125,41 +125,6 @@ main {
   position: relative;
 }
 
-#slogan {
-  margin: 0 30px;
-  color: #feecea;
-  text-align: center;
-  position: absolute;
-  bottom: 43%;
-  text-shadow: 0 0 0.2em black;
-}
-
-#slogan > h2 {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-/* Intro section */
-.container {
-  background-color: #c698a1;
-  padding: 20px;
-  max-width: 100%;
-  padding: 20px;
-}
-
-#intro i {
-  color: inherit;
-  padding: 20px;
-  max-width: 100%;
-  margin: 5px 15px;
-}
-
-#intro p {
-  text-align: justify;
-  color: #feecea;
-}
-
-
 /*About*/
 
 #about-sparkle-container {
@@ -308,81 +273,10 @@ footer {
   color: #feecea;
 }
 
-/* Media query fot tablets and up (from 768px and larger screens) */
+/* Media query for tablets and up (from 768px and larger screens) */
 @media screen and (min-width: 768px) {
   header h1 {
     font-size: 40px;
-  }
-
-  #slogan > h2 {
-    font-size: 30px;
-    margin: 0 30px;
-  }
-
-  #slogan {
-    bottom: 1%;
-  }
-
-  #hero {
-    height: 60vh;
-  }
-
-  #intro {
-    max-width: 100%;
-    padding: 20px;
-  }
-
-  /* Make menu always visible*/
-  #menu {
-    position: relative;
-    width: fit-content;
-    padding-right: 1rem;
-    box-shadow: none;
-    display: block;
-  }
-
-
-  #about-sparkle > div,
-  #team-sparkle > div {
-    align-self: center;
-    text-align: left;
-  }
-
-  /* Contact page */
-
-  #contact {
-    background-position: center;
-    position: relative;
-  }
-
-  .form-center {
-    display: flex;
-    justify-content: center;
-  }
-
-  #contact-form {
-    position: absolute;
-    top: 80px;
-  }
-
-  .text-input:hover {
-    border-color: #fbfbe3;
-  }
-
-  .join-button:hover {
-    background-color: #fbfbe3;
-    color: #592331;
-  }
-}
-
-/* Media query fot tablets and up (from 768px and larger screens) */
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  h2 {
-    font-size: 35px;
   }
 
   /* Make menu always visible*/
@@ -399,7 +293,6 @@ footer {
     justify-content: flex-end;
   }
 
-
   /* To make menu items show side by side */
   #menu-items {
     display: flex;
@@ -413,24 +306,22 @@ footer {
     display: none;
   }
 
-  /*About*/
-
-  #about-sparkle,
-  #team-sparkle {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #about-sparkle > div,
-  #team-sparkle > div {
-    width: 75%;
-    text-align: left;
-    align-self: center;
-  }
+   /*About*/
+   #about-sparkle,
+   #team-sparkle {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+   }
+ 
+   #about-sparkle > div,
+   #team-sparkle > div {
+     width: 75%;
+     text-align: left;
+     align-self: center;
+   }
 
   /* Contact page */
-
   #contact {
     background-position: center;
     position: relative;
@@ -455,6 +346,7 @@ footer {
     color: #592331;
   }
 }
+
 
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
