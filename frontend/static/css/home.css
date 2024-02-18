@@ -1,4 +1,5 @@
-#slogan {
+/* Hero */
+#hero-text {
     margin: 0 30px;
     color: #feecea;
     text-align: center;
@@ -7,7 +8,7 @@
     text-shadow: 0 0 0.2em black;
   }
   
-  #slogan > h2 {
+  #hero-text > h2 {
     font-size: 28px;
     font-weight: 700;
   }
@@ -15,24 +16,19 @@
   /* Intro section */
 .container {
     background-color: #c698a1;
-    padding: 20px;
     max-width: 100%;
-    padding: 20px;
   }
   
   #intro i {
     color: inherit;
-    padding: 20px;
     max-width: 100%;
-    margin: 5px 15px;
   }
   
   #intro p {
     text-align: justify;
     color: #feecea;
+    text-shadow: 0 0 0.1em black;
   }
-
-
 
   /* Media query fot tablets and up (from 768px and larger screens) */
 @media screen and (min-width: 768px) {
