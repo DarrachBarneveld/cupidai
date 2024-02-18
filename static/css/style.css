@@ -1,11 +1,7 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=WindSong:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital, wght@0, 100..900;1, 100..900 &family=WindSong:wght@400;500&display=swap&family=Gwendolyn:wght@400;700&display=swap");
 
 :root {
-  /* fonts */
-  --title: "Lato", sans-serif;
-  --main-font: "Montserrat", Verdana, sans-serif;
-
   /* Colours */
   --header-text: #481550;
   --main-text: #06040f;
@@ -31,7 +27,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: WindSong, cursive;
+  font-family: Gwendolyn, cursive;
   font-weight: 500;
   text-transform: capitalize;
   word-spacing: 0.4rem;
@@ -52,7 +48,7 @@ h3 {
 
 body {
   min-height: 100vh;
-  color: #06040f;
+  color: #481550;
   background-color: #feecea;
   display: flex;
   flex-direction: column;
@@ -60,8 +56,7 @@ body {
 
 /* Header */
 header {
-  background-color: #feecea;
-  color: #481550;
+  color: #feecea;
   padding: 0.5rem;
   width: 100%;
   display: flex;
@@ -90,13 +85,12 @@ ul {
 
 /* Marks the active web page */
 .active {
-  border-bottom: 1px solid #04041c;
+  border-bottom: 1px solid #feecea;
 }
 
 /* Navbar styles with dropdown toggle */
 #menu {
   position: absolute;
-  background-color: #feecea;
   width: 100%;
   padding: 0 1rem;
   left: 0;
@@ -137,38 +131,84 @@ main {
   position: relative;
 }
 
-#slogan {
-  margin: 0 30px;
-  color: #feecea;
+/*About*/
+
+#about-sparkle-container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+#about-sparkle-container h2 {
+  margin-bottom: 20px;
   text-align: center;
-  position: absolute;
-  bottom: 43%;
-  text-shadow: 0 0 0.2em black;
+  font-size: 280%;
 }
 
-#slogan > h2 {
-  font-size: 28px;
-  font-weight: 700;
+#about-sparkle > div,
+#team-sparkle > div {
+  line-height: 20px;
+  margin-bottom: 20px;
 }
 
-/* Intro section */
-.container {
-  background-color: #c698a1;
+#background p {
+  padding: 5px 10px;
+}
+
+#background hr {
+  border-top: 1px dotted #031226;
+  margin: 5px 0;
+}
+
+#circle-cover-bg-end {
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
+    top center / cover;
+  height: 90vw;
+  width: 90vw;
+  margin-bottom: 20px;
+  /*Makes the square image into a circle*/
+  border-radius: 50%;
+  max-width: 300px;
+  max-height: 300px;
+  border: 1px solid #031226;
+}
+
+#sparkle-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*The group section*/
+
+#sparkle-spoiler {
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
+    center / cover;
+  /*Handles rensponsivity without the need for a media query*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sparkle-spoiler div {
+  color: #ece3ce;
+  background-color: rgba(27, 19, 73, 0.3);
   padding: 20px;
-  max-width: 100%;
-  padding: 20px;
+  text-align: center;
+  /*this will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the available space on its row*/
+  flex-basis: 200px;
+  flex-grow: 1;
+  /*creates a grid of group member divs over the background image*/
+  border: 2px solid #ece3ce;
 }
 
-#intro i {
-  color: inherit;
-  padding: 20px;
-  max-width: 100%;
-  margin: 5px 15px;
+#sparkle-spoiler h3 {
+  /*Override the heading color set in general styles*/
+  color: #ece3ce;
 }
 
-#intro p {
-  text-align: justify;
-  color: #feecea;
+#spoiler h2 {
+  text-align: center;
+  text-transform: capitalize;
 }
 
 /* Contact page */
@@ -239,14 +279,10 @@ footer {
   color: #feecea;
 }
 
-/* Media query fot tablets and up (from 768px and larger screens) */
+/* Media query for tablets and up (from 768px and larger screens) */
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 42px;
-  }
-
-  h2 {
-    font-size: 35px;
+  header h1 {
+    font-size: 40px;
   }
 
   /* Make menu always visible*/
@@ -276,24 +312,22 @@ footer {
     display: none;
   }
 
-  /*About*/
-
-  #about-sparkle,
-  #team-sparkle {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #about-sparkle > div,
-  #team-sparkle > div {
-    width: 75%;
-    text-align: left;
-    align-self: center;
-  }
+   /*About*/
+   #about-sparkle,
+   #team-sparkle {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+   }
+ 
+   #about-sparkle > div,
+   #team-sparkle > div {
+     width: 75%;
+     text-align: left;
+     align-self: center;
+   }
 
   /* Contact page */
-
   #contact {
     background-position: center;
     position: relative;
@@ -319,9 +353,35 @@ footer {
   }
 }
 
+
 @media screen and (min-width: 992px) {
   /* To give the user a feedback of hovering over that specific link */
   #menu-items a:hover {
     border-bottom: 1px solid #04041c;
   }
+
+  /*About*/
+  #background {
+    flex-direction: row;
+    display: flex;
+  }
+
+  #background > div {
+    flex: 1;
+  }
+
+  #sparkle-image {
+    order: 0;
+  }
+
+  #team-sparkle {
+    order: 1;
+  }
+
+  #about-sparkle > div,
+  #team-sparkle > div {
+    align-self: center;
+    text-align: left;
+  }
 }
+
