@@ -121,3 +121,21 @@ You should now see the application running in your browser!
       ]
    }
    ```
+
+
+
+## API DEPLOYMENT
+1. Add `gunicorn` to requirements.txt
+2. Create a Procfile with the following content:
+   ```
+   web: gunicorn backend.wsgi
+   ```
+3. Create **Heroku** application and link to **GitHub** repository
+4. Add custom [Build Pack](https://github.com/timanovsky/subdir-heroku-buildpack.git) to deploy from subdirectory. To add a custom Build Pack go to the Heroku settings to the Buildpacks section.
+5. Setup environment variables:
+   - `PROJECT_PATH` : `backend` - *the subdirectory where the api is located*
+   - `DISABLE_COLLECTSTATIC` : `1`
+   - `OPENAI_API_KEY` : *your secret key*
+   - `PLACES_API_KEY` : *your secret key*
+
+6. Deploy from branch
