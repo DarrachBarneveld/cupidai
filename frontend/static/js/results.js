@@ -112,7 +112,7 @@ function createPlaceCard(place) {
 
   const isOpen = place?.regularOpeningHours?.openNow;
 
-  const photo = place.photos[0];
+  const photo = place?.photos[0];
   const cardHtml = `  <div class="card-sl bg-white fade-in-bounce">
   <div class="card-image">
     <img
@@ -122,11 +122,11 @@ function createPlaceCard(place) {
     />
   </div>
 
-  <div class="card-heading">${place.displayName.text}</div>
+  <div class="card-heading">${place?.displayName?.text}</div>
 
   <div class="d-flex align-items-center justify-content-center p-0">
     <p class="card-text fw-bold m-0 text-dark">
-      <i class="fa-solid fa-star text-warning"></i> ${place.rating}
+      <i class="fa-solid fa-star text-warning"></i> ${place?.rating}
     </p>
     <p class="card-text fw-bold m-0 text-dark">
       <i class="fa-solid fa-user text-info"></i> ${place.userRatingCount}
@@ -137,16 +137,16 @@ function createPlaceCard(place) {
     </p>
   </div>
   <a
-    href="${place.googleMapsUri}"
+    href="${place?.googleMapsUri}"
     target="_blank"
   >
     <address class="card-address">
-      ${place.formattedAddress}
+      ${place?.formattedAddress}
     </address>
   </a>
 
   <a
-    href="${place.websiteUri}"
+    href="${place?.websiteUri}"
     target="_blank"
     class="card-button"
     >Website</a
