@@ -1,35 +1,55 @@
 import DUMMY_AI_RESPONSE from "../data/dummyAIResponse.json";
 import { getCurrentLocationLatLng } from "./geolocation";
+import { quotes } from "../data/quotes.json";
+import { getRandomElements } from "./utils";
 
 const resultsContainerElement = document.getElementById("resultsContainer");
 const refreshBtn = document.getElementById("refreshBtn");
+const carouselInner = document.querySelector(".carousel-inner");
 
 document.addEventListener("DOMContentLoaded", async function () {
   const urlParams = new URLSearchParams(window.location.search);
   const interests = urlParams.get("prompt");
 
-  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
-    "recommendation": recommendation,
-    "drink": drink,
-    "food": food,
-    "activity": activity keywords
-  },
-  containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
+  const randomQuotes = getRandomElements(quotes, 3);
 
-  if (interests) {
-    const array = await getAIRecommendations(promptString);
-    console.log(array);
+  randomQuotes.forEach((quote, i) => {
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if (i === 0) {
+      carouselItem.classList.add("active");
+    }
 
-    loadingModal.style.display = "none";
-    refreshBtn.classList.remove("hidden");
-    array.forEach((result) => createResultsCard(result));
+    carouselItem.innerHTML = `
+    <p>
+  ${quote}
+    </p>
+    `;
+    carouselInner.appendChild(carouselItem);
+  });
 
-    return;
-  }
-  loadingModal.style.display = "none";
-  refreshBtn.classList.remove("hidden");
+  // let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
+  //   "recommendation": recommendation,
+  //   "drink": drink,
+  //   "food": food,
+  //   "activity": activity keywords
+  // },
+  // containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
 
-  DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
+  // if (interests) {
+  //   const array = await getAIRecommendations(promptString);
+  //   console.log(array);
+
+  //   loadingModal.style.display = "none";
+  //   refreshBtn.classList.remove("hidden");
+  //   array.forEach((result) => createResultsCard(result));
+
+  //   return;
+  // }
+  // loadingModal.style.display = "none";
+  // refreshBtn.classList.remove("hidden");
+
+  // DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
 });
 
 function createResultsCard(result) {

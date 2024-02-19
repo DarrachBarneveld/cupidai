@@ -74,7 +74,7 @@ function renderChoiceBtnHTML(choice) {
   buttonElement.textContent = choice.name;
 
   buttonElement.addEventListener("click", () => {
-    buttonElement.classList.toggle("active");
+    buttonElement.classList.toggle("activeBtn");
 
     const { name } = choice;
     switch (CURRENT_OPTION) {
