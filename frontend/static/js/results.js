@@ -1,12 +1,12 @@
 import DUMMY_AI_RESPONSE from "../data/dummyAIResponse.json";
+import { getCurrentLocationLatLng } from "./geolocation";
 
 const resultsContainerElement = document.getElementById("resultsContainer");
+const refreshBtn = document.getElementById("refreshBtn");
 
 document.addEventListener("DOMContentLoaded", async function () {
-  var urlParams = new URLSearchParams(window.location.search);
-  var interests = urlParams.get("prompt");
-
-  console.log(interests);
+  const urlParams = new URLSearchParams(window.location.search);
+  const interests = urlParams.get("prompt");
 
   let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
     "recommendation": recommendation,
@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log(array);
 
     loadingModal.style.display = "none";
+    refreshBtn.classList.remove("hidden");
     array.forEach((result) => createResultsCard(result));
 
     return;
   }
   loadingModal.style.display = "none";
+  refreshBtn.classList.remove("hidden");
 
   DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
 });
@@ -50,10 +52,7 @@ function createResultsCard(result) {
           <span class="badge rounded-pill bg-dark text-capitalize">${result.drink}</span>
           <span class="badge rounded-pill bg-dark text-capitalize">${result.activity}</span>
         </div>
-        <p class="mb-1">
-          <small class="text-primary">Help Me Plan!</small>
-        </p>
-        <button id="findPlaces" class="mx-auto btn btn-danger">
+        <button id="findPlaces" class="mx-auto btn btn-danger mt-2">
           <i class="fa-solid fa-map-location-dot"></i> <small> Find places! </small>
         </button>
       </div>
@@ -64,13 +63,12 @@ function createResultsCard(result) {
   resultsContainerElement.appendChild(columnElement);
 
   const cardButton = columnElement.querySelector("#findPlaces");
-  cardButton.addEventListener("click", () => {
-    getGooglePlaces(
-      { lat: 53.349805, lng: -6.26031 },
-      result.drink,
-      result.food,
-      result.activity
-    );
+  cardButton.addEventListener("click", async () => {
+    const { lat, lng } = await getCurrentLocationLatLng();
+
+    console.log(lat, lng);
+
+    getGooglePlaces({ lat, lng }, result.drink, result.food, result.activity);
   });
 }
 
@@ -130,20 +128,17 @@ async function getGooglePlaces(location, drink, food, activity) {
   const text = `${drink} ${food} ${activity}`;
 
   try {
-    const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          lat: location.lat,
-          lng: location.lng,
-          text,
-        }),
-      }
-    );
+    const response = await fetch("http://localhost:8000/api/places", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        lat: location.lat,
+        lng: location.lng,
+        text,
+      }),
+    });
 
     const { places } = await response.json();
     console.log(places);
@@ -193,3 +188,5 @@ async function getAIRecommendations(prompt) {
     console.error("Error fetching data:", error);
   }
 }
+
+refreshBtn.addEventListener("click", () => window.location.reload());

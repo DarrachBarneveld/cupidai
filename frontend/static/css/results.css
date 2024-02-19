@@ -127,6 +127,10 @@
   animation-delay: 0.9s;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Loader */
 
 #loadingModal {

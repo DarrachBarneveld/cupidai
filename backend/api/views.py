@@ -75,7 +75,6 @@ class AskGptView(APIView):
             # Access GPT message
             gpt_message = choices[0]['message']['content']
 
-            print(gpt_message)
 
             # Return GPT message
             return Response({'message': gpt_message})
@@ -111,12 +110,12 @@ class GeolocationView(APIView):
                 "X-Goog-FieldMask": "*",
             }
 
-            # places.displayName,places.formattedAddress,places.primaryType,places.rating,places.internationalPhoneNumber,places.googleMapsUri
-
             res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data)
 
             # Parse the response
             parsed_json = json.loads(res.text)
+            print(parsed_json)
+
 
             return Response(parsed_json)
 

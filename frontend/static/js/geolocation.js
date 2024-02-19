@@ -7,8 +7,8 @@ export async function getCurrentLocationLatLng() {
 
     return { lat, lng };
   } catch (error) {
-    alert("Unable to find location - default to Dublin");
-    return { lat: 53.34, lng: -6.26 };
+    alert("Unable to find location - default to London;");
+    return { lat: 51.5074, lng: -0.1278 };
   }
 }
 
