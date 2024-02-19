@@ -2,7 +2,7 @@
 
 .container {
   display: flex;
-  background-color: #c698a1;
+  background-color: #F2A7A7;
   max-width: 100%;
   justify-content: center;
   align-content: center;
@@ -80,7 +80,7 @@
 }
 
 #sparkle-spoiler div {
-  color: #ece3ce;
+  color: #FCEDCF;
   background-color: rgba(27, 19, 73, 0.3);
   padding: 20px;
   text-align: center;
@@ -89,12 +89,12 @@
   flex-basis: 200px;
   flex-grow: 1;
   /*creates a grid of group member divs over the background image*/
-  border: 2px solid #ece3ce;
+  border: 2px solid #FCEDCF;
 }
 
 #sparkle-spoiler h3 {
   /*Override the heading color set in general styles*/
-  color: #ece3ce;
+  color: #FCEDCF;
   text-transform: capitalize;
   text-align: center;
   font-size: 100%;
@@ -116,7 +116,7 @@
   align-self: center;
   font-size: 200%;
   padding: 5%;
-  color: #fffcc9;
+  color: #FCEDCF;
 }
 
 #spoiler h2 {
