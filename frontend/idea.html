@@ -16,34 +16,35 @@
       crossorigin="anonymous"
     />
 
-    <title>User Profile</title>
+    <title>Give me some ideas</title>
   </head>
   <body>
-    <div class="modal-body">
-      <div id="choicesPanel1">
-        <h4>Are you ready to discover new ideas for your date?</h4>
+    <section class="container">
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-6 col-md-6">
+          <div>
+            <div id="choicesPanel1">
+              <h4>Are you ready to discover new ideas for your date?</h4>
+            </div>
+            <div id="choicesPanel2">
+              <h4>What is your best choice for an activity?</h4>
+              <div class="choices card-text"></div>
+            </div>
+            <div id="choicesPanel3">
+              <h4>What is your best choice for a food?</h4>
+              <div class="choices card-text"></div>
+            </div>
+            <div id="choicesPanel4">
+              <h4>What is your best choice for a drink?</h4>
+              <div class="choices card-text"></div>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="acceptModalButton" class="btn-accept">YES</button>
+          </div>
+        </div>
       </div>
-      <div id="choicesPanel2">
-        <h4>What is your best choice for an activity?</h4>
-        <div class="choices"></div>
-      </div>
-      <div id="choicesPanel3">
-        <h4>What is your best choice for a food?</h4>
-        <div class="choices"></div>
-      </div>
-      <div id="choicesPanel4">
-        <h4>What is your best choice for a drink?</h4>
-        <div class="choices"></div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-        Close
-      </button>
-      <button type="button" id="acceptModalButton" class="btn btn-primary">
-        Accept
-      </button>
-    </div>
+    </section>
 
     <!-- Main JS file -->
     <script type="module" src="static/js/idea.js"></script>

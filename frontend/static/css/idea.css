@@ -3,12 +3,49 @@
 #choicesPanel4 {
   display: none;
 }
+body {
+  background-color: var(--background) !important;
+}
 
 .btn-selection {
-  background-color: aqua;
+  background-color: var(--accent);
+  color: var(--background);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: solid 2px var(--header-text);
+}
+
+.btn-selection:hover {
+  background-color: var(--header-text);
+  border: solid 2px var(--accent);
 }
 
 .btn-selection.selected {
-  background-color: #ff00b7;
-  color: #000;
+  background-color: var(--primary);
+  border: solid 2px var(--accent);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.btn-accept {
+  margin-top: 1rem;
+  background-color: var(--secondary);
+  color: var(--background);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: solid 2px var(--header-text);
+  padding: 0.5rem 1rem;
+}
+
+.btn-accept:hover {
+  background-color: var(--header-text);
+  border: solid 2px var(--secondary);
 }

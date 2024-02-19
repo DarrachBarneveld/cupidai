@@ -1,6 +1,6 @@
 "use strict";
 
-import ROOT_DATA from "../data/preferences.json";
+import ROOT_DATA from "/static/data/preferences.json" assert { type: "json" };
 
 const choicesPanel1 = document.getElementById("choicesPanel1");
 const choicesPanel2 = document.getElementById("choicesPanel2");
@@ -9,12 +9,7 @@ const choicesPanel4 = document.getElementById("choicesPanel4");
 
 const acceptModalButton = document.getElementById("acceptModalButton");
 
-const choicesPanelsArray = [
-  choicesPanel1,
-  choicesPanel2,
-  choicesPanel3,
-  choicesPanel4,
-];
+const choicesPanelsArray = [choicesPanel1, choicesPanel2, choicesPanel3, choicesPanel4];
 
 let vissiblePanel = 0;
 
@@ -29,7 +24,6 @@ ROOT_DATA.forEach((element) => {
   drinks = filterByCategoryId(ROOT_DATA, 3);
 });
 
-console.log(activity, food, drinks);
 // // takes jason data
 // fetch("/static/data/preferences.json")
 //   .then((response) => response.json())
