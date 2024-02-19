@@ -166,8 +166,8 @@ async function getGooglePlaces(location, drink, food, activity) {
 async function getAIRecommendations(prompt) {
   try {
     const response = await fetch(
-      // "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
-      "http://127.0.0.1:8000/api/ask-gpt",
+      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
+      // "http://127.0.0.1:8000/api/ask-gpt",
       {
         method: "POST",
         headers: {
