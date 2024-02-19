@@ -11,7 +11,7 @@ main {
 #hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     url("../../assets/images/couple-forest.webp");
-  background-color: #481550;
+  background-color: #732642;
   height: 50vh;
   width: 100%;
   background-position: center;
@@ -31,7 +31,7 @@ main {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  color: #feecea;
+  color: #FCEDCF;
   padding: 0 20px;
   transform: translate(0, -5%);
 }
@@ -84,7 +84,7 @@ main {
 /* Media query for laptops and up (from 992px and larger screens) */
 @media screen and (min-width: 992px) {
   #menu-items a:hover {
-    border-bottom: 1px solid #feecea;
+    border-bottom: 1px solid #FCEDCF;
   }
 }
 

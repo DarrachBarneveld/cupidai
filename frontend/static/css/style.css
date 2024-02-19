@@ -3,11 +3,11 @@
 
 :root {
   /* Colours */
-  --header-text: #481550;
+  --header-text: #732642;
   --main-text: #06040f;
-  --background: #feecea;
-  --primary: #f085f2;
-  --accent: #592331;
+  --background: #FCEDCF;
+  --primary: #F2A7A7;
+  --accent: #BF4565;
   --secondary: #04041c;
 
   /* Fonts */
@@ -37,7 +37,7 @@ h2 {
 
 h1 {
   font-size: 28px;
-  color: #feecea;
+  color: #FCEDCF;
 }
 
 h2 {
@@ -75,13 +75,13 @@ ul {
   font-size: 2rem;
   padding-right: 2px;
   position: relative;
-  color: #feecea;
+  color: #FCEDCF;
   text-shadow: 0 0 0.2em black;
 }
 
 #hero {
   background-image: url("../../assets/images/couple-forest.webp");
-  background-color: #481550;
+  background-color: #732642;
   height: 100vh;
   width: 100%;
   background-position: center;
@@ -93,7 +93,7 @@ ul {
 /* Footer */
 footer {
   background-color: #06040f;
-  color: #feecea;
+  color: #FCEDCF;
 }
 
 /* Media query for tablets and up (from 768px and larger screens) */
@@ -166,7 +166,7 @@ footer {
 
   .join-button:hover {
     background-color: #fbfbe3;
-    color: #592331;
+    color: #BF4565;
   }
 }
 

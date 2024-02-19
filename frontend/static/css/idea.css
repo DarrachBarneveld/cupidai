@@ -3,11 +3,11 @@
 
 :root {
   /* Colours */
-  --header-text: #481550;
+  --header-text: #732642;
   --main-text: #06040f;
-  --background: #feecea;
-  --primary: #f085f2;
-  --accent: #592331;
+  --background: #FCEDCF;
+  --primary: #F2A7A7;
+  --accent: #BF4565;
   --secondary: #04041c;
 }
 
@@ -36,7 +36,7 @@ h3 {
 
 .wrapper {
   background-image: url("../../assets/images/couple-forest.webp");
-  background-color: #481550;
+  background-color: #732642;
   height: 100vh;
   width: 100%;
   background-position: center;
