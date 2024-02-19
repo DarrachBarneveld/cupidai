@@ -20,7 +20,9 @@
     <!-- CSS Stylesheet link-->
     <link rel="stylesheet" href="static/css/style.css" />
     <link rel="stylesheet" href="static/css/home.css" />
+    <link rel="stylesheet" href="static/css/testing.css" />
     <link rel="stylesheet" href="static/css/animations.css" />
+
     <!-- Title -->
     <title>Date Sparkle</title>
     <!-- Favicon -->
@@ -56,67 +58,106 @@
   </head>
 
   <body>
-    <div id="hero">
-      <!-- Header -->
-      <header>
-        <!-- Logo -->
-        <a href="index.html" aria-label="Go to the home page">
-          <h1>Date Sparkle</h1>
-        </a>
-        <!-- NavBar -->
-        <div id="menu-nav">
-          <input type="checkbox" id="nav-toggle" name="nav-toggle" />
-          <label for="nav-toggle" class="nav-toggle-label">
-            <i class="fa-solid fa-bars"></i>
-          </label>
-          <nav id="menu">
-            <ul id="menu-items">
-              <li>
-                <a
-                  href="index.html"
-                  class="active"
-                  aria-label="Go to the home page"
-                  >Home</a
-                >
+    <header id="hero">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark-gradient p-0 border-bottom"
+      >
+        <div class="container-fluid">
+          <a class="brand-logo" href="index.html">Date Sparkle</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
               </li>
-              <li>
-                <a href="about.html" aria-label="Go to About page">About</a>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
               </li>
-              <li>
-                <a href="contact.html" aria-label="Go to Contact page"
-                  >Contact</a
-                >
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-          </nav>
+          </div>
         </div>
-      </header>
-      <section>
-        <div id="hero-text">
-          <h2>Start planning your next romantic adventure now!</h2>
-        </div>
+      </nav>
+      <section id="hero-text">
+        <h2>Start planning your next romantic adventure now!</h2>
       </section>
-    </div>
-    <div id="intro" id="intro" class="container">
-      <div>
-        <section>
-          <p>
-            <i class="fa-solid fa-heart"></i> Welcome to Date Sparkle, we bring
-            romance and creativity to your love life! Whether you're planning a
-            first date, a special anniversary celebration, or searching for the
-            perfect Valentine's Day surprise, we'll bring your date idea
-            creativity to life. At Date Sparkle, we understand that every
-            relationship is special, and that's why we inspire you to create
-            magical moments with your partner. <i class="fa-solid fa-heart"></i>
-          </p>
-        </section>
+    </header>
 
-        <!--  TEMP TESTING LINK -->
-        <a href="testing.html" class="btn-primary btn">Lets Plan</a>
-        <a href="results.html">Testing</a>
-        <a href="idea.html">Testing</a>
+    <section id="intro" id="intro">
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center p-4"
+      >
+        <div id="intro-text">
+          <h3 class="text-center my-4">Welcome to Date Sparkle</h3>
+          <p class="paragraph text-center">
+            <i class="fa-solid fa-heart text-danger h3"></i> Welcome to Date
+            Sparkle! We bring romance and creativity to your love life, from
+            first dates to special anniversaries and Valentine's surprises. At
+            Date Sparkle, we inspire magical moments for every relationship.
+            <i class="fa-solid fa-heart text-danger h3"></i>
+          </p>
+
+          <div class="wrap mb-4">
+            <a href="testing.html" id="letsGoBtn">Lets Plan</a>
+          </div>
+        </div>
+
+        <h3 class="text-decoration-underline mb-4">How to Use Sparkle Ai</h3>
+        <div id="listWrapper">
+          <ol>
+            <li>
+              <div class="icon"><i class="fa-solid fa-bicycle"></i></div>
+              <div class="title">Drinks</div>
+              <div class="descr">Choose your preffered drinks</div>
+            </li>
+            <li>
+              <div class="icon"><i class="fa-solid fa-car"></i></div>
+              <div class="title">Food</div>
+              <div class="descr">Choose your preffered foods</div>
+            </li>
+            <li>
+              <div class="icon"><i class="fa-solid fa-helicopter"></i></div>
+              <div class="title">Activities</div>
+              <div class="descr">Choose activities you usually like to do</div>
+            </li>
+            <li>
+              <div class="icon"><i class="fa-solid fa-plane"></i></div>
+              <div class="title">SparkleAi</div>
+              <div class="descr">
+                Cupid generates fun date ideas based on your preferences.
+              </div>
+            </li>
+            <li>
+              <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+              <div class="title">Options</div>
+              <div class="descr">
+                Explore related options tailored to your tastes.
+              </div>
+            </li>
+            <li>
+              <div class="icon"><i class="fa-solid fa-bus"></i></div>
+              <div class="title">Date!</div>
+              <div class="descr">
+                Turn on location services to find local spots to carry out
+                prompted dates
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
-    </div>
+    </section>
     <!-- Footer -->
     <footer>
       <p>AI Planner &copy; 2020</p>

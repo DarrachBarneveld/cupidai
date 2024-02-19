@@ -19,8 +19,7 @@ html {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: Gwendolyn, cursive;
   font-weight: 500;
   text-transform: capitalize;
@@ -32,6 +31,12 @@ h3 {
 .nav-item a {
   color: var(--background) !important;
   text-shadow: 0 0 0.2em #000;
+}
+
+.nav-item:focus,
+.nav-item:hover,
+.nav-item:active {
+  border-bottom: 1px solid var(--background);
 }
 
 .wrapper {
