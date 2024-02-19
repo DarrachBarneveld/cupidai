@@ -3,6 +3,11 @@
 
 /* Hero */
 
+main {
+  background-color: #f9d1b7;
+  background-image: linear-gradient(315deg, #f894a4 0%, #f9d1b7 94%);
+}
+
 #hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     url("../../assets/images/couple-forest.webp");
@@ -36,11 +41,6 @@
 }
 
 /* Intro section */
-
-#intro {
-  background-color: #f9d1b7;
-  background-image: linear-gradient(315deg, #f894a4 0%, #f9d1b7 94%);
-}
 
 #intro-text {
   transform: translate(0, -25%);
