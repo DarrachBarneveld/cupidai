@@ -86,104 +86,50 @@ h3 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
-
-/* CSS */
-.choice-btn {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
-  box-sizing: border-box;
-  color: #121212;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 1 1 auto;
-  font-family: Inter, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 1rem 1.2rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
-  white-space: nowrap;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+body {
+  background-color: var(--background) !important;
 }
 
-.choice-btn:hover {
-  box-shadow: var(--primary) 0 0 0 3px, transparent 0 0 0 0;
+.btn-selection {
+  background-color: var(--accent);
+  color: var(--background);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: solid 2px var(--header-text);
 }
 
-.active {
-  background: var(--primary);
-  box-shadow: var(--accent) 0 0 0 3px, transparent 0 0 0 0;
-  color: white;
+.btn-selection:hover {
+  background-color: var(--header-text);
+  border: solid 2px var(--accent);
 }
 
-.active:hover {
-  box-shadow: white 0 0 0 3px, transparent 0 0 0 0;
+.btn-selection.selected {
+  background-color: var(--primary);
+  border: solid 2px var(--accent);
 }
 
-.btn-light:hover,
-.btn-light:focus {
-  box-shadow: var(--primary) 0 0 0 3px, transparent 0 0 0 0;
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
-/* ANIMATION */
-
-.fade-in-bounce {
-  opacity: 0;
-  animation: fadeInBounce 0.3s ease-in-out forwards;
+.btn-accept {
+  margin-top: 1rem;
+  background-color: var(--secondary);
+  color: var(--background);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: solid 2px var(--header-text);
+  padding: 0.5rem 1rem;
 }
 
-@keyframes fadeInBounce {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  70% {
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+.btn-accept:hover {
+  background-color: var(--header-text);
+  border: solid 2px var(--secondary);
 
-#choiceContainer > .col:nth-child(1) {
-  animation-delay: 0s;
-}
-
-#choiceContainer > .col:nth-child(2) {
-  animation-delay: 0.1s;
-}
-#choiceContainer > .col:nth-child(3) {
-  animation-delay: 0.2s;
-}
-#choiceContainer > .col:nth-child(4) {
-  animation-delay: 0.3s;
-}
-#choiceContainer > .col:nth-child(5) {
-  animation-delay: 0.4s;
-}
-#choiceContainer > .col:nth-child(6) {
-  animation-delay: 0.5s;
-}
-#choiceContainer > .col:nth-child(7) {
-  animation-delay: 0.6s;
-}
-#choiceContainer > .col:nth-child(8) {
-  animation-delay: 0.7s;
-}
-#choiceContainer > .col:nth-child(9) {
-  animation-delay: 0.8s;
-}
-#choiceContainer > .col:nth-child(10) {
-  animation-delay: 0.9s;
 }

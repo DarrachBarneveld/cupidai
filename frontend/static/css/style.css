@@ -9,6 +9,9 @@
   --primary: #f085f2;
   --accent: #592331;
   --secondary: #04041c;
+
+  /* Fonts */
+  --font-family: "Montserrat", sans-serif;
 }
 
 *,
@@ -160,8 +163,7 @@ main {
 }
 
 #circle-cover-bg-end {
-  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
-    top center / cover;
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat top center / cover;
   height: 90vw;
   width: 90vw;
   margin-bottom: 20px;
@@ -181,8 +183,7 @@ main {
 /*The group section*/
 
 #sparkle-spoiler {
-  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
-    center / cover;
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat center / cover;
   /*Handles rensponsivity without the need for a media query*/
   display: flex;
   flex-wrap: wrap;
