@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   var urlParams = new URLSearchParams(window.location.search);
   var interests = urlParams.get("prompt");
 
+  console.log(interests);
+
   let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
     "recommendation": recommendation,
     "drink": drink,
@@ -163,7 +165,8 @@ async function getGooglePlaces(location, drink, food, activity) {
 async function getAIRecommendations(prompt) {
   try {
     const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
+      // "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
+      "http://127.0.0.1:8000/api/ask-gpt",
       {
         method: "POST",
         headers: {

@@ -1,27 +1,10 @@
-"use strict";
-
 import ROOT_DATA from "../data/preferences.json";
 
-const choicesPanel1 = document.getElementById("choicesPanel1");
-const choicesPanel2 = document.getElementById("choicesPanel2");
-const choicesPanel3 = document.getElementById("choicesPanel3");
-const choicesPanel4 = document.getElementById("choicesPanel4");
-
-const acceptModalButton = document.getElementById("acceptModalButton");
-
-const choicesPanelsArray = [
-  choicesPanel1,
-  choicesPanel2,
-  choicesPanel3,
-  choicesPanel4,
-];
-
-let vissiblePanel = 0;
+const choiceContainer = document.getElementById("choiceContainer");
+const refreshBtn = document.getElementById("refreshBtn");
+const nextBtn = document.getElementById("nextBtn");
 
 let activity, food, drinks;
-
-// Variables to store the user's choices
-let activityChoice, foodChoice, drinkChoice;
 
 ROOT_DATA.forEach((element) => {
   activity = filterByCategoryId(ROOT_DATA, 1);
@@ -29,19 +12,90 @@ ROOT_DATA.forEach((element) => {
   drinks = filterByCategoryId(ROOT_DATA, 3);
 });
 
-console.log(activity, food, drinks);
-// // takes jason data
-// fetch("/static/data/preferences.json")
-//   .then((response) => response.json())
-//   .then((json) => {
-//     activity = filterByCategoryId(json, 1);
-//     food = filterByCategoryId(json, 2);
-//     drinks = filterByCategoryId(json, 3);
-//   });
+let CURRENT_OPTION = 1;
+const selectedDrinks = [];
+const selectedFood = [];
+const selectedActivity = [];
 
-window.addEventListener("load", function () {});
+document.addEventListener("DOMContentLoaded", function () {
+  displayChoices(drinks);
+});
 
-// function to filter categories for elements
+function displayChoices(choicesArray) {
+  if (CURRENT_OPTION == 4) {
+    generateRandomPrompt();
+    return;
+  }
+  choiceContainer.innerHTML = "";
+  console.log(selectedDrinks);
+  console.log(selectedFood);
+  console.log(selectedActivity);
+
+  const randomItems = getRandomElements(choicesArray, 6);
+
+  randomItems.forEach((item) => {
+    renderChoiceBtnHTML(item);
+  });
+}
+
+function renderChoiceBtnHTML(choice) {
+  const containerElement = document.createElement("div");
+  containerElement.classList.add(
+    "col",
+    "px-1",
+    "d-flex",
+    "justify-content-center",
+    "fade-in-bounce"
+  );
+
+  const buttonElement = document.createElement("button");
+  buttonElement.classList.add("choice-btn");
+  buttonElement.textContent = choice.name;
+
+  buttonElement.addEventListener("click", () => {
+    buttonElement.classList.toggle("active");
+
+    const { name } = choice;
+    switch (CURRENT_OPTION) {
+      case 1:
+        if (selectedDrinks.includes(name)) {
+          const index = selectedDrinks.indexOf(name);
+          selectedDrinks.splice(index, 1);
+        } else {
+          selectedDrinks.push(name);
+        }
+        break;
+      case 2:
+        if (selectedFood.includes(name)) {
+          const index = selectedFood.indexOf(name);
+          selectedFood.splice(index, 1);
+        } else {
+          selectedFood.push(name);
+        }
+        break;
+      case 3:
+        if (selectedActivity.includes(name)) {
+          const index = selectedActivity.indexOf(name);
+          selectedActivity.splice(index, 1);
+        } else {
+          selectedActivity.push(name);
+        }
+        break;
+      default:
+        if (selectedDrinks.includes(name)) {
+          const index = selectedDrinks.indexOf(name);
+          selectedDrinks.splice(index, 1);
+        } else {
+          selectedDrinks.push(name);
+        }
+        break;
+    }
+  });
+
+  containerElement.appendChild(buttonElement);
+  choiceContainer.appendChild(containerElement);
+}
+
 function filterByCategoryId(array, categoryId) {
   return array.filter((element) => element.categoryId === categoryId);
 }
@@ -60,102 +114,52 @@ function getRandomElements(array, numberOfElements) {
   return shuffledArray.slice(0, numberOfElements);
 }
 
-// Function to create a list of button from random 6 elements
-function createButtonList(array) {
-  const randomElements = getRandomElements(array, 6);
-  const buttonList = randomElements.map((element) => {
-    return `<button class="btn-selection" type="button">${element.name}</button>`;
-  });
+function refreshCurrentOptions() {
+  choiceContainer.innerHTML = "";
 
-  return buttonList.join("");
-}
-
-function createButtonHTML(panelID) {
-  let buttonHTML = "";
-  switch (panelID) {
+  switch (CURRENT_OPTION) {
     case 1:
-      cleanAndReplaceButtons(panelID, activity);
+      selectedDrinks.splice(0, selectedDrinks.length);
+      displayChoices(drinks);
       break;
     case 2:
-      cleanAndReplaceButtons(panelID, food);
+      selectedFood.splice(0, selectedFood.length);
+
+      displayChoices(food);
       break;
     case 3:
-      cleanAndReplaceButtons(panelID, drinks);
+      selectedActivity.splice(0, selectedActivity.length);
+
+      displayChoices(activity);
       break;
     default:
-      buttonHTML = "";
-  }
-  return buttonHTML;
-}
-
-function cleanAndReplaceButtons(panelID, elementsList) {
-  const buttonHTML = createButtonList(elementsList);
-  const choices = choicesPanelsArray[panelID].querySelector(".choices");
-  choices.innerHTML = "";
-  choices.innerHTML = buttonHTML;
-
-  const buttons = choices.querySelectorAll(".btn-selection");
-  buttons.forEach((button) => {
-    button.addEventListener("click", handleButtonClick);
-  });
-}
-
-function handleButtonClick(event) {
-  const selectedButton = event.target;
-  const selectedChoice = selectedButton.textContent;
-
-  // Highlight the selected button
-  highlightButton(selectedButton);
-
-  // Update the corresponding choice variable based on the visible panel
-  switch (vissiblePanel) {
-    case 1:
-      activityChoice = selectedChoice;
-      break;
-    case 2:
-      foodChoice = selectedChoice;
-      break;
-    case 3:
-      drinkChoice = selectedChoice;
+      CURRENT_OPTION = 1;
+      displayChoices(drinks);
       break;
   }
-  console.log(activityChoice, foodChoice, drinkChoice);
 }
 
-function highlightButton(button) {
-  const buttons = button.parentElement.querySelectorAll(".btn-selection");
-  buttons.forEach((btn) => {
-    btn.classList.remove("selected");
-  });
-  button.classList.add("selected");
+function generateRandomPrompt() {
+  const drinkString = selectedDrinks.join(" ");
+  const foodString = selectedFood.join(" ");
+  const activityString = selectedActivity.join(" ");
+
+  const interests = drinkString + " " + foodString + " " + activityString;
+
+  console.log(interests);
+
+  const url = "results.html?prompt=" + encodeURIComponent(interests);
+  window.location.href = url;
 }
 
-// function to show one element and hide others
-function showOnlyOne(showID) {
-  // Make the specified element visible
-  choicesPanelsArray[showID].style.display = "block";
-
-  vissiblePanel = showID;
-
-  // Hide the other elements
-  choicesPanelsArray.forEach((element) => {
-    if (element !== choicesPanelsArray[showID]) {
-      element.style.display = "none";
-    }
-  });
-}
-
-// function to show next element
-function showNextPannel() {
-  vissiblePanel++;
-  if (vissiblePanel > choicesPanelsArray.length - 1) {
-    vissiblePanel = 0;
+function showNextOptions() {
+  CURRENT_OPTION++;
+  if (CURRENT_OPTION == 2) {
+    displayChoices(food);
+  } else {
+    displayChoices(activity);
   }
-  showOnlyOne(vissiblePanel);
 }
 
-acceptModalButton.addEventListener("click", () => {
-  console.log("acceptModalFunction called!");
-  showNextPannel();
-  createButtonHTML(vissiblePanel);
-});
+refreshBtn.addEventListener("click", refreshCurrentOptions);
+nextBtn.addEventListener("click", showNextOptions);

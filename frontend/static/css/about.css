@@ -5,8 +5,7 @@
   background-color: #c698a1;
   max-width: 100%;
   justify-content: center;
-  align-content: center; 
-  
+  align-content: center;
 }
 
 .container h2 {
@@ -23,7 +22,7 @@
 }
 
 #about-sparkle-container h2 {
-  text-transform: uppercase; 
+  text-transform: uppercase;
   text-align: center;
   font-size: 150%;
   font-family: Montserrat, Verdana, sans-serif;
@@ -36,11 +35,11 @@
   font-family: Montserrat, Verdana, sans-serif;
 }
 
-#about-sparkle > div, #team-sparkle > div {
+#about-sparkle > div,
+#team-sparkle > div {
   line-height: 20px;
   margin-bottom: 20px;
 }
-
 
 #background p {
   padding: 5px 10px;
@@ -52,7 +51,8 @@
 }
 
 #circle-cover-bg-end {
-  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat top center / cover;
+  background: url("../images/rhand-mccoy-VAfNctgbreA-unsplash.webp") no-repeat
+    top center / cover;
   height: 90vw;
   width: 90vw;
   margin-bottom: 20px;
@@ -72,11 +72,11 @@
 /*The group section*/
 
 #sparkle-spoiler {
-  background: url("../images/rachel-walker-fdYWSfH8N6Y-unsplash.jpg") no-repeat center / cover;
+  background: url("../images/rachel-walker-fdYWSfH8N6Y-unsplash.jpg") no-repeat
+    center / cover;
   /*Handles rensponsivity without the need for a media query*/
   display: flex;
-  flex-wrap: wrap;  
-
+  flex-wrap: wrap;
 }
 
 #sparkle-spoiler div {
@@ -95,7 +95,7 @@
 #sparkle-spoiler h3 {
   /*Override the heading color set in general styles*/
   color: #ece3ce;
-  text-transform: capitalize; 
+  text-transform: capitalize;
   text-align: center;
   font-size: 100%;
   font-family: Montserrat, Verdana, sans-serif;
@@ -112,7 +112,7 @@
   max-height: 300px;
 }
 
-#sparkle-spoiler i {  
+#sparkle-spoiler i {
   align-self: center;
   font-size: 200%;
   padding: 5%;
@@ -141,8 +141,6 @@
     text-align: left;
     align-self: center;
   }
-
-
 }
 
 @media screen and (min-width: 992px) {

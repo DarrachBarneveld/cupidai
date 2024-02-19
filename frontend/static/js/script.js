@@ -3,17 +3,9 @@ const foodForm = document.getElementById("foodForm");
 const activityForm = document.getElementById("activityForm");
 const promptBtn = document.getElementById("promptBtn");
 
-const APIKEY1 = "sk-xpy0IWg";
-const APIKEY2 = "P8oWW2pPKz2hJT3BlbkF";
-const APIKEY3 = "JPBP6CdnUnrAjPNqoxTCb";
-const APIKEYTOTAL = APIKEY1 + APIKEY2 + APIKEY3;
-
 const selectedDrinks = [];
 const selectedFood = [];
 const selectedActivity = [];
-
-//
-let location;
 
 function checkIfAllFormsAreFilled() {
   if (
