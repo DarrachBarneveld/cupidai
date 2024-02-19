@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     carouselItem.innerHTML = `
       <h3>
+      <i class="fa-solid fa-heart text-danger"></i>
     ${quote}
+    <i class="fa-solid fa-heart text-danger"></i>
       </h3>
       `;
     carouselInner.appendChild(carouselItem);
