@@ -1,10 +1,12 @@
 #menu-items a {
   text-shadow: 0 0 0.2em black;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
 /* Hero */
 
 #hero h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 700;
 }
 
@@ -21,7 +23,7 @@
 }
 
 #hero-text > h2 {
-  font-size: 28px;
+  font-size: clamp(1.3rem, 4vw, 2.5rem);
   font-weight: 700;
   text-align: center;
   text-shadow: 0 0 0.2em black;
@@ -40,33 +42,30 @@
 
 #intro p {
   text-align: justify;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   color: #feecea;
   text-shadow: 0 0 0.1em black;
 }
 
 /* Media query fot tablets and up (from 768px and larger screens) */
 @media screen and (min-width: 768px) {
-  #hero h1 {
-    font-size: 35px;
-  }
-
-  #hero-text > h2 {
-    font-size: 25px;
-  }
-
   #hero-text {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  #hero {
-    height: 70vh;
+  #intro {
+    background-color: rgba(60, 60, 60, 0.2);
+    max-width: 66.66%;
+    padding: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  #intro {
-    max-width: 100%;
-    padding: 20px;
+  #intro p {
+    text-shadow: 0 0 0.2em black;
   }
 }
 
@@ -74,13 +73,5 @@
 @media screen and (min-width: 992px) {
   #menu-items a:hover {
     border-bottom: 1px solid #feecea;
-  }
-
-  #hero h1 {
-    font-size: 50px;
-  }
-
-  #hero-text > h2 {
-    font-size: 35px;
   }
 }
