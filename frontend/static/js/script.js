@@ -1,8 +1,13 @@
 import ROOT_DATA from "../data/preferences.json";
+import foodPhoto from "../images/foods.png";
+import activityPhoto from "../images/activity.png";
 
 const choiceContainer = document.getElementById("choiceContainer");
 const refreshBtn = document.getElementById("refreshBtn");
 const nextBtn = document.getElementById("nextBtn");
+
+const headingText = document.getElementById("headingText");
+const choiceImage = document.getElementById("choiceImage");
 
 let activity, food, drinks;
 
@@ -17,6 +22,22 @@ const selectedDrinks = [];
 const selectedFood = [];
 const selectedActivity = [];
 
+function checkIfNullArray() {
+  switch (CURRENT_OPTION) {
+    case 1:
+      nextBtn.disabled = selectedDrinks.length === 0;
+      break;
+    case 2:
+      nextBtn.disabled = selectedFood.length === 0;
+      break;
+    case 3:
+      nextBtn.disabled = selectedActivity.length === 0;
+      break;
+    default:
+      nextBtn.disabled = selectedDrinks.length === 0;
+      break;
+  }
+}
 document.addEventListener("DOMContentLoaded", function () {
   displayChoices(drinks);
 });
@@ -49,7 +70,7 @@ function renderChoiceBtnHTML(choice) {
   );
 
   const buttonElement = document.createElement("button");
-  buttonElement.classList.add("choice-btn");
+  buttonElement.classList.add("choice-btn", "text-wrap");
   buttonElement.textContent = choice.name;
 
   buttonElement.addEventListener("click", () => {
@@ -90,6 +111,7 @@ function renderChoiceBtnHTML(choice) {
         }
         break;
     }
+    checkIfNullArray();
   });
 
   containerElement.appendChild(buttonElement);
@@ -124,12 +146,14 @@ function refreshCurrentOptions() {
       break;
     case 2:
       selectedFood.splice(0, selectedFood.length);
-
+      headingText.textContent = "What Foods You Feeling?";
+      choiceImage.src = "static/images/foods.png";
       displayChoices(food);
       break;
     case 3:
       selectedActivity.splice(0, selectedActivity.length);
-
+      headingText.textContent = "What Activities You Feeling?";
+      choiceImage.src = "static/images/activity.png";
       displayChoices(activity);
       break;
     default:
@@ -155,8 +179,12 @@ function generateRandomPrompt() {
 function showNextOptions() {
   CURRENT_OPTION++;
   if (CURRENT_OPTION == 2) {
+    headingText.textContent = "What Foods You Feeling?";
+    choiceImage.src = foodPhoto;
     displayChoices(food);
   } else {
+    headingText.textContent = "What Activities You Feeling?";
+    choiceImage.src = activityPhoto;
     displayChoices(activity);
   }
 }

@@ -17,20 +17,23 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 #hero h1 {
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2.2rem, 8vw, 4rem);
   font-weight: 700;
 }
 
 #hero-text {
-  height: 100%;
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
   color: #feecea;
   padding: 0 20px;
+  transform: translate(0, -5%);
 }
 
 #hero-text > h2 {
@@ -43,13 +46,14 @@ main {
 /* Intro section */
 
 #intro-text {
-  transform: translate(0, -25%);
+  transform: translate(0, -20%);
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 3px solid var(--primary);
+  padding: 0.25rem 1.25rem;
 }
 
 #intro i {

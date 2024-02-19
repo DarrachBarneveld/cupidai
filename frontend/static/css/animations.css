@@ -174,7 +174,7 @@
 
 #letsGoBtn {
   text-align: center;
-  min-width: 300px;
+  min-width: 250px;
   min-height: 60px;
   font-family: "Nunito", sans-serif;
   font-size: 22px;
@@ -197,7 +197,7 @@
 #letsGoBtn::before {
   content: "";
   border-radius: 1000px;
-  min-width: calc(300px + 12px);
+  min-width: calc(250px + 12px);
   min-height: calc(60px + 12px);
   border: 6px solid var(--primary);
   box-shadow: 0 0 60px var(--accent);
@@ -245,8 +245,8 @@
     opacity: 1;
   }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     opacity: 0;
   }
 }
