@@ -147,13 +147,13 @@ function refreshCurrentOptions() {
     case 2:
       selectedFood.splice(0, selectedFood.length);
       headingText.textContent = "What Foods You Feeling?";
-      choiceImage.src = "static/images/foods.png";
+      choiceImage.src = foodPhoto;
       displayChoices(food);
       break;
     case 3:
       selectedActivity.splice(0, selectedActivity.length);
       headingText.textContent = "What Activities You Feeling?";
-      choiceImage.src = "static/images/activity.png";
+      choiceImage.src = activityPhoto;
       displayChoices(activity);
       break;
     default:
