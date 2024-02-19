@@ -8,9 +8,24 @@
       content="Romantic planning assistant for dates and Valentine's day ideas."
     />
     <meta name="keywords" content="date, Valentine's Day, ideas, plans" />
+
+    <!-- BOOTSTRAP LINKS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <!-- CSS Stylesheet link-->
     <link rel="stylesheet" href="static/css/style.css" />
     <link rel="stylesheet" href="static/css/about.css" />
+    <link rel="stylesheet" href="static/css/testing.css" />
 
     <!-- Title -->
     <title>Date Sparkle</title>
@@ -35,33 +50,38 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <!-- Logo -->
-      <a href="index.html" aria-label="Go to the home page">
-        <h1>Date Sparkle</h1>
-      </a>
-      <!-- NavBar -->
-      <div id="menu-nav">
-        <input type="checkbox" id="nav-toggle" name="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <i class="fa-solid fa-bars"></i>
-        </label>
-        <nav id="menu">
-          <ul id="menu-items">
-            <li>
-              <a href="index.html" aria-label="Go to the home page">Home</a>
-            </li>
-            <li>
-              <a href="about.html" class="active" aria-label="Go to About page"
-                >About</a
-              >
-            </li>
-            <li>
-              <a href="contact.html" aria-label="Go to Contact page">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header style="background: rgba(0, 0, 0, 0.6)">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark-gradient p-0 border-bottom"
+      >
+        <div class="container-fluid">
+          <a class="brand-logo" href="index.html">Date Sparkle</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Main content -->
@@ -132,28 +152,29 @@
                 Here's the group behind DATE Sparkle!
                 <br />
                 <br />
-                <i class="fa-regular fa-heart"></i> We're the great people who
-                have created this site. Here you can find some information about
-                us, and links to our Github and LinkedIn. <br />
+                <i class="fa-regular fa-heart text-danger"></i> We're the great
+                people who have created this site. Here you can find some
+                information about us, and links to our Github and LinkedIn.
+                <br />
                 Date Sparkle isn't just a web app; it's the brainchild of a
                 passionate and dedicated development group committed to
                 enhancing the romantic experiences of couples worldwide. <br />
                 <br />
-                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-heart text-danger"></i>
                 Behind the scenes, there's a team of individuals driven by a
                 shared vision: to inspire and facilitate meaningful connections
                 through curated, unforgettable experiences. <br />
                 <br />
-                <i class="fa-regular fa-heart"></i> Collaborative by nature, the
-                developers at Date Sparkle thrive in an environment where ideas
-                flow freely, and innovation knows no bounds. They leverage their
-                collective expertise to overcome challenges and push the
-                boundaries of what's possible, constantly striving to exceed
-                expectations and delight users at every turn. <br />
+                <i class="fa-regular fa-heart text-danger"></i> Collaborative by
+                nature, the developers at Date Sparkle thrive in an environment
+                where ideas flow freely, and innovation knows no bounds. They
+                leverage their collective expertise to overcome challenges and
+                push the boundaries of what's possible, constantly striving to
+                exceed expectations and delight users at every turn. <br />
                 <br />
-                <i class="fa-regular fa-heart"></i> In essence, the development
-                team behind Date Sparkle is more than just a group of
-                professionals; they are architects of romance, sculptors of
+                <i class="fa-regular fa-heart text-danger"></i> In essence, the
+                development team behind Date Sparkle is more than just a group
+                of professionals; they are architects of romance, sculptors of
                 dreams, and champions of love. Through their creativity and
                 dedication, they ensure that Date Sparkle remains not just a
                 platform, but a trusted companion on the journey of love,
@@ -227,7 +248,7 @@
 
           <div>
             <h3>Dimitri</h3>
-            <p>The backend wizard</p>
+            <p>The backend ai wizard</p>
             <img src="./static/images/dimitri.webp" alt="image of Dimitri" />
             <a
               href="https://github.com/dimitri-edel"
