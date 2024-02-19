@@ -28,28 +28,28 @@ document.addEventListener("DOMContentLoaded", async function () {
     carouselInner.appendChild(carouselItem);
   });
 
-  // let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
-  //   "recommendation": recommendation,
-  //   "drink": drink,
-  //   "food": food,
-  //   "activity": activity keywords
-  // },
-  // containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
+  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
+    "recommendation": recommendation,
+    "drink": drink,
+    "food": food,
+    "activity": activity keywords
+  },
+  containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
 
-  // if (interests) {
-  //   const array = await getAIRecommendations(promptString);
-  //   console.log(array);
+  if (interests) {
+    const array = await getAIRecommendations(promptString);
+    console.log(array);
 
-  //   loadingModal.style.display = "none";
-  //   refreshBtn.classList.remove("hidden");
-  //   array.forEach((result) => createResultsCard(result));
+    loadingModal.style.display = "none";
+    refreshBtn.classList.remove("hidden");
+    array.forEach((result) => createResultsCard(result));
 
-  //   return;
-  // }
-  // loadingModal.style.display = "none";
-  // refreshBtn.classList.remove("hidden");
+    return;
+  }
+  loadingModal.style.display = "none";
+  refreshBtn.classList.remove("hidden");
 
-  // DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
+  DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
 });
 
 function createResultsCard(result) {
@@ -148,17 +148,20 @@ async function getGooglePlaces(location, drink, food, activity) {
   const text = `${drink} ${food} ${activity}`;
 
   try {
-    const response = await fetch("http://localhost:8000/api/places", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        lat: location.lat,
-        lng: location.lng,
-        text,
-      }),
-    });
+    const response = await fetch(
+      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          lat: location.lat,
+          lng: location.lng,
+          text,
+        }),
+      }
+    );
 
     const { places } = await response.json();
     console.log(places);
