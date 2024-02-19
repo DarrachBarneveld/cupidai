@@ -1,7 +1,5 @@
 import DUMMY_AI_RESPONSE from "../data/dummyAIResponse.json";
 
-console.log("fire");
-
 const resultsContainerElement = document.getElementById("resultsContainer");
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -22,10 +20,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     const array = await getAIRecommendations(promptString);
     console.log(array);
 
+    loadingModal.style.display = "none";
     array.forEach((result) => createResultsCard(result));
 
     return;
   }
+  loadingModal.style.display = "none";
+
   DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
 });
 

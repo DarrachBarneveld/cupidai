@@ -11,6 +11,7 @@
     <!-- CSS Stylesheet link-->
     <link rel="stylesheet" href="static/css/style.css" />
     <link rel="stylesheet" href="static/css/results.css" />
+    <link rel="stylesheet" href="static/css/testing.css" />
 
     <!-- Title -->
     <title>Date Sparkle</title>
@@ -54,43 +55,51 @@
     ></script>
   </head>
 
-  <body>
+  <body class="wrapper">
     <!-- Header -->
     <header>
-      <!-- Logo -->
-      <a href="index.html" aria-label="Go to the home page">
-        <h1>Date Sparkle</h1>
-      </a>
-      <!-- NavBar -->
-      <div id="menu-nav">
-        <input type="checkbox" id="nav-toggle" name="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <i class="fa-solid fa-bars"></i>
-        </label>
-        <nav id="menu">
-          <ul id="menu-items">
-            <li>
-              <a
-                href="index.html"
-                class="active"
-                aria-label="Go to the home page"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="about.html" aria-label="Go to About page">About</a>
-            </li>
-            <li>
-              <a href="contact.html" aria-label="Go to Contact page">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark-gradient p-0 border-bottom"
+      >
+        <div class="container-fluid">
+          <a class="brand-logo" href="index.html">Date Sparkle</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Main content -->
-    <main class="container">
-      <div id="resultsContainer" class="row gx-2 gy-2">
+    <main class="container h-100">
+      <div id="loadingModal" class="glassmorphism p-3 rounded-3 text-center">
+        <div class="mx-auto" id="pulsingheart"></div>
+        <h3 class="fw-bolder">SparkleAi is generating...</h3>
+        <p>Please be patient for your custom generated dates</p>
+        <em>Your partner will be appreciative</em>
+      </div>
+      <div id="resultsContainer" class="row gx-2 gy-2 mt-5">
         <!-- <div class="col-md-3">
           <div class="card-sl bg-white">
             <div class="card-image">
@@ -186,9 +195,12 @@
 
       <!-- Heart Animation -->
     </main>
-    <!-- Footer -->
-    <footer>
-      <p>AI Planner &copy; 2020</p>
+
+    <!-- FOOTER -->
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copywrite &copy; SparkleAi</small>
+      </div>
     </footer>
     <!-- Font awasome kit  -->
 

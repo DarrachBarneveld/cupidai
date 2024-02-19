@@ -26,6 +26,9 @@ h2 {
   word-spacing: 0.4rem;
 }
 
+main {
+  flex: 1;
+}
 /* Navbar styles */
 
 .nav-item a {
@@ -42,12 +45,14 @@ h2 {
 .wrapper {
   background-image: url("../../assets/images/couple-forest.webp");
   background-color: #481550;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-logo {

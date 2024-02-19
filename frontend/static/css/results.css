@@ -1,12 +1,3 @@
-body {
-  background-size: cover;
-  background-image: linear-gradient(transparent, white 180%),
-    url(../images/backgroundResults.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-}
-
 .blockquote-custom {
   font-size: 1rem !important;
 }
@@ -134,4 +125,54 @@ body {
 }
 #resultsContainer > .col-md-6:nth-child(10) .fade-in-bounce {
   animation-delay: 0.9s;
+}
+
+/* Loader */
+
+#loadingModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+}
+
+#pulsingheart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+#pulsingheart:before,
+#pulsingheart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #aa0000;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  animation: pulsecolor 1s infinite;
+}
+
+#pulsingheart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  animation: pulsecolor 1s infinite;
+}
+
+@keyframes pulse {
+  10% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulsecolor {
+  10% {
+    background: #dd0000;
+  }
 }
