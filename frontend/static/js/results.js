@@ -182,12 +182,12 @@ async function getGooglePlaces(location, drink, food, activity) {
         return;
       }
     } else {
+      console.log("Places:", places);
+
       resultsContainerElement.innerHTML = "";
 
       places.forEach((place) => createPlaceCard(place));
     }
-
-    console.log("Places:", places);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
