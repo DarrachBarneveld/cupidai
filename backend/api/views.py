@@ -66,7 +66,8 @@ class AskGptView(APIView):
                 "messages": [{"role": "user", "content": req_data.validated_data.get('message')}]
             }
             res = request("POST", GPT_URL, 
-                          headers={'Authorization': 'Bearer ' + openai_api_key}, json=data)
+                          headers={'Authorization': 'Bearer ' + openai_api_key}, 
+                          json=data, timeout=10)
 
             # Parse GPT response
             parsed_json = json.loads(res.text)
@@ -110,7 +111,7 @@ class GeolocationView(APIView):
                 "X-Goog-FieldMask": "*",
             }
 
-            res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data)
+            res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data, timeout=10)
 
             # Parse the response
             parsed_json = json.loads(res.text)
