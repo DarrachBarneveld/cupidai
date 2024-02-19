@@ -7,6 +7,8 @@ const resultsContainerElement = document.getElementById("resultsContainer");
 const refreshBtn = document.getElementById("refreshBtn");
 const carouselInner = document.querySelector(".carousel-inner");
 
+let LOCATION;
+
 document.addEventListener("DOMContentLoaded", async function () {
   const urlParams = new URLSearchParams(window.location.search);
   const interests = urlParams.get("prompt");
@@ -50,12 +52,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     refreshBtn.classList.remove("hidden");
     array.forEach((result) => createResultsCard(result));
 
+    LOCATION = await getCurrentLocationLatLng();
+
     return;
   }
   loadingModal.style.display = "none";
   refreshBtn.classList.remove("hidden");
 
   DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
+  LOCATION = await getCurrentLocationLatLng();
 });
 
 function createResultsCard(result) {
@@ -89,12 +94,15 @@ function createResultsCard(result) {
   resultsContainerElement.appendChild(columnElement);
 
   const cardButton = columnElement.querySelector("#findPlaces");
-  cardButton.addEventListener("click", async () => {
-    const { lat, lng } = await getCurrentLocationLatLng();
+  cardButton.addEventListener("click", async (e) => {
+    e.target.textContent = "Loading...";
 
-    console.log(lat, lng);
+    if (!LOCATION) {
+      const { lat, lng } = await getCurrentLocationLatLng();
+      LOCATION = { lat, lng };
+    }
 
-    getGooglePlaces({ lat, lng }, result.drink, result.food, result.activity);
+    getGooglePlaces(e, LOCATION, result.drink, result.food, result.activity);
   });
 }
 
@@ -150,7 +158,8 @@ function createPlaceCard(place) {
   resultsContainerElement.appendChild(columnElement);
 }
 
-async function getGooglePlaces(location, drink, food, activity) {
+async function getGooglePlaces(e, location, drink, food, activity) {
+  console.log(location);
   const text = `${drink} ${food} ${activity}`;
 
   try {
@@ -170,6 +179,8 @@ async function getGooglePlaces(location, drink, food, activity) {
     );
 
     const { places } = await response.json();
+
+    e.target.textContent = "Find places!";
 
     if (!places) {
       alert("No places found");
