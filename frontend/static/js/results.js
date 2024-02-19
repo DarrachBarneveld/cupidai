@@ -39,6 +39,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (interests) {
     const array = await getAIRecommendations(promptString);
     console.log(array);
+    if (array.length === 0 || !array) {
+      DUMMY_AI_RESPONSE.forEach((result) => createResultsCard(result));
+      loadingModal.style.display = "none";
+      refreshBtn.classList.remove("hidden");
+      return;
+    }
 
     loadingModal.style.display = "none";
     refreshBtn.classList.remove("hidden");
