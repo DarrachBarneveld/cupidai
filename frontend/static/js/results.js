@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     carouselInner.appendChild(carouselItem);
   });
 
-  let promptString = `Based on my interests like ${interests} could you suggest 10 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
+  let promptString = `Based on my interests like ${interests} could you suggest 6 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
     "recommendation": recommendation,
     "drink": drink,
     "food": food,
