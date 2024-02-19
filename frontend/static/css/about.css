@@ -2,10 +2,12 @@
 
 .container {
   display: flex;
-  background-color: #F2A7A7;
   max-width: 100%;
   justify-content: center;
   align-content: center;
+}
+.bg-pink {
+  background-image: linear-gradient(315deg, #f894a4 0%, #f9d1b7 94%);
 }
 
 .container h2 {
@@ -80,7 +82,7 @@
 }
 
 #sparkle-spoiler div {
-  color: #FCEDCF;
+  color: #fcedcf;
   background-color: rgba(27, 19, 73, 0.3);
   padding: 20px;
   text-align: center;
@@ -89,12 +91,12 @@
   flex-basis: 200px;
   flex-grow: 1;
   /*creates a grid of group member divs over the background image*/
-  border: 2px solid #FCEDCF;
+  border: 2px solid #fcedcf;
 }
 
 #sparkle-spoiler h3 {
   /*Override the heading color set in general styles*/
-  color: #FCEDCF;
+  color: #fcedcf;
   text-transform: capitalize;
   text-align: center;
   font-size: 100%;
@@ -116,7 +118,7 @@
   align-self: center;
   font-size: 200%;
   padding: 5%;
-  color: #FCEDCF;
+  color: #fcedcf;
 }
 
 #spoiler h2 {

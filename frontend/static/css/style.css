@@ -5,9 +5,9 @@
   /* Colours */
   --header-text: #732642;
   --main-text: #06040f;
-  --background: #FCEDCF;
-  --primary: #F2A7A7;
-  --accent: #BF4565;
+  --background: #fcedcf;
+  --primary: #f2a7a7;
+  --accent: #bf4565;
   --secondary: #04041c;
 
   /* Fonts */
@@ -37,7 +37,7 @@ h2 {
 
 h1 {
   font-size: 28px;
-  color: #FCEDCF;
+  color: #fcedcf;
 }
 
 h2 {
@@ -75,7 +75,7 @@ ul {
   font-size: 2rem;
   padding-right: 2px;
   position: relative;
-  color: #FCEDCF;
+  color: #fcedcf;
   text-shadow: 0 0 0.2em black;
 }
 
@@ -93,7 +93,7 @@ ul {
 /* Footer */
 footer {
   background-color: #06040f;
-  color: #FCEDCF;
+  color: #fcedcf;
 }
 
 /* Media query for tablets and up (from 768px and larger screens) */
@@ -142,31 +142,6 @@ footer {
     width: 75%;
     text-align: left;
     align-self: center;
-  }
-
-  /* Contact page */
-  #contact {
-    background-position: center;
-    position: relative;
-  }
-
-  .form-center {
-    display: flex;
-    justify-content: center;
-  }
-
-  #contact-form {
-    position: absolute;
-    top: 80px;
-  }
-
-  .text-input:hover {
-    border-color: #fbfbe3;
-  }
-
-  .join-button:hover {
-    background-color: #fbfbe3;
-    color: #BF4565;
   }
 }
 
