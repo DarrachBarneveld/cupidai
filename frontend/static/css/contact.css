@@ -48,3 +48,41 @@
   color: white;
   font-weight: 800;
 }
+
+#thankyou {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#thankyouid {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-direction: column;
+}
+
+#thankyouid h1 {
+  color: var(--header-text);
+  font-weight: 900;
+}
+
+.pointer {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  color: var(--header-text);
+  text-align: center;
+  background: white;
+  text-decoration: none;
+}
+.pointer:hover,
+.pointer:active {
+  outline: 2px solid var(--accent);
+
+  background-color: var(--primary);
+  text-align: center;
+  color: white;
+  font-weight: 800;
+}
