@@ -170,11 +170,17 @@ async function getGooglePlaces(location, drink, food, activity) {
     );
 
     const { places } = await response.json();
-    console.log(places);
 
-    if (places.length === 0) {
-      console.log("No places found");
+    if (!places) {
+      alert("No places found");
       return;
+    }
+
+    if (places) {
+      if (places.length === 0) {
+        alert("No places found");
+        return;
+      }
     } else {
       resultsContainerElement.innerHTML = "";
 
