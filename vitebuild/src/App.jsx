@@ -1,35 +1,118 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from "./components/Navbar";
+import "./App.css";
+import ChoiceButton from "./components/ui/ChoiceButton";
+import { useEffect, useState } from "react";
+import ActionButton from "./components/ui/ActionButton";
 
-function App() {
-  const [count, setCount] = useState(0)
+import ROOT_DATA from "./assets/data/preferences.json";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function getRandomElements(array, numberOfElements) {
+  const shuffledArray = array.slice();
+
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray.slice(0, numberOfElements);
 }
 
-export default App
+function App() {
+  const [choiceCategory, setChoiceCategory] = useState(1);
+  const [randomChoices, setRandomChoices] = useState([]);
+  const [choices, setChoices] = useState({
+    drinks: [],
+    food: [],
+    activity: [],
+  });
+
+  const categoryMapping = {
+    1: "drinks",
+    2: "food",
+    3: "activity",
+  };
+
+  useEffect(() => {
+    const randomSelections = getRandomElements(
+      ROOT_DATA.filter((element) => {
+        return element.categoryId === choiceCategory;
+      }),
+      6
+    );
+
+    setRandomChoices(randomSelections);
+  }, [choiceCategory]);
+
+  function handleSelectedChoice(choice) {
+    if (choiceCategory === 1) {
+      choices.drinks.includes(choice)
+        ? setChoices((prev) => ({
+            ...prev,
+            drinks: prev.drinks.filter((item) => item !== choice),
+          }))
+        : setChoices((prev) => ({
+            ...prev,
+            drinks: [...prev.drinks, choice],
+          }));
+    }
+    if (choiceCategory === 2) {
+      choices.food.includes(choice)
+        ? setChoices((prev) => ({
+            ...prev,
+            food: prev.food.filter((item) => item !== choice),
+          }))
+        : setChoices((prev) => ({
+            ...prev,
+            food: [...prev.food, choice],
+          }));
+    }
+    if (choiceCategory === 3) {
+      choices.activity.includes(choice)
+        ? setChoices((prev) => ({
+            ...prev,
+            activity: prev.activity.filter((item) => item !== choice),
+          }))
+        : setChoices((prev) => ({
+            ...prev,
+            activity: [...prev.activity, choice],
+          }));
+    }
+  }
+
+  return (
+    <div className="wrapper">
+      <header>
+        <Navbar />
+      </header>
+
+      <main>
+        <div className="container px-lg-5 mt-5">
+          <div id="choiceContainer" className="row row-cols-2 gy-4">
+            {randomChoices.map((choice) => (
+              <ChoiceButton
+                key={choice.id}
+                text={choice.name}
+                onClick={() => handleSelectedChoice(choice.name)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="d-flex my-4 gap-3 justify-content-center align-items-center">
+          <ActionButton
+            text="REFRESH"
+            icon={<i className="fa-solid fa-arrows-rotate"></i>}
+          />
+          <ActionButton
+            text="NEXT"
+            onClick={() => setChoiceCategory((prev) => prev + 1)}
+            disabled={choices[categoryMapping[choiceCategory]]?.length == 0}
+            icon={<i className="fa-solid fa-forward"></i>}
+          />
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default App;

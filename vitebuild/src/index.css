@@ -1,0 +1,77 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Colours */
+  --header-text: #732642;
+  --main-text: #06040f;
+  --background: #fcedcf;
+  --primary: #f2a7a7;
+  --accent: #bf4565;
+  --secondary: #04041c;
+
+  /* Fonts */
+  --font-family: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: Montserrat, Verdana, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: Gwendolyn, cursive;
+  font-weight: 500;
+  text-transform: capitalize;
+  word-spacing: 0.4rem;
+}
+
+h1 {
+  font-size: 28px;
+  color: #fcedcf;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.bg-dark-gradient {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.brand-logo {
+  color: var(--background);
+  font-size: 40px;
+  font-family: Gwendolyn, cursive;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.wrapper {
+  background-image: url("../public/images/backgroundResults.png");
+  background-color: #732642;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
