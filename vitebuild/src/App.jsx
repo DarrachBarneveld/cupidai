@@ -18,7 +18,7 @@ function getRandomElements(array, numberOfElements) {
 }
 
 function App() {
-  const [choiceCategory, setChoiceCategory] = useState(1);
+  const [choiceCategory, setChoiceCategory] = useState(3);
   const [randomChoices, setRandomChoices] = useState([]);
   const [choices, setChoices] = useState({
     drinks: [],
@@ -27,12 +27,12 @@ function App() {
   });
 
   const categoryMapping = {
-    1: "drinks",
+    3: "drinks",
     2: "food",
-    3: "activity",
+    1: "activity",
   };
 
-  useEffect(() => {
+  function setRandomOptions() {
     const randomSelections = getRandomElements(
       ROOT_DATA.filter((element) => {
         return element.categoryId === choiceCategory;
@@ -41,10 +41,14 @@ function App() {
     );
 
     setRandomChoices(randomSelections);
+  }
+
+  useEffect(() => {
+    setRandomOptions();
   }, [choiceCategory]);
 
   function handleSelectedChoice(choice) {
-    if (choiceCategory === 1) {
+    if (choiceCategory === 3) {
       choices.drinks.includes(choice)
         ? setChoices((prev) => ({
             ...prev,
@@ -66,7 +70,7 @@ function App() {
             food: [...prev.food, choice],
           }));
     }
-    if (choiceCategory === 3) {
+    if (choiceCategory === 1) {
       choices.activity.includes(choice)
         ? setChoices((prev) => ({
             ...prev,
@@ -101,11 +105,12 @@ function App() {
         <div className="d-flex my-4 gap-3 justify-content-center align-items-center">
           <ActionButton
             text="REFRESH"
+            onClick={setRandomOptions}
             icon={<i className="fa-solid fa-arrows-rotate"></i>}
           />
           <ActionButton
             text="NEXT"
-            onClick={() => setChoiceCategory((prev) => prev + 1)}
+            onClick={() => setChoiceCategory((prev) => prev - 1)}
             disabled={choices[categoryMapping[choiceCategory]]?.length == 0}
             icon={<i className="fa-solid fa-forward"></i>}
           />
