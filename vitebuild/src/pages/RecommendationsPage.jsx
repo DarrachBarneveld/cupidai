@@ -17,11 +17,11 @@ const RecommendationsPage = () => {
 
   return (
     <div className="text-center">
-      <h1 class="display-4">Recommendations</h1>
-      <button id="refreshBtn" class="btn btn-light w-fit">
-        <i class="fa-solid fa-arrows-rotate"></i> Refresh Options
+      <h1 className="display-4">Recommendations</h1>
+      <button id="refreshBtn" className="btn btn-light w-fit">
+        <i className="fa-solid fa-arrows-rotate"></i> Refresh Options
       </button>
-      <ul id="resultsContainer" class="row gx-2 gy-2 mt-2 text-start">
+      <ul id="resultsContainer" className="row gx-2 gy-2 mt-2 text-start">
         {recommendations.map((recommendation, index) => {
           return (
             <RecommendationCard

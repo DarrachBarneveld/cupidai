@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 export const PlacesContext = createContext({
   places: [],
@@ -6,7 +7,7 @@ export const PlacesContext = createContext({
 });
 
 export default function PlacesContextProvider({ children }) {
-  const [places, setPlaces] = useState([]);
+  const [places, setPlaces] = useSessionStorage("places");
 
   const value = {
     setPlaces,

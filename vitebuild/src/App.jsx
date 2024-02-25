@@ -21,9 +21,9 @@ function App() {
 
             <footer
               id="sticky-footer"
-              class="flex-shrink-0 py-4 bg-dark text-white-50"
+              className="flex-shrink-0 py-4 bg-dark text-white-50"
             >
-              <div class="container text-center">
+              <div className="container text-center">
                 <small>Copywrite &copy; SparkleAi</small>
               </div>
             </footer>
