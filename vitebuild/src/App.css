@@ -1,0 +1,19 @@
+.icon-container {
+  border-radius: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.6);
+  font-size: 3rem;
+  padding: 8px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.icon-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}

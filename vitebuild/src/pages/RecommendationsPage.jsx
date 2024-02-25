@@ -4,6 +4,7 @@ import RecommendationCard from "../components/RecommendationCard";
 import { getCurrentLocationLatLng } from "../lib/geolocation";
 import { useNavigate, useParams } from "react-router-dom";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
+import HeadingText from "../components/ui/HeadingText";
 
 function isEmptyObject(obj) {
   return Object.entries(obj).length === 0;
@@ -52,12 +53,10 @@ const RecommendationsPage = () => {
     setLoading(false);
   }
 
-  console.log(choices);
-
   return (
     <>
-      <h1 className="display-4">Recommendations</h1>
-      {loading ? (
+      <HeadingText text="Recommendations" />
+      {!loading ? (
         <LoadingSpinner />
       ) : (
         <>

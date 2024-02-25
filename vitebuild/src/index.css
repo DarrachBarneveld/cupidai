@@ -23,7 +23,6 @@
 }
 
 html {
-  height: 100%;
   font-family: Montserrat, Verdana, sans-serif;
 }
 
@@ -53,6 +52,10 @@ ul {
   list-style-type: none;
 }
 
+main {
+  min-height: 95vh;
+}
+
 .bg-dark-gradient {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -74,6 +77,8 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .glassmorphism {

@@ -6,6 +6,11 @@ import ROOT_DATA from "../assets/data/preferences.json";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
 import { ChoiceContext } from "../context/ChoiceContext";
 import { useNavigate } from "react-router-dom";
+import HeadingText from "../components/ui/HeadingText";
+
+import drinksImage from "../../public/images/drinks.png";
+import foodImage from "../../public/images/foods.png";
+import activityImage from "../../public/images/activity.png";
 
 function getRandomElements(array, numberOfElements) {
   if (numberOfElements <= 0 || numberOfElements > array.length) {
@@ -22,11 +27,30 @@ const ChoicesPage = () => {
     useContext(ChoiceContext);
   const [choiceCategory, setChoiceCategory] = useState(3);
   const [randomChoices, setRandomChoices] = useState([]);
+  const [headline, setHeadling] = useState("Choose your drinks!");
+
+  // const categoryMapping = {
+  //   3: "drinks",
+  //   2: "food",
+  //   1: "activity",
+  // };
 
   const categoryMapping = {
-    3: "drinks",
-    2: "food",
-    1: "activity",
+    3: {
+      category: "drinks",
+      image: drinksImage,
+      headline: "Choose Your Drinks",
+    },
+    2: {
+      category: "food",
+      image: foodImage,
+      headline: "Choose Your Foods",
+    },
+    1: {
+      category: "activity",
+      image: activityImage,
+      headline: "Choose Your Activities",
+    },
   };
 
   function setRandomOptions() {
@@ -43,8 +67,6 @@ const ChoicesPage = () => {
   useEffect(() => {
     setRandomOptions();
   }, [choiceCategory]);
-
-  console.log(choices);
 
   async function getRecommendations() {
     try {
@@ -73,19 +95,23 @@ const ChoicesPage = () => {
         <LoadingSpinner />
       ) : (
         <>
-          {" "}
-          <div className="container px-lg-5 mt-5">
-            <div id="choiceContainer" className="row row-cols-2 gy-4">
-              {randomChoices.map((choice) => (
-                <ChoiceButton
-                  key={choice.id}
-                  text={choice.name}
-                  onClick={() =>
-                    handleSelectedChoice(choice.name + ",", choiceCategory)
-                  }
-                />
-              ))}
-            </div>
+          <div class="icon-container glassmorphism text-center mt-5">
+            <img src={categoryMapping[choiceCategory].image} alt="Image icon" />
+          </div>
+          <HeadingText text={categoryMapping[choiceCategory].headline} />
+          <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
+            Choose a few options if you wish
+          </p>
+          <div id="choiceContainer" className="row row-cols-2 gy-4">
+            {randomChoices.map((choice) => (
+              <ChoiceButton
+                key={choice.id}
+                text={choice.name}
+                onClick={() =>
+                  handleSelectedChoice(choice.name + ",", choiceCategory)
+                }
+              />
+            ))}
           </div>
           <div className="d-flex my-4 gap-3 justify-content-center align-items-center">
             <ActionButton
@@ -97,14 +123,18 @@ const ChoicesPage = () => {
               <ActionButton
                 text="NEXT"
                 onClick={() => setChoiceCategory((prev) => prev - 1)}
-                disabled={choices[categoryMapping[choiceCategory]]?.length == 0}
+                disabled={
+                  choices[categoryMapping[choiceCategory].category]?.length == 0
+                }
                 icon={<i className="fa-solid fa-forward"></i>}
               />
             ) : (
               <ActionButton
                 text="PLAN!"
                 onClick={getRecommendations}
-                disabled={choices[categoryMapping[choiceCategory]]?.length == 0}
+                disabled={
+                  choices[categoryMapping[choiceCategory].category]?.length == 0
+                }
                 icon={<i className="fa-solid fa-heart"></i>}
               />
             )}

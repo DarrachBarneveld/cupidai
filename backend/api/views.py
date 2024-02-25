@@ -109,7 +109,7 @@ class GeolocationView(APIView):
                     'locationBias': {
                         'circle': {
                             'center': {'latitude': lat, 'longitude': lng},
-                            'radius': 1000.0,
+                            'radius': 5000.0,
                         },
                     },
                 }
@@ -124,9 +124,7 @@ class GeolocationView(APIView):
 
                 # Parse the response
                 parsed_json = json.loads(res.text)
-                if parsed_json.get('places'):
-                    print(text_query)
-                places.extend(parsed_json.get('places', []))
+                places.append({category: parsed_json.get('places', [])})
 
             return Response(places)
 

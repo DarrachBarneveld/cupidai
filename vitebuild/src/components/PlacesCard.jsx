@@ -2,7 +2,7 @@ import placeholderPhoto from "../../public/images/noimageplaceholder.png";
 
 const PlacesCard = ({
   displayName,
-  formattedAddress,
+  category,
   regularOpeningHours,
   photos,
   rating,
@@ -17,11 +17,16 @@ const PlacesCard = ({
     photoUrl = placeholderPhoto;
   } else {
     const photo = photos[0];
-    photoUrl = `https://places.googleapis.com/v1/${photo?.name}/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyAQD37gEBZUU9QFrndU9QxukjhQ3t8qRWU`;
+    // photoUrl = `https://places.googleapis.com/v1/${photo?.name}/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyAQD37gEBZUU9QFrndU9QxukjhQ3t8qRWU`;
+    photoUrl = placeholderPhoto;
   }
   return (
     <div className="col-md-3 p-2">
-      <div className="card-sl fade-in-bounce">
+      <div className="card-sl fade-in-bounce position-relative">
+        <span class="position-absolute top-0 right-0 translate-middle badge rounded-pill bg-danger text-capitalize">
+          {category}
+        </span>
+
         <div className="card-image">
           <img src={photoUrl} />
         </div>
