@@ -171,12 +171,10 @@
   -webkit-backdrop-filter: blur(20px);
   border: 3px solid whitesmoke;
 }
-/* 
-.card-sl:hover,
-.card-sl:focus {
-  border-color: #0d6efd;
-  cursor: pointer;
-} */
+
+i {
+  text-shadow: 0 0 3px #000;
+}
 
 .card-image img {
   max-height: 100%;

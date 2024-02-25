@@ -10,16 +10,21 @@ const PlacesCard = ({
 }) => {
   const isOpen = regularOpeningHours?.openNow;
 
-  const photo = photos[0];
+  let photo;
+  if (!photos) {
+    photo = {};
+  } else {
+    photo = photos[0];
+  }
   return (
-    <div className="col-md-3">
+    <div className="col-md-3 p-2">
       <div class="card-sl fade-in-bounce">
         <div class="card-image">
           <img
             src={`https://places.googleapis.com/v1/${photo?.name}/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyAQD37gEBZUU9QFrndU9QxukjhQ3t8qRWU`}
           />
         </div>
-        <div class="card-heading">{displayName?.text}</div>
+        <div class="card-heading text-truncate">{displayName?.text}</div>
         <div class="container p-0 text-small my-2">
           <div class="row m-0">
             <div class="col-sm-4 text-center">
@@ -53,7 +58,7 @@ const PlacesCard = ({
             <i class="fa-solid fa-location-dot"></i>
           </a>
 
-          <a href={websiteUri} target="_blank" className="btn btn-primary">
+          <a href={websiteUri} target="_blank" className="btn btn-success">
             <i class="fa-solid fa-globe"></i>
           </a>
         </div>

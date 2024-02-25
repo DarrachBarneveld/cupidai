@@ -25,8 +25,6 @@ export async function fetchAIRecommendations(prompt) {
 }
 
 export async function fetchGooglePlaces(location, drink, food, activity) {
-  const text = `${drink} ${food} ${activity}`;
-
   try {
     const response = await fetch("http://127.0.0.1:8000/api/places", {
       method: "POST",
@@ -36,25 +34,27 @@ export async function fetchGooglePlaces(location, drink, food, activity) {
       body: JSON.stringify({
         lat: location.lat,
         lng: location.lng,
-        text,
+        drink,
+        food,
+        activity,
       }),
     });
 
-    const { places } = await response.json();
+    const data = await response.json();
 
-    if (!places) {
+    if (!data) {
       alert("No places found");
       return;
     }
 
-    if (places) {
-      if (places.length === 0) {
+    if (data) {
+      if (data.length === 0) {
         alert("No places found");
         return;
       }
     }
 
-    return places;
+    return data;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
