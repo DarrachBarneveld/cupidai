@@ -40,7 +40,56 @@
   box-shadow: white 0 0 0 3px, transparent 0 0 0 0;
 }
 
+#loadingModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  border-radius: 25px;
+}
+
 /* ANIMATION */
+
+#pulsingheart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+#pulsingheart:before,
+#pulsingheart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #aa0000;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  animation: pulsecolor 1s infinite;
+}
+
+#pulsingheart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  animation: pulsecolor 1s infinite;
+}
+
+@keyframes pulse {
+  10% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulsecolor {
+  10% {
+    background: #dd0000;
+  }
+}
 
 .fade-in-bounce {
   opacity: 0;
@@ -92,4 +141,137 @@
 }
 #choiceContainer > .col:nth-child(10) {
   animation-delay: 0.9s;
+}
+
+.blockquote-custom {
+  font-size: 1rem !important;
+}
+
+.blockquote-custom-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -25px;
+  left: 50px;
+  font-size: 1.2rem !important;
+  border: 1px solid rgb(90, 153, 255);
+}
+
+/* PLACES CARD */
+
+.card-sl {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image img {
+  max-height: 100%;
+  max-width: 100%;
+  height: 200px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 8px 8px 0px 0;
+}
+
+.card-heading {
+  font-size: 18px;
+  font-weight: bold;
+  background: #fff;
+  padding: 10px 15px;
+}
+
+.card-text {
+  padding: 10px 15px;
+  background: #fff;
+  font-size: 14px;
+  color: #636262;
+}
+
+.card-address {
+  padding: 10px 15px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #1f487e;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+.card-button:hover {
+  text-decoration: none;
+  background-color: #1d3461;
+  color: #fff;
+}
+
+/* ANIMATION */
+
+.fade-in-bounce {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInBounce 0.3s ease-in-out forwards;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(#f8f9fa 0 0) padding-box,
+    /*this is your grey background*/
+      linear-gradient(to bottom right, #f85183, #9c20aa) border-box;
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#resultsContainer > .col-md-6:nth-child(1) .fade-in-bounce {
+  animation-delay: 0s;
+}
+
+#resultsContainer > .col-md-6:nth-child(2) .fade-in-bounce {
+  animation-delay: 0.1s;
+}
+#resultsContainer > .col-md-6:nth-child(3) .fade-in-bounce {
+  animation-delay: 0.2s;
+}
+#resultsContainer > .col-md-6:nth-child(4) .fade-in-bounce {
+  animation-delay: 0.3s;
+}
+#resultsContainer > .col-md-6:nth-child(5) .fade-in-bounce {
+  animation-delay: 0.4s;
+}
+#resultsContainer > .col-md-6:nth-child(6) .fade-in-bounce {
+  animation-delay: 0.5s;
+}
+#resultsContainer > .col-md-6:nth-child(7) .fade-in-bounce {
+  animation-delay: 0.6s;
+}
+#resultsContainer > .col-md-6:nth-child(8) .fade-in-bounce {
+  animation-delay: 0.7s;
+}
+#resultsContainer > .col-md-6:nth-child(9) .fade-in-bounce {
+  animation-delay: 0.8s;
+}
+#resultsContainer > .col-md-6:nth-child(10) .fade-in-bounce {
+  animation-delay: 0.9s;
+}
+
+.hidden {
+  display: none !important;
 }
