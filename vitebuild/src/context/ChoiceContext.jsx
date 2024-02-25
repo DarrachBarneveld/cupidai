@@ -1,6 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { fetchAIRecommendations } from "../lib/api";
 import DUMMY_RECOMMENDATIONS from "../assets/data/dummyAIResponse.json";
+import useSessionStorage from "../hooks/useSessionStorage";
 
 export const ChoiceContext = createContext({
   choices: {
@@ -16,12 +17,13 @@ export const ChoiceContext = createContext({
 });
 
 export default function ChoiceContextProvider({ children }) {
+  const [recommendations, setRecommendations] =
+    useSessionStorage("recommendations");
   const [choices, setChoices] = useState({
     activity: [],
     food: [],
     drinks: [],
   });
-  const [recommendations, setRecommendations] = useState(DUMMY_RECOMMENDATIONS);
 
   function handleSelectedChoice(choice, choiceCategory) {
     if (choiceCategory === 3) {
@@ -72,6 +74,7 @@ export default function ChoiceContextProvider({ children }) {
       },
       containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
 
+    console.log(promptString);
     const results = await fetchAIRecommendations(promptString);
     setRecommendations(results);
     return results;

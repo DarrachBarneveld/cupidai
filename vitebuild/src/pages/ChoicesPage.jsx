@@ -48,12 +48,13 @@ const ChoicesPage = () => {
     try {
       setLoading(true);
       const result = await getAIRecommendations();
+      console.log(result);
       if (result) {
         navigate("/recommendations");
       }
     } catch (error) {
       setLoading(false);
-      throw new Error("Invalid number of elements");
+      throw new Error("Error", error);
     }
 
     setLoading(false);

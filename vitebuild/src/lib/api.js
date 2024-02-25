@@ -28,20 +28,17 @@ export async function fetchGooglePlaces(location, drink, food, activity) {
   const text = `${drink} ${food} ${activity}`;
 
   try {
-    const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          lat: location.lat,
-          lng: location.lng,
-          text,
-        }),
-      }
-    );
+    const response = await fetch("http://127.0.0.1:8000/api/places", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        lat: location.lat,
+        lng: location.lng,
+        text,
+      }),
+    });
 
     const { places } = await response.json();
 
