@@ -39,7 +39,7 @@ ACCESS_CONTROL_ALLOW_CREDENTIALS = True
 ACCESS_CONTROL_ALLOW_METHODS = '*'
 ACCESS_CONTROL_ALLOW_HEADERS = '*'
 
-CSRF_TRUSTED_ORIGINS = [ "http://127.0.0.1:63753",'http://127.0.0.1:8000', "http://localhost:63753", 'http://127.0.0.1:1234', "http://127.0.0.1:1234", 'https://datesparkle.netlify.app']
+CSRF_TRUSTED_ORIGINS = [ "http://127.0.0.1:63753",'http://127.0.0.1:8000', "http://localhost:63753", 'http://127.0.0.1:1234', "http://127.0.0.1:1234", 'https://datesparkle.netlify.app', "http://localhost:5173/"]
 
 # Application definition
 

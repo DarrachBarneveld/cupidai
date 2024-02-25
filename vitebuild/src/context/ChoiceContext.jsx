@@ -66,7 +66,7 @@ export default function ChoiceContextProvider({ children }) {
     const foodString = choices.food.join(" ");
     const activityString = choices.activity.join(" ");
 
-    let promptString = `Based on my interests in drinks such as ${drinkString}, foods such as ${foodString} and activities such as ${activityString} could you suggest 6 varied activities, drinks, and foods? Please provide recommendations in the format of an array of objects, with each object of this structure {
+    let promptString = `Based on my interests in drinks such as ${drinkString}, foods such as ${foodString} and activities such as ${activityString} could you suggest 6 varied date ideas? Include things that are similar to my interests options by modelling on my perceived personality type. Please provide recommendations in the format of an array of objects, with each object of this structure {
         "recommendation": recommendation,
         "drink": drink,
         "food": food,

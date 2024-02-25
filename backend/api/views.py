@@ -85,42 +85,50 @@ class AskGptView(APIView):
 
 
 class GeolocationView(APIView):
+
     def post(self, req):
 
         places_api_key = settings.PLACES_API_KEY
-
         req_data = GeolocationSerializer(data=req.data)
 
         # Check if request is valid
         if req_data.is_valid():
+            lat = req_data.validated_data.get('lat')
+            lng = req_data.validated_data.get('lng')
+            categories = ['drink', 'food', 'activity']
+            places = []
 
-            # Do the request to Google Places API
-            data = {
-                'textQuery': req_data.validated_data.get('text'),
-                'locationBias': {
-                    'circle': {
-                        'center': { 'latitude': req_data.validated_data.get('lat'), 'longitude': req_data.validated_data.get('lng') },
-                        'radius': 1000.0,
+
+            # Run the fetch on individual items for Better Results
+            for category in categories:
+
+                text_query = req_data.validated_data.get(category)
+                # Do the request to Google Places API
+                data = {
+                    'textQuery': text_query,
+                    'locationBias': {
+                        'circle': {
+                            'center': {'latitude': lat, 'longitude': lng},
+                            'radius': 1000.0,
+                        },
                     },
-                },
-            }
+                }
 
-            headers = {
-                "Content-Type": "application/json",
-                "X-Goog-Api-Key": places_api_key,
-                "X-Goog-FieldMask": "*",
-            }
+                headers = {
+                    "Content-Type": "application/json",
+                    "X-Goog-Api-Key": places_api_key,
+                    "X-Goog-FieldMask": "*",
+                }
 
-            res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data, timeout=10)
+                res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data, timeout=10)
 
-            # Parse the response
-            parsed_json = json.loads(res.text)
-            print(parsed_json)
+                # Parse the response
+                parsed_json = json.loads(res.text)
+                if parsed_json.get('places'):
+                    print(text_query)
+                places.extend(parsed_json.get('places', []))
 
+            return Response(places)
 
-            return Response(parsed_json)
-
-        else:  
              # Return 400 and validation errors
-            return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
-        
+        return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)

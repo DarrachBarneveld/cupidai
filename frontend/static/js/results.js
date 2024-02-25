@@ -159,7 +159,6 @@ function createPlaceCard(place) {
 }
 
 async function getGooglePlaces(e, location, drink, food, activity) {
-  console.log(location);
   const text = `${drink} ${food} ${activity}`;
 
   try {
