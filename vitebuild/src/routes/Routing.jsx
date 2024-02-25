@@ -8,6 +8,10 @@ const Routing = () => {
     <Routes>
       <Route path="/" element={<ChoicesPage />} />
       <Route path="recommendations" element={<RecommendationsPage />} />
+      <Route
+        path="recommendations/:drink/:food/:activity"
+        element={<RecommendationsPage />}
+      />
       <Route path="places" element={<PlacesPage />} />
     </Routes>
   );

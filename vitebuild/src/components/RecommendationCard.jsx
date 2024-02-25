@@ -25,7 +25,7 @@ const RecommendationCard = ({
   }
   return (
     <li className="col-md-6 mt-4">
-      <div className="shadow  pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
+      <div className="shadow rounded-3 pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
         <blockquote className="blockquote bg-white blockquote-custom">
           <div className="blockquote-custom-icon bg-info shadow-sm">
             <i className="fa fa-quote-left text-white"></i>

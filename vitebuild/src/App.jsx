@@ -15,7 +15,7 @@ function App() {
               <Navbar />
             </header>
 
-            <main className="container mb-5">
+            <main className="container mb-5 text-center">
               <Routing />
             </main>
 

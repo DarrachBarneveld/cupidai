@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchAIRecommendations } from "../lib/api";
-import DUMMY_RECOMMENDATIONS from "../assets/data/dummyAIResponse.json";
 import useSessionStorage from "../hooks/useSessionStorage";
 
 export const ChoiceContext = createContext({

@@ -44,13 +44,19 @@ const ChoicesPage = () => {
     setRandomOptions();
   }, [choiceCategory]);
 
+  console.log(choices);
+
   async function getRecommendations() {
     try {
       setLoading(true);
       const result = await getAIRecommendations();
-      console.log(result);
+
       if (result) {
-        navigate("/recommendations");
+        navigate(
+          `/recommendations/${choices.drinks.join(" ")}/${choices.food.join(
+            " "
+          )}/${choices.activity.join(" ")}`
+        );
       }
     } catch (error) {
       setLoading(false);
@@ -75,7 +81,7 @@ const ChoicesPage = () => {
                   key={choice.id}
                   text={choice.name}
                   onClick={() =>
-                    handleSelectedChoice(choice.name, choiceCategory)
+                    handleSelectedChoice(choice.name + ",", choiceCategory)
                   }
                 />
               ))}
