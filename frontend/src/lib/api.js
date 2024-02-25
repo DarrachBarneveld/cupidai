@@ -27,7 +27,7 @@ export async function fetchAIRecommendations(prompt) {
 export async function fetchGooglePlaces(location, drink, food, activity) {
   try {
     const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/places",
+      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
       {
         method: "POST",
         headers: {
