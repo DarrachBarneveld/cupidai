@@ -56,7 +56,7 @@ const RecommendationsPage = () => {
   return (
     <>
       <HeadingText text="Recommendations" />
-      {!loading ? (
+      {loading ? (
         <LoadingSpinner />
       ) : (
         <>
