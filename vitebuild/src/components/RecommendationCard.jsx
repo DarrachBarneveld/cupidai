@@ -1,4 +1,28 @@
-const RecommendationCard = ({ recommendation, food, drink, activity }) => {
+import { useNavigate } from "react-router-dom";
+import { PlacesContext } from "../context/PlacesContext";
+import { fetchGooglePlaces } from "../lib/api";
+import { useContext } from "react";
+
+const RecommendationCard = ({
+  recommendation,
+  food,
+  drink,
+  activity,
+  disabled,
+  fetchLocation,
+  location,
+}) => {
+  const navigate = useNavigate();
+  const { setPlaces } = useContext(PlacesContext);
+
+  async function getGooglePlacesResults() {
+    const places = await fetchGooglePlaces(location, drink, food, activity);
+
+    if (places) {
+      setPlaces(places);
+      navigate("/places");
+    }
+  }
   return (
     <li class="col-md-6 mt-4">
       <div class="shadow  pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
@@ -20,10 +44,20 @@ const RecommendationCard = ({ recommendation, food, drink, activity }) => {
               {activity}
             </span>
           </div>
-          <button id="findPlaces" class="mx-auto btn btn-danger mt-2">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <small> Find places! </small>
-          </button>
+          {disabled ? (
+            <button
+              onClick={getGooglePlacesResults}
+              class="mx-auto btn btn-danger mt-2"
+            >
+              <i class="fa-solid fa-map-location-dot"></i>
+              <small> Find places! </small>
+            </button>
+          ) : (
+            <button onClick={fetchLocation} class="mx-auto btn btn-danger mt-2">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <small> Enable Location! </small>
+            </button>
+          )}
         </div>
       </div>
     </li>

@@ -1,9 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ChoiceContext } from "../context/ChoiceContext";
 import RecommendationCard from "../components/RecommendationCard";
+import { getCurrentLocationLatLng } from "../lib/geolocation";
 
 const RecommendationsPage = () => {
-  const { recommendations } = useContext(ChoiceContext);
+  const [location, setLocation] = useState(null);
+  const { recommendations, choices } = useContext(ChoiceContext);
+
+  const fetchCoordinates = async () => {
+    const currentLocation = await getCurrentLocationLatLng();
+    setLocation(currentLocation);
+  };
+  useEffect(() => {
+    fetchCoordinates();
+  }, []);
 
   return (
     <div className="text-center">
@@ -13,7 +23,15 @@ const RecommendationsPage = () => {
       </button>
       <ul id="resultsContainer" class="row gx-2 gy-2 mt-2 text-start">
         {recommendations.map((recommendation, index) => {
-          return <RecommendationCard key={index} {...recommendation} />;
+          return (
+            <RecommendationCard
+              key={index}
+              {...recommendation}
+              disabled={location}
+              fetchLocation={fetchCoordinates}
+              location={location}
+            />
+          );
         })}
       </ul>
     </div>

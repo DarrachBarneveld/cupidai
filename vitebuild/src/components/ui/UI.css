@@ -166,7 +166,17 @@
 .card-sl {
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 3px solid whitesmoke;
 }
+/* 
+.card-sl:hover,
+.card-sl:focus {
+  border-color: #0d6efd;
+  cursor: pointer;
+} */
 
 .card-image img {
   max-height: 100%;
@@ -174,26 +184,18 @@
   height: 200px;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border-radius: 8px 8px 0px 0;
+  border-radius: 6px 6px 0px 0;
 }
 
 .card-heading {
   font-size: 18px;
   font-weight: bold;
-  background: #fff;
-  padding: 10px 15px;
+  padding: 10px 10px;
+  margin-inline: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.card-text {
-  padding: 10px 15px;
-  background: #fff;
-  font-size: 14px;
-  color: #636262;
-}
-
-.card-address {
-  padding: 10px 15px;
-  background: #fff;
+.text-small {
   font-size: 14px;
 }
 
@@ -219,11 +221,6 @@
   opacity: 0;
   transform: scale(0.5);
   animation: fadeInBounce 0.3s ease-in-out forwards;
-  border: 3px solid transparent;
-  border-radius: 10px;
-  background: linear-gradient(#f8f9fa 0 0) padding-box,
-    /*this is your grey background*/
-      linear-gradient(to bottom right, #f85183, #9c20aa) border-box;
 }
 
 @keyframes fadeInBounce {

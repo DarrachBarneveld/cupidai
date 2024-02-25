@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { fetchAIRecommendations } from "../lib/api";
+import DUMMY_RECOMMENDATIONS from "../assets/data/dummyAIResponse.json";
 
 export const ChoiceContext = createContext({
   choices: {
@@ -20,7 +21,7 @@ export default function ChoiceContextProvider({ children }) {
     food: [],
     drinks: [],
   });
-  const [recommendations, setRecommendations] = useState([]);
+  const [recommendations, setRecommendations] = useState(DUMMY_RECOMMENDATIONS);
 
   function handleSelectedChoice(choice, choiceCategory) {
     if (choiceCategory === 3) {
