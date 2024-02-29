@@ -157,7 +157,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section id="sparkle-spoiler" classNameName="mt-5">
+        <section id="sparkle-spoiler" className="mt-5">
           {developers.map((developer) => (
             <Developer {...developer} />
           ))}

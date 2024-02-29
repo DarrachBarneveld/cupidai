@@ -1,11 +1,3 @@
-.animation-wrapper {
-  width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  text-align: center;
-  position: fixed;
-}
-
 .x1 {
   left: 5%;
   -webkit-transform: scale(0.9);

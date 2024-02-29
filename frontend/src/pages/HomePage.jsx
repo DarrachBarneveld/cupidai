@@ -4,7 +4,14 @@ import HeroImage from "../../public/images/background.png";
 const HomePage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
-      <div className="container col-xxl-8 px-4 py-1 glassmorphism rounded-3">
+      <div className="container col-xxl-8 px-4 py-1 glassmorphism rounded-3 position-relative overflow-hidden">
+        <div className="p-2 position-absolute bg-danger bottom-0"></div>
+        <div className="heart x1"></div>
+        <div className="heart x2"></div>
+        <div className="heart x3"></div>
+        <div className="heart x4"></div>
+        <div className="heart x5"></div>
+        <div className="altheart x6"></div>
         <div className="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
           <div className="col-10 col-sm-8 col-lg-6">
             <img

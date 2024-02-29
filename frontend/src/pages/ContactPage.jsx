@@ -4,13 +4,6 @@ import "./contact.css";
 const ContactPage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
-      <div className="heart x1"></div>
-      <div className="heart x2"></div>
-      <div className="heart x3"></div>
-      <div className="heart x4"></div>
-      <div className="heart x5"></div>
-      <div className="altheart x6"></div>
-
       <section id="contact">
         <HeadingText
           text="Let the team know what we can do!"
