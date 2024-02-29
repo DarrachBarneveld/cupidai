@@ -442,12 +442,6 @@ ol li .descr {
 }
 
 /* HEART FLOATS */
-.animation-wrapper {
-  width: 100%;
-  min-height: 100%;
-  text-align: center;
-  position: fixed;
-}
 
 .x1 {
   left: 5%;
@@ -516,19 +510,19 @@ ol li .descr {
 
 @-webkit-keyframes moveclouds {
   0% {
-    top: 100vh;
+    bottom: 0;
   }
   100% {
-    top: -10vh;
+    bottom: 100%;
   }
 }
 
 @keyframes moveclouds {
   0% {
-    top: 100vh;
+    bottom: 0;
   }
   100% {
-    top: -10vh;
+    bottom: 100%;
   }
 }
 
@@ -556,12 +550,12 @@ ol li .descr {
     no-repeat center;
   width: 24px;
   height: 21px;
-  position: relative;
+  position: absolute;
   display: block;
 }
 
 .heart {
-  position: relative;
+  position: absolute;
 }
 
 .heart:before,

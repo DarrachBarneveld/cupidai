@@ -5,7 +5,6 @@ const HomePage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
       <div className="container col-xxl-8 px-4 py-1 glassmorphism rounded-3 position-relative overflow-hidden">
-        <div className="p-2 position-absolute bg-danger bottom-0"></div>
         <div className="heart x1"></div>
         <div className="heart x2"></div>
         <div className="heart x3"></div>
