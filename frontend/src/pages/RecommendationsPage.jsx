@@ -54,46 +54,48 @@ const RecommendationsPage = () => {
   }
 
   return (
-    <>
-      <HeadingText text="Recommendations" />
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <>
-          {isParams && isChoices ? (
-            <button
-              onClick={() => navigate("/")}
-              className="btn btn-light w-fit"
+    <main className="py-5 bg-pink-gradient px-1">
+      <div className="container">
+        <HeadingText text="Recommendations" />
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <>
+            {isParams && isChoices ? (
+              <button
+                onClick={() => navigate("/")}
+                className="btn btn-light w-fit"
+              >
+                <i className="fa-solid fa-arrows-rotate"></i> Reselect Choices
+              </button>
+            ) : (
+              <button
+                onClick={refreshCurrentOptions}
+                className="btn btn-light w-fit"
+              >
+                <i className="fa-solid fa-arrows-rotate"></i> Refresh Options
+              </button>
+            )}
+            <ul
+              id="resultsContainer"
+              className="row gx-2 gy-2 mt-2 text-start ps-0"
             >
-              <i className="fa-solid fa-arrows-rotate"></i> Reselect Choices
-            </button>
-          ) : (
-            <button
-              onClick={refreshCurrentOptions}
-              className="btn btn-light w-fit"
-            >
-              <i className="fa-solid fa-arrows-rotate"></i> Refresh Options
-            </button>
-          )}
-          <ul
-            id="resultsContainer"
-            className="row gx-2 gy-2 mt-2 text-start ps-0"
-          >
-            {recommendations.map((recommendation, index) => {
-              return (
-                <RecommendationCard
-                  key={index}
-                  {...recommendation}
-                  disabled={location}
-                  fetchLocation={fetchCoordinates}
-                  location={location}
-                />
-              );
-            })}
-          </ul>
-        </>
-      )}
-    </>
+              {recommendations.map((recommendation, index) => {
+                return (
+                  <RecommendationCard
+                    key={index}
+                    {...recommendation}
+                    disabled={location}
+                    fetchLocation={fetchCoordinates}
+                    location={location}
+                  />
+                );
+              })}
+            </ul>
+          </>
+        )}
+      </div>
+    </main>
   );
 };
 

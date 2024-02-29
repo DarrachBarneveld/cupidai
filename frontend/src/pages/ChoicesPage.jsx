@@ -11,14 +11,7 @@ import HeadingText from "../components/ui/HeadingText";
 import drinksImage from "../../public/images/drinks.png";
 import foodImage from "../../public/images/foods.png";
 import activityImage from "../../public/images/activity.png";
-
-function getRandomElements(array, numberOfElements) {
-  if (numberOfElements <= 0 || numberOfElements > array.length) {
-    throw new Error("Invalid number of elements");
-  }
-  const shuffledArray = array.slice().sort(() => Math.random() - 0.5);
-  return shuffledArray.slice(0, numberOfElements);
-}
+import { getRandomElements } from "../lib/utils";
 
 const ChoicesPage = () => {
   const navigate = useNavigate();
@@ -89,58 +82,64 @@ const ChoicesPage = () => {
   }
 
   return (
-    <main className="container mb-5 text-center">
-      {" "}
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <>
-          <div class="icon-container glassmorphism text-center mt-5">
-            <img src={categoryMapping[choiceCategory].image} alt="Image icon" />
-          </div>
-          <HeadingText text={categoryMapping[choiceCategory].headline} />
-          <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
-            Choose a few options if you wish
-          </p>
-          <div id="choiceContainer" className="row row-cols-2 gy-4">
-            {randomChoices.map((choice) => (
-              <ChoiceButton
-                key={choice.id}
-                text={choice.name}
-                onClick={() =>
-                  handleSelectedChoice(choice.name + ",", choiceCategory)
-                }
+    <main className="py-5 bg-pink-gradient px-1">
+      <div className="container">
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <>
+            <div class="icon-container glassmorphism text-center mt-5">
+              <img
+                src={categoryMapping[choiceCategory].image}
+                alt="Image icon"
               />
-            ))}
-          </div>
-          <div className="d-flex my-4 gap-3 justify-content-center align-items-center">
-            <ActionButton
-              text="REFRESH"
-              onClick={setRandomOptions}
-              icon={<i className="fa-solid fa-arrows-rotate"></i>}
-            />
-            {choiceCategory > 1 ? (
+            </div>
+            <HeadingText text={categoryMapping[choiceCategory].headline} />
+            <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
+              Choose a few options if you wish
+            </p>
+            <div id="choiceContainer" className="row row-cols-2 gy-4">
+              {randomChoices.map((choice) => (
+                <ChoiceButton
+                  key={choice.id}
+                  text={choice.name}
+                  onClick={() =>
+                    handleSelectedChoice(choice.name + ",", choiceCategory)
+                  }
+                />
+              ))}
+            </div>
+            <div className="d-flex my-4 gap-3 justify-content-center align-items-center">
               <ActionButton
-                text="NEXT"
-                onClick={() => setChoiceCategory((prev) => prev - 1)}
-                disabled={
-                  choices[categoryMapping[choiceCategory].category]?.length == 0
-                }
-                icon={<i className="fa-solid fa-forward"></i>}
+                text="REFRESH"
+                onClick={setRandomOptions}
+                icon={<i className="fa-solid fa-arrows-rotate"></i>}
               />
-            ) : (
-              <ActionButton
-                text="PLAN!"
-                onClick={getRecommendations}
-                disabled={
-                  choices[categoryMapping[choiceCategory].category]?.length == 0
-                }
-                icon={<i className="fa-solid fa-heart"></i>}
-              />
-            )}
-          </div>
-        </>
-      )}
+              {choiceCategory > 1 ? (
+                <ActionButton
+                  text="NEXT"
+                  onClick={() => setChoiceCategory((prev) => prev - 1)}
+                  disabled={
+                    choices[categoryMapping[choiceCategory].category]?.length ==
+                    0
+                  }
+                  icon={<i className="fa-solid fa-forward"></i>}
+                />
+              ) : (
+                <ActionButton
+                  text="PLAN!"
+                  onClick={getRecommendations}
+                  disabled={
+                    choices[categoryMapping[choiceCategory].category]?.length ==
+                    0
+                  }
+                  icon={<i className="fa-solid fa-heart"></i>}
+                />
+              )}
+            </div>
+          </>
+        )}
+      </div>
     </main>
   );
 };

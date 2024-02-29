@@ -23,6 +23,7 @@ const RecommendationCard = ({
       navigate("/places");
     }
   }
+
   return (
     <li className="col-md-6 mt-4">
       <div className="shadow rounded-3 pt-4 p-3 position-relative fade-in-bounce bg-light mt-2">
@@ -35,13 +36,13 @@ const RecommendationCard = ({
         <div className="pt-2 mt-2 border-top">
           <div className="d-flex gap-1 my-1 flex-wrap">
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {food}
+              {food.replace(/,/g, " -")}
             </span>
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {drink}
+              {drink.replace(/,/g, " -")}
             </span>
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {activity}
+              {activity.replace(/,/g, " -")}
             </span>
           </div>
           {disabled ? (
