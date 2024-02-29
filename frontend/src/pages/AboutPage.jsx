@@ -1,93 +1,170 @@
+import "./about.css";
+import darrachImage from "../../public/images/darrach.webp";
+import cameliaImage from "../../public/images/camelia.webp";
+import dimitriImage from "../../public/images/dimitri.webp";
+import erikImage from "../../public/images/erik.webp";
+import patriciaImage from "../../public/images/patricia.webp";
+import kiki from "../../public/images/kiki.jpg";
+import Developer from "../components/Developer";
+
+const developers = [
+  {
+    name: "Darrach",
+    description: "The scrum master",
+    src: darrachImage,
+    link: "https://github.com/DarrachBarneveld",
+  },
+  {
+    name: "Camelia",
+    description: "The backend girl-power",
+    src: cameliaImage,
+    link: "https://github.com/Camelia03",
+  },
+  {
+    name: "Erik",
+    description: "The automation veteran",
+    src: erikImage,
+    link: "https://github.com/Erikas-Ramanauskas",
+  },
+  {
+    name: "Patricia",
+    description: "The styling girl-power",
+    src: patriciaImage,
+    link: "https://github.com/pswhdev",
+  },
+  {
+    name: "Dimitri",
+    description: "The backend ai wizard",
+    src: dimitriImage,
+    link: "https://github.com/dimitri-edel",
+  },
+  {
+    name: "kiki",
+    description: "The structure wizard",
+    src: kiki,
+    link: "https://github.com/KikiBerg",
+  },
+];
+
 const AboutPage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
-      <div class="container col-xxl-8 px-4 py-1 glassmorphism rounded-3">
-        <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img
-              src={HeroImage}
-              class="d-block mx-auto img-fluid rounded-3"
-              alt="romantic hero image"
-              loading="lazy"
-            />
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bolder lh-1 mb-3">
-              Start planning your next romantic adventure now!
-            </h1>
-            <p class="lead text-white">
-              We bring romance and creativity to your love life, from first
-              dates to special anniversaries and Valentine's surprises. At Date
-              Sparkle, we inspire magical moments for every relationship.
-            </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <NavLink id="letsPlanBtn" to="/choices">
-                Lets Plan! <i class="ms-2 fa-solid fa-heart"></i>
-              </NavLink>
+      <div className="container">
+        <section id="about" class="container p-4">
+          <h2>
+            Welcome to Date Sparkle, where we ignite the flames of romance and
+            infuse creativity into your love life!
+          </h2>
+        </section>
+
+        <section id="about-sparkle-container">
+          <h2 class="fw-bolder">What is Date Sparkle?</h2>
+
+          <div id="background">
+            <div id="about-sparkle">
+              <div>
+                <h3>ABOUT DATE SPARKLE</h3>
+                <hr />
+                <p>
+                  Whether you're embarking on the thrilling journey of a first
+                  date, commemorating a milestone anniversary, or crafting the
+                  perfect surprise for Valentine's Day, Date Sparkle is here to
+                  elevate your experience to extraordinary heights.
+                  <br />
+                  In a world filled with routine and monotony, we recognize the
+                  importance of nurturing the spark that keeps relationships
+                  vibrant and alive. At Date Sparkle, we're not just about
+                  planning dates; we're about curating unforgettable experiences
+                  that deepen connections and create cherished memories.
+                  <br />
+                  Our mission is simple: to inspire you to infuse magic into
+                  every moment spent with your partner. Whether it's an intimate
+                  candlelit dinner under the stars, a whimsical picnic in a
+                  sun-kissed meadow, or an exhilarating adventure that gets your
+                  hearts racing, we're dedicated to helping you create moments
+                  that will last a lifetime.
+                </p>
+              </div>
+
+              <div>
+                <h3>WHY DATE SPARKLE?</h3>
+                <hr />
+                <p>
+                  Because we understand that every relationship is unique, we
+                  offer personalized experiences tailored to your preferences
+                  and desires.
+                  <br />
+                  Whether you're a hopeless romantic or an adventurous soul,
+                  we'll tailor our services to reflect your individuality,
+                  ensuring that your date is a true reflection of your love
+                  story.
+                  <br />
+                  So, whether you're planning a grand gesture or a simple,
+                  heartfelt surprise, let Date Sparkle be your guide. Together,
+                  let's embark on a journey of love, laughter, and unforgettable
+                  moments. Welcome to Date Sparkle; where love shines bright and
+                  every date is a celebration of romance and creativity.
+                </p>
+              </div>
+            </div>
+
+            <div id="team-sparkle">
+              <div>
+                <h3>MEET THE TEAM</h3>
+                <hr />
+                <p>
+                  Here's the group behind DATE Sparkle!
+                  <br />
+                  <br />
+                  <i class="fa-regular fa-heart text-danger"></i> We're the
+                  great people who have created this site. Here you can find
+                  some information about us, and links to our Github and
+                  LinkedIn.
+                  <br />
+                  Date Sparkle isn't just a web app; it's the brainchild of a
+                  passionate and dedicated development group committed to
+                  enhancing the romantic experiences of couples worldwide.{" "}
+                  <br />
+                  <br />
+                  <i class="fa-regular fa-heart text-danger"></i>
+                  Behind the scenes, there's a team of individuals driven by a
+                  shared vision: to inspire and facilitate meaningful
+                  connections through curated, unforgettable experiences. <br />
+                  <br />
+                  <i class="fa-regular fa-heart text-danger"></i> Collaborative
+                  by nature, the developers at Date Sparkle thrive in an
+                  environment where ideas flow freely, and innovation knows no
+                  bounds. They leverage their collective expertise to overcome
+                  challenges and push the boundaries of what's possible,
+                  constantly striving to exceed expectations and delight users
+                  at every turn. <br />
+                  <br />
+                  <i class="fa-regular fa-heart text-danger"></i> In essence,
+                  the development team behind Date Sparkle is more than just a
+                  group of professionals; they are architects of romance,
+                  sculptors of dreams, and champions of love. Through their
+                  creativity and dedication, they ensure that Date Sparkle
+                  remains not just a platform, but a trusted companion on the
+                  journey of love, guiding couples toward moments of pure magic
+                  and enduring connection.
+                </p>
+              </div>
+            </div>
+
+            <div id="sparkle-image">
+              <div id="circle-cover-bg-end"></div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <hr className="text-white my-5" />
-      <section className="my-5">
-        <h2 className=" text-white  mx-auto display-3 bg-dark-gradient rounded-3 w-fit px-3 mb-5">
-          How to Use Sparkle Ai
-        </h2>
-        <div id="howToWrapper">
-          <ol>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-champagne-glasses"></i>
-              </div>
-              <div class="title">Drinks</div>
-              <div class="descr">Choose your preffered drinks</div>
-            </li>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-utensils"></i>
-              </div>
-              <div class="title">Food</div>
-              <div class="descr">Choose your preffered foods</div>
-            </li>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-helicopter"></i>
-              </div>
-              <div class="title">Activities</div>
-              <div class="descr">Choose activities you usually like to do</div>
-            </li>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-square-root-variable"></i>
-              </div>
-              <div class="title">SparkleAi</div>
-              <div class="descr">
-                Cupid generates fun date ideas based on your preferences.
-              </div>
-            </li>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-rocket"></i>
-              </div>
-              <div class="title">Options</div>
-              <div class="descr">
-                Explore related options tailored to your tastes.
-              </div>
-            </li>
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-              <div class="title">Date!</div>
-              <div class="descr">
-                Turn on location services to find local spots to carry out
-                prompted dates
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
+        <section id="spoiler">
+          <div id="sparkle-spoiler">
+            {developers.map((developer) => (
+              <Developer {...developer} />
+            ))}
+          </div>
+        </section>
+      </div>
     </main>
   );
 };
