@@ -5,6 +5,7 @@ import PlacesPage from "../pages/PlacesPage";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import Error404 from "../pages/Error404";
 
 const Routing = () => {
   return (
@@ -19,6 +20,7 @@ const Routing = () => {
         element={<RecommendationsPage />}
       />
       <Route path="places" element={<PlacesPage />} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   );
 };

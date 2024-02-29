@@ -80,6 +80,11 @@
   animation: pulsecolor 1s infinite;
 }
 
+.error-icon {
+  color: var(--primary);
+  animation: pulsetext 1s infinite;
+}
+
 @keyframes pulse {
   10% {
     transform: scale(1.1);
@@ -89,6 +94,12 @@
 @keyframes pulsecolor {
   10% {
     background: #dd0000;
+  }
+}
+
+@keyframes pulsetext {
+  10% {
+    color: #dd0000;
   }
 }
 
