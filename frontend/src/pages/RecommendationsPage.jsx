@@ -23,6 +23,7 @@ const RecommendationsPage = () => {
   const navigate = useNavigate();
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
   const { recommendations, setChoices, choices, getAIRecommendations } =
     useContext(ChoiceContext);
 
@@ -76,6 +77,15 @@ const RecommendationsPage = () => {
                 <i className="fa-solid fa-arrows-rotate"></i> Refresh Options
               </button>
             )}
+
+            {errorMessage && (
+              <div className="glassmorphism text-center w-fit mx-auto p-2 rounded-3">
+                <h2 className="text-danger text-center fw-bolder">
+                  {errorMessage}
+                </h2>
+                <p className="text-dark">Please try again later</p>
+              </div>
+            )}
             <ul
               id="resultsContainer"
               className="row gx-2 gy-2 mt-2 text-start ps-0"
@@ -88,6 +98,7 @@ const RecommendationsPage = () => {
                     disabled={location}
                     fetchLocation={fetchCoordinates}
                     location={location}
+                    setErrorMessage={setErrorMessage}
                   />
                 );
               })}

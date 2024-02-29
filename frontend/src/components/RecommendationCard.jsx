@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { fetchGooglePlaces } from "../lib/api";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const RecommendationCard = ({
   recommendation,
@@ -11,16 +11,21 @@ const RecommendationCard = ({
   disabled,
   fetchLocation,
   location,
+  setErrorMessage,
 }) => {
   const navigate = useNavigate();
   const { setPlaces } = useContext(PlacesContext);
 
   async function getGooglePlacesResults() {
-    const places = await fetchGooglePlaces(location, drink, food, activity);
+    try {
+      const places = await fetchGooglePlaces(location, drink, food, activity);
 
-    if (places) {
-      setPlaces(places);
-      navigate("/places");
+      if (places) {
+        setPlaces(places);
+        // navigate("/places");
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
     }
   }
 
@@ -36,13 +41,13 @@ const RecommendationCard = ({
         <div className="pt-2 mt-2 border-top">
           <div className="d-flex gap-1 my-1 flex-wrap">
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {food.replace(/,/g, " -")}
+              {food?.replace(/,/g, " -")}
             </span>
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {drink.replace(/,/g, " -")}
+              {drink?.replace(/,/g, " -")}
             </span>
             <span className="badge rounded-pill bg-dark text-capitalize">
-              {activity.replace(/,/g, " -")}
+              {activity?.replace(/,/g, " -")}
             </span>
           </div>
           {disabled ? (

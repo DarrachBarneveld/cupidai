@@ -10,7 +10,7 @@ const Developer = ({ name, description, src, link }) => {
         rel="noopener"
         aria-label="Connect in Github (Opens in a new tab)"
       >
-        <i class="fa-brands fa-github"></i>
+        <i className="fa-brands fa-github"></i>
       </a>
     </div>
   );

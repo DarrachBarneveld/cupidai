@@ -4,52 +4,56 @@ import "./contact.css";
 const ContactPage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
-      <div class="heart x1"></div>
-      <div class="heart x2"></div>
-      <div class="heart x3"></div>
-      <div class="heart x4"></div>
-      <div class="heart x5"></div>
-      <div class="altheart x6"></div>
+      <div className="heart x1"></div>
+      <div className="heart x2"></div>
+      <div className="heart x3"></div>
+      <div className="heart x4"></div>
+      <div className="heart x5"></div>
+      <div className="altheart x6"></div>
 
       <section id="contact">
         <HeadingText
           text="Let the team know what we can do!"
           className="bg-transparent"
         />
-        <div class="container contact-form rounded-3 glassmorphism">
-          <div class="contact-image">
-            <i class="fa-solid fa-heart"></i>
+        <div className="container contact-form rounded-3 glassmorphism">
+          <div className="contact-image">
+            <i className="fa-solid fa-heart"></i>
           </div>
           <form method="post">
             <h3>Drop Us a Message</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="form-group">
                   <input
                     type="text"
                     name="txtName"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Your Name *"
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="text"
                     name="txtEmail"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Your Email *"
                   />
                 </div>
 
-                <div class="form-group">
-                  <input type="submit" name="btnSubmit" class="btnContact" />
+                <div className="form-group">
+                  <input
+                    type="submit"
+                    name="btnSubmit"
+                    className="btnContact"
+                  />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
+              <div className="col-md-6">
+                <div className="form-group">
                   <textarea
                     name="txtMsg"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Your Message *"
                   ></textarea>
                 </div>

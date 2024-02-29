@@ -50,7 +50,7 @@ const AboutPage = () => {
   return (
     <main className="py-5 bg-pink-gradient px-1">
       <div className="container">
-        <section id="about" class="container p-4">
+        <section id="about" className="container p-4">
           <h2>
             Welcome to Date Sparkle, where we ignite the flames of romance and
             infuse creativity into your love life!
@@ -58,7 +58,7 @@ const AboutPage = () => {
         </section>
 
         <section id="about-sparkle-container">
-          <h2 class="fw-bolder">What is Date Sparkle?</h2>
+          <h2 className="fw-bolder">What is Date Sparkle?</h2>
 
           <div id="background">
             <div id="about-sparkle">
@@ -116,7 +116,7 @@ const AboutPage = () => {
                   Here's the group behind DATE Sparkle!
                   <br />
                   <br />
-                  <i class="fa-regular fa-heart text-danger"></i> We're the
+                  <i className="fa-regular fa-heart text-danger"></i> We're the
                   great people who have created this site. Here you can find
                   some information about us, and links to our Github and
                   LinkedIn.
@@ -126,22 +126,22 @@ const AboutPage = () => {
                   enhancing the romantic experiences of couples worldwide.{" "}
                   <br />
                   <br />
-                  <i class="fa-regular fa-heart text-danger"></i>
+                  <i className="fa-regular fa-heart text-danger"></i>
                   Behind the scenes, there's a team of individuals driven by a
                   shared vision: to inspire and facilitate meaningful
                   connections through curated, unforgettable experiences. <br />
                   <br />
-                  <i class="fa-regular fa-heart text-danger"></i> Collaborative
-                  by nature, the developers at Date Sparkle thrive in an
-                  environment where ideas flow freely, and innovation knows no
-                  bounds. They leverage their collective expertise to overcome
-                  challenges and push the boundaries of what's possible,
-                  constantly striving to exceed expectations and delight users
-                  at every turn. <br />
+                  <i className="fa-regular fa-heart text-danger"></i>{" "}
+                  Collaborative by nature, the developers at Date Sparkle thrive
+                  in an environment where ideas flow freely, and innovation
+                  knows no bounds. They leverage their collective expertise to
+                  overcome challenges and push the boundaries of what's
+                  possible, constantly striving to exceed expectations and
+                  delight users at every turn. <br />
                   <br />
-                  <i class="fa-regular fa-heart text-danger"></i> In essence,
-                  the development team behind Date Sparkle is more than just a
-                  group of professionals; they are architects of romance,
+                  <i className="fa-regular fa-heart text-danger"></i> In
+                  essence, the development team behind Date Sparkle is more than
+                  just a group of professionals; they are architects of romance,
                   sculptors of dreams, and champions of love. Through their
                   creativity and dedication, they ensure that Date Sparkle
                   remains not just a platform, but a trusted companion on the
@@ -157,7 +157,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section id="sparkle-spoiler" className="mt-5">
+        <section id="sparkle-spoiler" classNameName="mt-5">
           {developers.map((developer) => (
             <Developer {...developer} />
           ))}

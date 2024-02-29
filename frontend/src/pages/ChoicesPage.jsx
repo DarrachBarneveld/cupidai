@@ -88,7 +88,7 @@ const ChoicesPage = () => {
           <LoadingSpinner />
         ) : (
           <>
-            <div class="icon-container glassmorphism text-center mt-5">
+            <div className="icon-container glassmorphism text-center mt-5">
               <img
                 src={categoryMapping[choiceCategory].image}
                 alt="Image icon"
