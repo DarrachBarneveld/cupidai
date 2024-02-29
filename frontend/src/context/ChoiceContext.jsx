@@ -1,13 +1,15 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { fetchAIRecommendations } from "../lib/api";
 import useLocationStorage from "../hooks/useLocationStorage";
 
+export const DEFAULT_CHOICE = {
+  activity: [],
+  food: [],
+  drinks: [],
+};
+
 export const ChoiceContext = createContext({
-  choices: {
-    activity: [],
-    food: [],
-    drinks: [],
-  },
+  choices: DEFAULT_CHOICE,
   setChoices: () => {},
   handleSelectedChoice: () => {},
   getAIRecommendations: async () => {},

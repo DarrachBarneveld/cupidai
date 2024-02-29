@@ -4,7 +4,7 @@ import ActionButton from "../components/ui/ActionButton";
 
 import ROOT_DATA from "../assets/data/preferences.json";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
-import { ChoiceContext } from "../context/ChoiceContext";
+import { ChoiceContext, DEFAULT_CHOICE } from "../context/ChoiceContext";
 import { useNavigate } from "react-router-dom";
 import HeadingText from "../components/ui/HeadingText";
 
@@ -17,7 +17,7 @@ import ErrorMessage from "../components/ui/ErrorMessage";
 const ChoicesPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const { choices, handleSelectedChoice, getAIRecommendations } =
+  const { choices, setChoices, handleSelectedChoice, getAIRecommendations } =
     useContext(ChoiceContext);
   const [choiceCategory, setChoiceCategory] = useState(3);
   const [randomChoices, setRandomChoices] = useState([]);
@@ -71,10 +71,16 @@ const ChoicesPage = () => {
     } catch (error) {
       setLoading(false);
       setErrorMessage(error.message);
+      setChoices(DEFAULT_CHOICE);
+      setChoiceCategory(3);
     }
 
     setLoading(false);
   }
+
+  console.log(choices);
+
+  console.log(errorMessage);
 
   return (
     <main className="py-5 bg-pink-gradient px-1">
@@ -83,7 +89,12 @@ const ChoicesPage = () => {
           <LoadingSpinner />
         ) : (
           <>
-            {errorMessage && <ErrorMessage message={errorMessage} />}
+            {errorMessage && (
+              <ErrorMessage
+                message={errorMessage}
+                subtext="Please add choices again "
+              />
+            )}
             <div className="icon-container glassmorphism text-center mt-5">
               <img
                 src={categoryMapping[choiceCategory].image}
