@@ -10,24 +10,20 @@ function App() {
     <PlacesContextProvider>
       <ChoiceContextProvider>
         <BrowserRouter>
-          <div className="wrapper">
-            <header>
-              <Navbar />
-            </header>
+          <header>
+            <Navbar />
+          </header>
 
-            <main className="container mb-5 text-center">
-              <Routing />
-            </main>
+          <Routing />
 
-            <footer
-              id="sticky-footer"
-              className="flex-shrink-0 py-4 bg-dark text-white-50"
-            >
-              <div className="container text-center">
-                <small>Copywrite &copy; SparkleAi</small>
-              </div>
-            </footer>
-          </div>
+          <footer
+            id="sticky-footer"
+            className="flex-shrink-0 py-4 bg-dark text-white-50"
+          >
+            <div className="container text-center">
+              <small>Copywrite &copy; SparkleAi</small>
+            </div>
+          </footer>
         </BrowserRouter>
       </ChoiceContextProvider>
     </PlacesContextProvider>

@@ -271,3 +271,161 @@ i {
 .hidden {
   display: none !important;
 }
+
+:root {
+  --white: #fff;
+}
+
+#letsPlanBtn {
+  -webkit-appearance: none;
+  background: -webkit-gradient(
+    to right,
+    var(--background) 0%,
+    var(--pink) 50%,
+    var(--accent) 100%
+  );
+  background: linear-gradient(
+    to right,
+    var(--background) 0%,
+    var(--pink) 50%,
+    var(--accent) 100%
+  );
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: var(--accent);
+  cursor: pointer;
+  font: 1.5em Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 1rem 4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#letsPlanBtn:hover,
+#letsPlanBtn:focus {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 1.25s;
+  -webkit-animation-duration: 1.25s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  outline: 2px solid var(--accent);
+  color: white;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* HOW TO CSS */
+
+#howToWrapper {
+  --color: rgba(30, 30, 30);
+  --bgColor: rgba(245, 245, 245);
+  display: grid;
+  align-content: center;
+  font-family: "Exo 2", sans-serif;
+  color: var(--color);
+}
+ol {
+  width: min(60rem, 90%);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: stepnr;
+}
+
+li:nth-child(6n + 1) {
+  --accent-color: #b8df4e;
+}
+li:nth-child(6n + 2) {
+  --accent-color: #4cbccb;
+}
+li:nth-child(6n + 3) {
+  --accent-color: #7197d3;
+}
+li:nth-child(6n + 4) {
+  --accent-color: #ae78cb;
+}
+li:nth-child(6n + 5) {
+  --accent-color: #7dc7a4;
+}
+li:nth-child(6n + 6) {
+  --accent-color: #f078c2;
+}
+
+ol li {
+  counter-increment: stepnr;
+  width: 18rem;
+  --borderS: 0.75rem;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: calc(var(--borderS) + 2rem);
+  position: relative;
+  background: var(--bgColor);
+  border-radius: 50%;
+}
+
+ol li::before,
+ol li::after {
+  inset: 0;
+  position: absolute;
+  border-radius: 50%;
+  border: var(--borderS) solid var(--bgColor);
+  line-height: 1.1;
+}
+ol li::before {
+  content: counter(stepnr);
+  color: var(--accent-color);
+  padding-left: 10rem;
+  font-size: 12rem;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+ol li::after {
+  content: "";
+  filter: drop-shadow(-0.25rem 0.25rem 0.0675rem rgba(0, 0, 0, 0.75)) blur(5px);
+}
+
+ol li > * {
+  width: 7.5rem;
+}
+ol li .icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+ol li .title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+ol li .descr {
+  font-size: 0.8rem;
+  font-weight: 300;
+}

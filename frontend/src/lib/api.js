@@ -1,18 +1,16 @@
+const API_URL = import.meta.env.VITE_BASE_API_URL;
+
 export async function fetchAIRecommendations(prompt) {
   try {
-    const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/ask-gpt",
-      // "http://127.0.0.1:8000/api/ask-gpt",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: prompt,
-        }),
-      }
-    );
+    const response = await fetch(`${API_URL}api/ask-gpt`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: prompt,
+      }),
+    });
 
     const data = await response.json();
 
@@ -26,22 +24,19 @@ export async function fetchAIRecommendations(prompt) {
 
 export async function fetchGooglePlaces(location, drink, food, activity) {
   try {
-    const response = await fetch(
-      "https://cupiai-api-936b1019c6d5.herokuapp.com/api/places",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          lat: location.lat,
-          lng: location.lng,
-          drink,
-          food,
-          activity,
-        }),
-      }
-    );
+    const response = await fetch(`${API_URL}api/places`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        lat: location.lat,
+        lng: location.lng,
+        drink,
+        food,
+        activity,
+      }),
+    });
 
     const data = await response.json();
 

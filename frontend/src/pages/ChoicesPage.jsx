@@ -89,7 +89,7 @@ const ChoicesPage = () => {
   }
 
   return (
-    <>
+    <main className="container mb-5 text-center">
       {" "}
       {loading ? (
         <LoadingSpinner />
@@ -141,7 +141,7 @@ const ChoicesPage = () => {
           </div>
         </>
       )}
-    </>
+    </main>
   );
 };
 

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchAIRecommendations } from "../lib/api";
-import useSessionStorage from "../hooks/useSessionStorage";
+import useLocationStorage from "../hooks/useLocationStorage";
 
 export const ChoiceContext = createContext({
   choices: {
@@ -17,7 +17,7 @@ export const ChoiceContext = createContext({
 
 export default function ChoiceContextProvider({ children }) {
   const [recommendations, setRecommendations] =
-    useSessionStorage("recommendations");
+    useLocationStorage("recommendations");
   const [choices, setChoices] = useState({
     activity: [],
     food: [],

@@ -2,11 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import ChoicesPage from "../pages/ChoicesPage";
 import RecommendationsPage from "../pages/RecommendationsPage";
 import PlacesPage from "../pages/PlacesPage";
+import HomePage from "../pages/HomePage";
 
 const Routing = () => {
   return (
     <Routes>
-      <Route path="/" element={<ChoicesPage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="choices" element={<ChoicesPage />} />
       <Route path="recommendations" element={<RecommendationsPage />} />
       <Route
         path="recommendations/:drink/:food/:activity"

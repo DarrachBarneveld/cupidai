@@ -10,7 +10,7 @@ const PlacesPage = () => {
   console.log(places);
 
   return (
-    <>
+    <main className="container mb-5 text-center">
       <HeadingText text="Places Near You" />
       <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
         Explore these locations based on your date recommendation.
@@ -30,7 +30,7 @@ const PlacesPage = () => {
           ));
         })}
       </div>
-    </>
+    </main>
   );
 };
 
