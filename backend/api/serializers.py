@@ -5,8 +5,8 @@ class GptSerializer(serializers.Serializer):
     message = serializers.CharField(required=True)
 
 class GeolocationSerializer(serializers.Serializer):
-    lat = serializers.FloatField()
-    lng = serializers.FloatField()
-    drink = serializers.CharField()
-    food = serializers.CharField()
-    activity = serializers.CharField()
+    lat = serializers.FloatField(required=True)
+    lng = serializers.FloatField(required=True)
+    drink = serializers.CharField(required=False, allow_blank=True)
+    food = serializers.CharField(required=False, allow_blank=True)
+    activity = serializers.CharField(required=False, allow_blank=True)

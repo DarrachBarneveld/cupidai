@@ -93,6 +93,8 @@ class GeolocationView(APIView):
         places_api_key = settings.PLACES_API_KEY
         req_data = GeolocationSerializer(data=req.data)
 
+
+
         # Check if request is valid
         if req_data.is_valid():
             lat = req_data.validated_data.get('lat')
