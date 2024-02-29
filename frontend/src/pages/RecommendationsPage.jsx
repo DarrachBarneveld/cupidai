@@ -5,6 +5,7 @@ import { getCurrentLocationLatLng } from "../lib/geolocation";
 import { useNavigate, useParams } from "react-router-dom";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
 import HeadingText from "../components/ui/HeadingText";
+import ErrorMessage from "../components/ui/ErrorMessage";
 
 function isEmptyObject(obj) {
   return Object.entries(obj).length === 0;
@@ -78,14 +79,7 @@ const RecommendationsPage = () => {
               </button>
             )}
 
-            {errorMessage && (
-              <div className="glassmorphism text-center w-fit mx-auto p-2 rounded-3">
-                <h2 className="text-danger text-center fw-bolder">
-                  {errorMessage}
-                </h2>
-                <p className="text-dark">Please try again later</p>
-              </div>
-            )}
+            {errorMessage && <ErrorMessage message={errorMessage} />}
             <ul
               id="resultsContainer"
               className="row gx-2 gy-2 mt-2 text-start ps-0"

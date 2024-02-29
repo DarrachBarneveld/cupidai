@@ -18,7 +18,7 @@ export async function fetchAIRecommendations(prompt) {
 
     return objectArray;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    throw new Error(`Error: ${error.message}`, error);
   }
 }
 

@@ -12,6 +12,7 @@ import drinksImage from "../../public/images/drinks.png";
 import foodImage from "../../public/images/foods.png";
 import activityImage from "../../public/images/activity.png";
 import { getRandomElements } from "../lib/utils";
+import ErrorMessage from "../components/ui/ErrorMessage";
 
 const ChoicesPage = () => {
   const navigate = useNavigate();
@@ -20,13 +21,7 @@ const ChoicesPage = () => {
     useContext(ChoiceContext);
   const [choiceCategory, setChoiceCategory] = useState(3);
   const [randomChoices, setRandomChoices] = useState([]);
-  const [headline, setHeadling] = useState("Choose your drinks!");
-
-  // const categoryMapping = {
-  //   3: "drinks",
-  //   2: "food",
-  //   1: "activity",
-  // };
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const categoryMapping = {
     3: {
@@ -75,7 +70,7 @@ const ChoicesPage = () => {
       }
     } catch (error) {
       setLoading(false);
-      throw new Error("Error", error);
+      setErrorMessage(error.message);
     }
 
     setLoading(false);
@@ -88,6 +83,7 @@ const ChoicesPage = () => {
           <LoadingSpinner />
         ) : (
           <>
+            {errorMessage && <ErrorMessage message={errorMessage} />}
             <div className="icon-container glassmorphism text-center mt-5">
               <img
                 src={categoryMapping[choiceCategory].image}

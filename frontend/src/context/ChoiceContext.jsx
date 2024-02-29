@@ -73,9 +73,13 @@ export default function ChoiceContextProvider({ children }) {
       },
       containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
 
-    const results = await fetchAIRecommendations(promptString);
-    setRecommendations(results);
-    return results;
+    try {
+      const results = await fetchAIRecommendations(promptString);
+      setRecommendations(results);
+      return results;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   const value = {
