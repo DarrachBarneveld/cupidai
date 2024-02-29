@@ -1,45 +1,9 @@
-/*About*/
-
 .container h2 {
   color: var(--background);
   font-weight: 500;
   font-family: Montserrat, Verdana, sans-serif;
   margin: 20px;
   text-align: center;
-}
-
-#about-sparkle-container {
-  width: 90%;
-  margin: 20px auto;
-}
-
-#about-sparkle-container h2 {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 150%;
-  font-family: Montserrat, Verdana, sans-serif;
-}
-
-#about-sparkle-container h3 {
-  margin: 10px;
-  text-align: center;
-  font-size: 120%;
-  font-family: Montserrat, Verdana, sans-serif;
-}
-
-#about-sparkle > div,
-#team-sparkle > div {
-  line-height: 20px;
-  margin-bottom: 20px;
-}
-
-#background p {
-  padding: 5px 10px;
-}
-
-#background hr {
-  border-top: 1px dotted #031226;
-  margin: 5px 0;
 }
 
 #circle-cover-bg-end {
@@ -68,7 +32,6 @@
     center / cover;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   grid-gap: 0.5rem;
 }
 
@@ -145,10 +108,6 @@
   #background {
     flex-direction: row;
     display: flex;
-  }
-
-  #background > div {
-    flex: 1;
   }
 
   #sparkle-image {
