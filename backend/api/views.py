@@ -1,12 +1,14 @@
+from openai import OpenAI
+import json
+
+
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from requests import request
-from .serializers import GptSerializer, GeolocationSerializer
-from rest_framework import status
 from django.conf import settings
-import json
-from openai import OpenAI
 from django.http import StreamingHttpResponse
+from .serializers import GptSerializer, GeolocationSerializer
 
 GPT_MODEL = 'gpt-3.5-turbo'
 GPT_URL = 'https://api.openai.com/v1/chat/completions'
@@ -124,7 +126,10 @@ class GeolocationView(APIView):
 
                 # Parse the response
                 parsed_json = json.loads(res.text)
-                places.append({category: parsed_json.get('places', [])})
+                places_data = parsed_json.get('places', [])
+                for place in places_data:
+                    place['category'] = category
+                places.append({category: places_data})
 
             return Response(places)
 
