@@ -39,12 +39,15 @@ export async function fetchGooglePlaces(location, drink, food, activity) {
         activity,
       }),
     });
+    console.log(response);
 
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.error);
     }
     const places = await response.json();
+    console.log("places", places);
+
     return places;
   } catch (error) {
     throw new Error(error.message);

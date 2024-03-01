@@ -13,6 +13,9 @@ const RecommendationCard = ({
   location,
   setErrorMessage,
 }) => {
+  console.log(drink);
+  console.log(food);
+  console.log(activity);
   const navigate = useNavigate();
   const { setPlaces } = useContext(PlacesContext);
   const [loading, setLoading] = useState(false);
@@ -21,6 +24,8 @@ const RecommendationCard = ({
     try {
       setLoading(true);
       const places = await fetchGooglePlaces(location, drink, food, activity);
+
+      console.log(places);
 
       if (places.length === 0) {
         alert("No places found. Please try again.");
