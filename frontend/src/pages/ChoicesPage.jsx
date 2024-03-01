@@ -78,10 +78,6 @@ const ChoicesPage = () => {
     setLoading(false);
   }
 
-  console.log(choices);
-
-  console.log(errorMessage);
-
   return (
     <main className="py-5 bg-pink-gradient px-1">
       <div className="container">

@@ -15,17 +15,21 @@ const RecommendationCard = ({
 }) => {
   const navigate = useNavigate();
   const { setPlaces } = useContext(PlacesContext);
+  const [loading, setLoading] = useState(false);
 
   async function getGooglePlacesResults() {
     try {
-      const places = await fetchGooglePlaces(location, drink, food, activity);
+      setLoading(true);
+      // const places = await fetchGooglePlaces(location, drink, food, activity);
 
-      if (places) {
-        setPlaces(places);
-        // navigate("/places");
-      }
+      // if (places) {
+      //   setPlaces(places);
+      //   setLoading(false);
+      //   navigate("/places");
+      // }
     } catch (error) {
       setErrorMessage(error.message);
+      setLoading(false);
     }
   }
 
@@ -55,8 +59,16 @@ const RecommendationCard = ({
               onClick={getGooglePlacesResults}
               className="mx-auto btn btn-danger mt-2"
             >
-              <i className="fa-solid fa-map-location-dot"></i>
-              <small> Find places! </small>
+              {loading ? (
+                <div className="spinner-border spinner-border-sm" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              ) : (
+                <>
+                  <i className="fa-solid fa-map-location-dot"></i>
+                  <small> Find places! </small>
+                </>
+              )}
             </button>
           ) : (
             <button

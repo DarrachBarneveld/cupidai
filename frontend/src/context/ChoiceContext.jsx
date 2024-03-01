@@ -77,10 +77,11 @@ export default function ChoiceContextProvider({ children }) {
 
     try {
       const results = await fetchAIRecommendations(promptString);
+
       setRecommendations(results);
       return results;
     } catch (error) {
-      throw new Error(error);
+      throw new Error(error.message);
     }
   }
 

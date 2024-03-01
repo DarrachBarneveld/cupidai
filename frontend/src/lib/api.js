@@ -12,13 +12,15 @@ export async function fetchAIRecommendations(prompt) {
       }),
     });
 
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error);
+    }
+
     const data = await response.json();
-
-    const objectArray = JSON.parse(data.message);
-
-    return objectArray;
+    return JSON.parse(data.message);
   } catch (error) {
-    throw new Error(`Error: ${error.message}`, error);
+    throw new Error(error.message);
   }
 }
 
