@@ -81,7 +81,7 @@ class AskGptView(APIView):
             try:
                 res = request("POST", GPT_URL,
                           headers={'Authorization': 'Bearer ' + openai_api_key},
-                          json=data, timeout=1)
+                          json=data, timeout=10)
                 # Parse GPT response
                 parsed_json = json.loads(res.text)
 
@@ -100,19 +100,26 @@ class AskGptView(APIView):
             # Return GPT message
             return Response({'message': gpt_message})
 
-        else:
-            # Return 400 and validation errors
-            return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
+        # Return 400 and validation errors
+        return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class GeolocationView(APIView):
+    """
+    API View to handle geolocation data. It accepts POST requests with 
+    latitude and longitude, and performs operations based on these 
+    geolocation coordinates.
+
+    """
 
     def post(self, req):
+        """
+        Handles POST requests. It expects 'lat' and 'lng' in the request data,
+        representing latitude and longitude respectively.
+        """
 
         places_api_key = settings.PLACES_API_KEY
         req_data = GeolocationSerializer(data=req.data)
-
-
 
         # Check if request is valid
         if req_data.is_valid():
@@ -120,7 +127,6 @@ class GeolocationView(APIView):
             lng = req_data.validated_data.get('lng')
             categories = ['drink', 'food', 'activity']
             places = []
-
 
             # Run the fetch on individual items for Better Results
             for category in categories:
@@ -143,16 +149,29 @@ class GeolocationView(APIView):
                     "X-Goog-FieldMask": "*",
                 }
 
-                res = request("POST", GOOGLE_PLACES_URL, headers=headers, json=data, timeout=10)
+                try:
+                    res = request("POST",
+                                  GOOGLE_PLACES_URL, headers=headers,
+                                  json=data, timeout=10)
+
+                    parsed_json = json.loads(res.text)
+
+                except Timeout:
+                    return Response({"error": "The request timed out."},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+                except RequestException as e:
+                    return Response({"error": str(e)},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
                 # Parse the response
-                parsed_json = json.loads(res.text)
                 places_data = parsed_json.get('places', [])
                 for place in places_data:
                     place['category'] = category
                 places.append({category: places_data})
+                print(places)
 
-            return Response(places)
+                return Response(places)
 
              # Return 400 and validation errors
         return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
