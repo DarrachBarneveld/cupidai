@@ -130,8 +130,8 @@ class GeolocationView(APIView):
 
             # Run the fetch on individual items for Better Results
             for category in categories:
-
                 text_query = req_data.validated_data.get(category)
+
                 # Do the request to Google Places API
                 data = {
                     'textQuery': text_query,
@@ -155,6 +155,10 @@ class GeolocationView(APIView):
                                   json=data, timeout=10)
 
                     parsed_json = json.loads(res.text)
+                    places_data = parsed_json.get('places', [])
+                    for place in places_data:
+                        place['category'] = category
+                    places.append({category: places_data})
 
                 except Timeout:
                     return Response({"error": "The request timed out."},
@@ -164,14 +168,7 @@ class GeolocationView(APIView):
                     return Response({"error": str(e)},
                                 status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-                # Parse the response
-                places_data = parsed_json.get('places', [])
-                for place in places_data:
-                    place['category'] = category
-                places.append({category: places_data})
-                print(places)
-
-                return Response(places)
+            return Response(places)
 
              # Return 400 and validation errors
         return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
