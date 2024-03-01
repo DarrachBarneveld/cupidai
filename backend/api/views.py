@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from requests import request
+from requests.exceptions import RequestException, Timeout
 from django.conf import settings
 from django.http import StreamingHttpResponse
 from .serializers import GptSerializer, GeolocationSerializer
@@ -53,8 +54,17 @@ def stream_response(completion_stream):
 
 
 class AskGptView(APIView):
-    
+    """
+    API View to interact with the GPT model. It accepts POST requests with 
+    user messages, sends them to the GPT model, and returns the model's responses.
+    """
+
     def post(self, req):
+        """
+        Handles POST requests. Sends user message to GPT model and 
+        returns model's response.
+        """
+
         openai_api_key = settings.OPENAI_API_KEY
 
         req_data = GptSerializer(data=req.data)
@@ -67,20 +77,29 @@ class AskGptView(APIView):
                 'model': GPT_MODEL,
                 "messages": [{"role": "user", "content": req_data.validated_data.get('message')}]
             }
-            res = request("POST", GPT_URL, 
-                          headers={'Authorization': 'Bearer ' + openai_api_key}, 
-                          json=data, timeout=10)
 
-            # Parse GPT response
-            parsed_json = json.loads(res.text)
-            choices = parsed_json['choices']
+            try:
+                res = request("POST", GPT_URL,
+                          headers={'Authorization': 'Bearer ' + openai_api_key},
+                          json=data, timeout=1)
+                # Parse GPT response
+                parsed_json = json.loads(res.text)
+
+            except Timeout:
+                return Response({"error": "The request timed out."},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+            except RequestException as e:
+                return Response({"error": str(e)},
+                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             # Access GPT message
+            choices = parsed_json['choices']
             gpt_message = choices[0]['message']['content']
-
 
             # Return GPT message
             return Response({'message': gpt_message})
+
         else:
             # Return 400 and validation errors
             return Response(req_data.errors, status=status.HTTP_400_BAD_REQUEST)
