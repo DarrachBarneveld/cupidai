@@ -20,13 +20,19 @@ const RecommendationCard = ({
   async function getGooglePlacesResults() {
     try {
       setLoading(true);
-      // const places = await fetchGooglePlaces(location, drink, food, activity);
+      const places = await fetchGooglePlaces(location, drink, food, activity);
 
-      // if (places) {
-      //   setPlaces(places);
-      //   setLoading(false);
-      //   navigate("/places");
-      // }
+      if (places.length === 0) {
+        alert("No places found. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      if (places) {
+        setPlaces(places);
+        setLoading(false);
+        navigate("/places");
+      }
     } catch (error) {
       setErrorMessage(error.message);
       setLoading(false);

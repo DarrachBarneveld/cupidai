@@ -40,22 +40,13 @@ export async function fetchGooglePlaces(location, drink, food, activity) {
       }),
     });
 
-    const data = await response.json();
-
-    if (!data) {
-      alert("No places found");
-      return;
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error);
     }
-
-    if (data) {
-      if (data.length === 0) {
-        alert("No places found");
-        return;
-      }
-    }
-
-    return data;
+    const places = await response.json();
+    return places;
   } catch (error) {
-    throw new Error(`Error: ${error.message}`, error);
+    throw new Error(error.message);
   }
 }
