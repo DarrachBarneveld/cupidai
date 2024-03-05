@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { MapContainer, TileLayer, Marker, useMap, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
+import { motion } from "framer-motion";
 
 export const redMarker = new Icon({
   iconUrl:
@@ -35,7 +36,7 @@ export const blueMarker = new Icon({
   shadowSize: [41, 41],
 });
 
-const PlacesMap = ({ placesArray, locationCoords }) => {
+const PlacesMap = ({ placesArray, locationCoords, setMapInView }) => {
   function PlacesMarker() {
     const map = useMap();
 
@@ -81,17 +82,30 @@ const PlacesMap = ({ placesArray, locationCoords }) => {
 
   const displayMap = useMemo(
     () => (
-      <MapContainer
-        className="map-container fade-in-bounce rounded-3"
-        center={locationCoords}
-        zoom={13}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ ease: "easeInOut" }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <PlacesMarker />
-      </MapContainer>
+        <div onClick={() => setMapInView(false)} className="overlay"></div>
+        <MapContainer
+          className="map-container"
+          center={locationCoords}
+          zoom={13}
+        >
+          <div className="position-relative lose-icon-container">
+            <button onClick={() => setMapInView(false)}>
+              <i class="fa-solid fa-xmark close-icon"></i>
+            </button>
+          </div>
+
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <PlacesMarker />
+        </MapContainer>
+      </motion.div>
     ),
     []
   );

@@ -55,7 +55,7 @@ const PlacesPage = () => {
           text="Places Near You"
           subtext="Explore these locations based on your date recommendation."
         />
-        <div className="d-flex justify-content-around mb-2 gap-2">
+        <div className="d-flex justify-content-around mb-2 gap-2 position-relative">
           <NavLink className="btn btn-light" to="/recommendations">
             <i className="fa-solid fa-arrow-left"></i> Back
           </NavLink>
@@ -76,6 +76,7 @@ const PlacesPage = () => {
         </div>
         {mapInView ? (
           <PlacesMap
+            setMapInView={setMapInView}
             placesArray={placesArray}
             locationCoords={locationCoords}
           />
