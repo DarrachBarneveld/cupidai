@@ -64,13 +64,17 @@ export default function ChoiceContextProvider({ children }) {
     const foodString = choices.food.join(" ");
     const activityString = choices.activity.join(" ");
 
-    let promptString = `Based on my interests in drinks such as ${drinkString}, foods such as ${foodString} and activities such as ${activityString} could you suggest 6 varied date ideas? Include things that are similar to my interests options by modelling on my perceived personality type. Please provide recommendations in the format of an array of objects, with each object of this structure {
-        "recommendation": recommendation,
-        "drink": drink,
-        "food": food,
-        "activity": activity keywords
-      },
-      containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
+    let promptString = `Based on my interests in drinks such as ${drinkString}, foods such as ${foodString} and activities such as ${activityString} could you suggest 6 varied date ideas? Include things that are similar to my interests options but quite different by modelling on my perceived personality type from these choices. Model on the choices listed above. 
+
+      Important - make sure the recommendations are varied and use food types that are similar to ${foodString}, drink types that are similar to ${drinkString} and activities similar to ${activityString}
+      
+      Please provide recommendations in the format of an array of objects, with each object of this structure {
+              "recommendation": recommendation,
+              "drink": drink listed in recommendation,
+              "food": food listed in recommendation,
+              "activity": activity keywords listed in recommendation
+            },
+            containing a recommendation that is 3 sentences long, along with associated drink keyword, food keyword, and activity keywords.`;
 
     try {
       const results = await fetchAIRecommendations(promptString);
