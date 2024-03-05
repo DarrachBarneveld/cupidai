@@ -147,7 +147,7 @@ class GeolocationView(APIView):
                 headers = {
                     "Content-Type": "application/json",
                     "X-Goog-Api-Key": places_api_key,
-                    "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.googleMapsUri,places.regularOpeningHours,places.rating,places.userRatingCount,places.websiteUri,places.location",
+                    "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.googleMapsUri,places.regularOpeningHours,places.rating,places.userRatingCount,places.websiteUri,places.location,places.photos",
                 }
 
                 try:

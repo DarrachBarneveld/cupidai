@@ -83,8 +83,8 @@ const PlacesMap = ({ placesArray, locationCoords, setMapInView }) => {
   const displayMap = useMemo(
     () => (
       <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut" }}
       >
         <div onClick={() => setMapInView(false)} className="overlay"></div>

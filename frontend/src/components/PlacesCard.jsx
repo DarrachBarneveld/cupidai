@@ -1,7 +1,7 @@
 import { memo } from "react";
 import placeholderPhoto from "../../public/images/noimageplaceholder.png";
 
-// const GOOGLE_PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
+const GOOGLE_PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
 
 const PlacesCard = memo(
   ({
@@ -21,8 +21,8 @@ const PlacesCard = memo(
       photoUrl = placeholderPhoto;
     } else {
       const photo = photos[0];
-      photoUrl = `https://places.googleapis.com/v1/${photo?.name}/media?maxHeightPx=400&maxWidthPx=400&key=${GOOGLE_PLACES_API_KEY}`;
-      // photoUrl = placeholderPhoto;
+      // photoUrl = `https://places.googleapis.com/v1/${photo?.name}/media?maxHeightPx=400&maxWidthPx=400&key=${GOOGLE_PLACES_API_KEY}`;
+      photoUrl = placeholderPhoto;
     }
 
     let color = "bg-danger";
