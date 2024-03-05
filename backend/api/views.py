@@ -146,7 +146,7 @@ class GeolocationView(APIView):
                 headers = {
                     "Content-Type": "application/json",
                     "X-Goog-Api-Key": places_api_key,
-                    "X-Goog-FieldMask": "*",
+                    "X-Goog-FieldMask": "displayName,formattedAddress,googleMapsUri, regularOpeningHours,rating,userRatingCount,websiteUri",
                 }
 
                 try:
@@ -162,7 +162,7 @@ class GeolocationView(APIView):
 
                 except Timeout:
                     return Response({"error": "The request timed out."},
-                                status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                                status=status.HTTP_504_GATEWAY_TIMEOUT)
 
                 except RequestException as e:
                     return Response({"error": str(e)},
