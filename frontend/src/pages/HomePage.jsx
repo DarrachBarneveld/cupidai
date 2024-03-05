@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import HeroImage from "../../public/images/background.png";
+import MainWrapper from "../layout/MainWrapper";
 
 const HomePage = () => {
   return (
-    <main className="py-lg-5 bg-pink-gradient">
+    <MainWrapper>
       <div className="container col-xxl-8 px-4 py-1 glassmorphism rounded-3 position-relative overflow-hidden">
         <div className="heart x1"></div>
         <div className="heart x2"></div>
@@ -43,62 +44,6 @@ const HomePage = () => {
         <h2 className=" text-white text-center my-3 display-3">
           How to Use Sparkle Ai
         </h2>
-        {/* <div id="howToWrapper">
-          <ol>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-champagne-glasses"></i>
-              </div>
-              <div className="title">Drinks</div>
-              <div className="descr">Choose your preffered drinks</div>
-            </li>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-utensils"></i>
-              </div>
-              <div className="title">Food</div>
-              <div className="descr">Choose your preffered foods</div>
-            </li>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-helicopter"></i>
-              </div>
-              <div className="title">Activities</div>
-              <div className="descr">
-                Choose activities you usually like to do
-              </div>
-            </li>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-square-root-variable"></i>
-              </div>
-              <div className="title">SparkleAi</div>
-              <div className="descr">
-                Cupid generates fun date ideas based on your preferences.
-              </div>
-            </li>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-rocket"></i>
-              </div>
-              <div className="title">Options</div>
-              <div className="descr">
-                Explore related options tailored to your tastes.
-              </div>
-            </li>
-            <li>
-              <div className="icon">
-                <i className="fa-solid fa-heart"></i>
-              </div>
-              <div className="title">Date!</div>
-              <div className="descr">
-                Turn on location services to find local spots to carry out
-                prompted dates
-              </div>
-            </li>
-          </ol>
-        </div> */}
-
         <ol>
           <li>
             <div class="icon">
@@ -150,7 +95,7 @@ const HomePage = () => {
           </li>
         </ol>
       </section>
-    </main>
+    </MainWrapper>
   );
 };
 

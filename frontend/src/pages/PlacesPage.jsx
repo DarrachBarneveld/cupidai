@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import HeadingText from "../components/ui/HeadingText";
 import { shuffleArray } from "../lib/utils";
 import { staggeredFadeUp } from "../animations/variants";
+import MainWrapper from "../layout/MainWrapper";
 
 export function extractArrays(arrayOfObjects) {
   const result = {};
@@ -37,7 +38,7 @@ const PlacesPage = () => {
   }, [drink, food, activity]);
 
   return (
-    <main className="py-5 bg-pink-gradient px-1">
+    <MainWrapper>
       <div className="container">
         <HeadingText text="Places Near You" />
         <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
@@ -76,7 +77,7 @@ const PlacesPage = () => {
           Load More Activities
         </button>
       </div>
-    </main>
+    </MainWrapper>
   );
 };
 

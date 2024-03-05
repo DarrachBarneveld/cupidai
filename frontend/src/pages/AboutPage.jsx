@@ -6,6 +6,7 @@ import erikImage from "../../public/images/erik.webp";
 import patriciaImage from "../../public/images/patricia.webp";
 import kiki from "../../public/images/kiki.jpg";
 import Developer from "../components/Developer";
+import MainWrapper from "../layout/MainWrapper";
 
 const developers = [
   {
@@ -48,7 +49,7 @@ const developers = [
 
 const AboutPage = () => {
   return (
-    <main className="py-5 bg-pink-gradient px-1">
+    <MainWrapper>
       <div className="container">
         <section id="about" className="container p-4">
           <h2>
@@ -163,7 +164,7 @@ const AboutPage = () => {
           ))}
         </section>
       </div>
-    </main>
+    </MainWrapper>
   );
 };
 

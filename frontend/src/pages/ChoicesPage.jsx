@@ -13,6 +13,7 @@ import foodImage from "../../public/images/foods.png";
 import activityImage from "../../public/images/activity.png";
 import { getRandomElements } from "../lib/utils";
 import ErrorMessage from "../components/ui/ErrorMessage";
+import MainWrapper from "../layout/MainWrapper";
 
 const ChoicesPage = () => {
   const navigate = useNavigate();
@@ -50,7 +51,16 @@ const ChoicesPage = () => {
     );
 
     setRandomChoices(randomSelections);
+
+    setChoices((choices) => {
+      return {
+        ...choices,
+        [categoryMapping[choiceCategory].category]: [],
+      };
+    });
   }
+
+  console.log(choices);
 
   useEffect(() => {
     setRandomOptions();
@@ -79,7 +89,7 @@ const ChoicesPage = () => {
   }
 
   return (
-    <main className="py-5 bg-pink-gradient px-1">
+    <MainWrapper>
       <div className="container">
         {loading ? (
           <LoadingSpinner />
@@ -91,16 +101,17 @@ const ChoicesPage = () => {
                 subtext="Please add choices again "
               />
             )}
-            <div className="icon-container glassmorphism text-center mt-5">
+            <div className="icon-container glassmorphism text-center mt-3 mt-lg-5">
               <img
                 src={categoryMapping[choiceCategory].image}
                 alt="Image icon"
               />
             </div>
-            <HeadingText text={categoryMapping[choiceCategory].headline} />
-            <p className="lead text-center bg-dark-gradient text-white rounded-3 p-2">
-              Choose a few options if you wish
-            </p>
+            <HeadingText
+              text={categoryMapping[choiceCategory].headline}
+              subtext="Choose a few options if you wish"
+            />
+
             <div id="choiceContainer" className="row row-cols-2 gy-4">
               {randomChoices.map((choice) => (
                 <ChoiceButton
@@ -143,7 +154,7 @@ const ChoicesPage = () => {
           </>
         )}
       </div>
-    </main>
+    </MainWrapper>
   );
 };
 

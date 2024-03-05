@@ -9,7 +9,7 @@ const ChoiceButton = ({ onClick, text }) => {
   }
 
   return (
-    <div className="col px-1 d-flex justify-content-center fade-in-bounce">
+    <div className="col px-1 d-flex justify-content-center fade-in-bounce ">
       <button
         onClick={handleClick}
         className={`choice-btn text-wrap ${selected && "selected-btn"}`}

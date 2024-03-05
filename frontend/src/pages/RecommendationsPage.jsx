@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
 import HeadingText from "../components/ui/HeadingText";
 import ErrorMessage from "../components/ui/ErrorMessage";
+import MainWrapper from "../layout/MainWrapper";
 
 function isEmptyObject(obj) {
   return Object.entries(obj).length === 0;
@@ -56,7 +57,7 @@ const RecommendationsPage = () => {
   }
 
   return (
-    <main className="py-5 bg-pink-gradient px-1">
+    <MainWrapper>
       <div className="container">
         <HeadingText text="Recommendations" />
         {loading ? (
@@ -100,7 +101,7 @@ const RecommendationsPage = () => {
           </>
         )}
       </div>
-    </main>
+    </MainWrapper>
   );
 };
 

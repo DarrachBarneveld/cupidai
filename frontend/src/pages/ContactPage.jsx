@@ -1,9 +1,10 @@
 import HeadingText from "../components/ui/HeadingText";
+import MainWrapper from "../layout/MainWrapper";
 import "./contact.css";
 
 const ContactPage = () => {
   return (
-    <main className="py-5 bg-pink-gradient px-1">
+    <MainWrapper>
       <section id="contact">
         <HeadingText
           text="Let the team know what we can do!"
@@ -55,7 +56,7 @@ const ContactPage = () => {
           </form>
         </div>
       </section>
-    </main>
+    </MainWrapper>
   );
 };
 

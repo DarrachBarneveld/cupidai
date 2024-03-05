@@ -96,3 +96,8 @@ main {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+.subtext {
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  margin: 0;
+}
