@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 
 :root {
   /* Colours */
@@ -29,7 +29,7 @@ html {
 
 h1,
 h2 {
-  font-family: Gwendolyn, cursive;
+  font-family: "Madimi One", sans-serif;
   font-weight: 500;
   text-transform: capitalize;
   word-spacing: 0.4rem;
@@ -72,7 +72,7 @@ main {
 .brand-logo {
   color: var(--background);
   font-size: 40px;
-  font-family: Gwendolyn, cursive;
+  font-family: "Madimi One", sans-serif;
   text-decoration: none;
   font-weight: 700;
 }

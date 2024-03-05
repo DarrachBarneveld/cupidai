@@ -348,7 +348,7 @@ i {
 }
 
 /* HOW TO CSS */
-
+/* 
 #howToWrapper {
   --color: rgba(30, 30, 30);
   --bgColor: rgba(245, 245, 245);
@@ -439,6 +439,96 @@ ol li .title {
 ol li .descr {
   font-size: 0.8rem;
   font-weight: 300;
+} */
+
+ol {
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+ol li {
+  color: var(--background);
+  max-width: 10rem;
+  justify-self: center;
+  display: grid;
+  grid-template:
+    "icon"
+    "line"
+    "dot"
+    "title"
+    "descr" 1fr;
+  justify-items: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+li:nth-child(6n + 1) {
+  --accent-color: #b8df4e;
+}
+li:nth-child(6n + 2) {
+  --accent-color: #4cbccb;
+}
+li:nth-child(6n + 3) {
+  --accent-color: #7197d3;
+}
+li:nth-child(6n + 4) {
+  --accent-color: #c11b1b;
+}
+li:nth-child(6n + 5) {
+  --accent-color: #7dc7a4;
+}
+li:nth-child(6n + 6) {
+  --accent-color: #f078c2;
+}
+
+ol li .icon {
+  grid-area: icon;
+  width: 6rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 2.5rem;
+  border: 0.4rem solid var(--bgColor);
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: var(--background) 0px 0px 0px 3px;
+}
+
+.icon i {
+  text-shadow: 0 0 10px #000;
+}
+
+ol li::before {
+  content: "";
+  grid-area: line;
+  height: 2rem;
+  border-right: 2px dotted currentColor;
+}
+
+ol li::after {
+  content: "";
+  grid-area: dot;
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent-color);
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+
+ol li .title {
+  grid-area: title;
+  margin-block: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* HEART FLOATS */
