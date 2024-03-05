@@ -1,7 +1,7 @@
 import { memo } from "react";
 import placeholderPhoto from "../../public/images/noimageplaceholder.png";
 
-const GOOGLE_PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
+// const GOOGLE_PLACES_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
 
 const PlacesCard = memo(
   ({
