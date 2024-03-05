@@ -7,7 +7,6 @@ import HeadingText from "../components/ui/HeadingText";
 import { shuffleArray } from "../lib/utils";
 import { staggeredFadeUp } from "../animations/variants";
 import MainWrapper from "../layout/MainWrapper";
-import { GooglePlacesApiResponse } from "../classes/GoogleApiResponse";
 import PlacesMap from "../components/PlacesMap";
 
 export function extractArrays(arrayOfObjects) {
@@ -29,7 +28,8 @@ export function getNextAmount(array, index = 0, step = 4) {
 
 const PlacesPage = () => {
   const navigate = useNavigate();
-  const { places } = useContext(PlacesContext);
+  const { places, locationCoords, fetchCoordinates } =
+    useContext(PlacesContext);
   const [placesArray, setPlacesArray] = useState([]);
   const [shuffledArray, setShuffledArray] = useState([]);
   const { drink, food, activity } = extractArrays(places);
@@ -42,9 +42,7 @@ const PlacesPage = () => {
 
     const shuffledArray = shuffleArray([...drink, ...food, ...activity]);
 
-    // const classArray = shuffledArray.map(
-    //   (place) => new GooglePlacesApiResponse(place)
-    // );
+    fetchCoordinates();
 
     setPlacesArray(getNextAmount(shuffledArray, 0, 8));
     setShuffledArray(shuffledArray);
@@ -61,16 +59,26 @@ const PlacesPage = () => {
           <NavLink className="btn btn-light" to="/recommendations">
             <i className="fa-solid fa-arrow-left"></i> Back
           </NavLink>
-          <button
-            className="btn btn-light"
-            onClick={() => setMapInView((prev) => !prev)}
-          >
-            <i className="fa-solid fa-map"></i> {mapInView ? "Hide" : "View"}{" "}
-            Map
-          </button>
+          {locationCoords ? (
+            <button
+              className="btn btn-light"
+              onClick={() => setMapInView((prev) => !prev)}
+            >
+              <i className="fa-solid fa-map"></i> {mapInView ? "Hide" : "View"}
+              Map
+            </button>
+          ) : (
+            <button onClick={fetchCoordinates} className="btn btn-light">
+              <i className="fa-solid fa-location-crosshairs me-1"></i>
+              Enable Location
+            </button>
+          )}
         </div>
         {mapInView ? (
-          <PlacesMap placesArray={placesArray} />
+          <PlacesMap
+            placesArray={placesArray}
+            locationCoords={locationCoords}
+          />
         ) : (
           <>
             {placesArray.length > 0 && (

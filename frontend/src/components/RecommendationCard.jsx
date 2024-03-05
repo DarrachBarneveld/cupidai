@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { fetchGooglePlaces } from "../lib/api";
 import { useContext, useState } from "react";
-import { GooglePlacesApiResponse } from "../classes/GoogleApiResponse";
 
 const RecommendationCard = ({
   recommendation,
@@ -11,18 +10,22 @@ const RecommendationCard = ({
   activity,
   disabled,
   fetchLocation,
-  location,
   setErrorMessage,
   index,
 }) => {
   const navigate = useNavigate();
-  const { setPlaces } = useContext(PlacesContext);
+  const { setPlaces, locationCoords } = useContext(PlacesContext);
   const [loading, setLoading] = useState(false);
 
   async function getGooglePlacesResults() {
     try {
       setLoading(true);
-      const places = await fetchGooglePlaces(location, drink, food, activity);
+      const places = await fetchGooglePlaces(
+        locationCoords,
+        drink,
+        food,
+        activity
+      );
 
       if (places.length === 0) {
         alert("No places found. Please try again.");

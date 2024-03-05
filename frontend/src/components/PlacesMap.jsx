@@ -2,8 +2,6 @@ import { useMemo } from "react";
 import { MapContainer, TileLayer, Marker, useMap, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 
-const COORDS = [53.35014, -6.266155];
-
 export const redMarker = new Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -37,7 +35,7 @@ export const blueMarker = new Icon({
   shadowSize: [41, 41],
 });
 
-const PlacesMap = ({ placesArray }) => {
+const PlacesMap = ({ placesArray, locationCoords }) => {
   function PlacesMarker() {
     const map = useMap();
 
@@ -85,7 +83,7 @@ const PlacesMap = ({ placesArray }) => {
     () => (
       <MapContainer
         className="map-container fade-in-bounce rounded-3"
-        center={COORDS}
+        center={locationCoords}
         zoom={13}
       >
         <TileLayer

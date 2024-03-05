@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ChoiceContext } from "../context/ChoiceContext";
 import RecommendationCard from "../components/RecommendationCard";
-import { getCurrentLocationLatLng } from "../lib/geolocation";
 import { NavLink, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
 import HeadingText from "../components/ui/HeadingText";
@@ -15,16 +14,11 @@ import { PlacesContext } from "../context/PlacesContext";
 
 const RecommendationsPage = () => {
   const navigate = useNavigate();
-  const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const { recommendations, choices, getAIRecommendations } =
     useContext(ChoiceContext);
-  const { places } = useContext(PlacesContext);
-  const fetchCoordinates = async () => {
-    const currentLocation = await getCurrentLocationLatLng();
-    setLocation(currentLocation);
-  };
+  const { places, fetchCoordinates } = useContext(PlacesContext);
 
   useEffect(() => {
     if (!recommendations || recommendations.length === 0) {
@@ -130,7 +124,6 @@ const RecommendationsPage = () => {
                       {...recommendation}
                       disabled={location}
                       fetchLocation={fetchCoordinates}
-                      location={location}
                       setErrorMessage={setErrorMessage}
                     />
                   );
