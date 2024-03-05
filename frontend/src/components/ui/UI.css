@@ -173,6 +173,13 @@
   border: 1px solid rgb(90, 153, 255);
 }
 
+.blockquote-custom-icon span {
+  text-shadow: 0 0 1px #000;
+  font-weight: 700;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
+}
+
 /* PLACES CARD */
 
 .card-sl {
@@ -198,10 +205,9 @@ i {
 }
 
 .card-heading {
-  font-size: 18px;
+  padding: 0.5rem;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: bold;
-  padding: 10px 10px;
-  margin-inline: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -225,6 +231,9 @@ i {
   color: #fff;
 }
 
+.btn-light i {
+  text-shadow: none;
+}
 /* ANIMATION */
 
 .fade-in-bounce {

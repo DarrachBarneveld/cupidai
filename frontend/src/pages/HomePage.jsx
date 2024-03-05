@@ -46,50 +46,50 @@ const HomePage = () => {
         </h2>
         <ol>
           <li>
-            <div class="icon">
+            <div className="icon">
               <i className="fa-solid fa-champagne-glasses"></i>
             </div>
-            <div class="title">Drinks</div>
-            <div class="descr">Select some drinks</div>
+            <div className="title">Drinks</div>
+            <div className="descr">Select some drinks</div>
           </li>
           <li>
-            <div class="icon">
+            <div className="icon">
               <i className="fa-solid fa-utensils"></i>
             </div>
-            <div class="title">Foods</div>
-            <div class="descr">Select some Food</div>
+            <div className="title">Foods</div>
+            <div className="descr">Select some Food</div>
           </li>
           <li>
-            <div class="icon">
-              <i class="fa-solid fa-person-snowboarding"></i>{" "}
+            <div className="icon">
+              <i className="fa-solid fa-person-snowboarding"></i>{" "}
             </div>
-            <div class="title">Activities</div>
-            <div class="descr">Select a few activites</div>
+            <div className="title">Activities</div>
+            <div className="descr">Select a few activites</div>
           </li>
           <li>
-            <div class="icon">
+            <div className="icon">
               <i className="fa-solid fa-square-root-variable"></i>
             </div>
-            <div class="title">Sparkle Ai</div>
-            <div class="descr">
+            <div className="title">Sparkle Ai</div>
+            <div className="descr">
               Sparkle Ai generates fun date ideas based on your choices.
             </div>
           </li>
           <li>
-            <div class="icon">
+            <div className="icon">
               <i className="fa-solid fa-rocket"></i>
             </div>
-            <div class="title">Options</div>
-            <div class="descr">
+            <div className="title">Options</div>
+            <div className="descr">
               Explore date options tailored to your tastes.
             </div>
           </li>
           <li>
-            <div class="icon">
+            <div className="icon">
               <i className="fa-solid fa-heart"></i>
             </div>
-            <div class="title">Date</div>
-            <div class="descr">
+            <div className="title">Date</div>
+            <div className="descr">
               Enable location to find local spots to carry out your date
             </div>
           </li>

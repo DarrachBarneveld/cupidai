@@ -20,11 +20,8 @@ export const ChoiceContext = createContext({
 export default function ChoiceContextProvider({ children }) {
   const [recommendations, setRecommendations] =
     useLocationStorage("recommendations");
-  const [choices, setChoices] = useState({
-    activity: [],
-    food: [],
-    drinks: [],
-  });
+  const [localChoices, setLocalChoices] = useLocationStorage("choices");
+  const [choices, setChoices] = useLocationStorage("choices");
 
   function handleSelectedChoice(choice, choiceCategory) {
     if (choiceCategory === 3) {
@@ -91,6 +88,8 @@ export default function ChoiceContextProvider({ children }) {
     handleSelectedChoice,
     getAIRecommendations,
     recommendations,
+    localChoices,
+    setLocalChoices,
   };
 
   return (

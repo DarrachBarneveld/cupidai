@@ -1,6 +1,5 @@
-from openai import OpenAI
 import json
-
+from openai import OpenAI
 
 from rest_framework import status
 from rest_framework.views import APIView
@@ -81,7 +80,7 @@ class AskGptView(APIView):
             try:
                 res = request("POST", GPT_URL,
                           headers={'Authorization': 'Bearer ' + openai_api_key},
-                          json=data, timeout=10)
+                          json=data, timeout=15)
                 # Parse GPT response
                 parsed_json = json.loads(res.text)
 
@@ -121,12 +120,15 @@ class GeolocationView(APIView):
         places_api_key = settings.PLACES_API_KEY
         req_data = GeolocationSerializer(data=req.data)
 
+
         # Check if request is valid
         if req_data.is_valid():
             lat = req_data.validated_data.get('lat')
             lng = req_data.validated_data.get('lng')
             categories = ['drink', 'food', 'activity']
             places = []
+            print(req_data)
+
 
             # Run the fetch on individual items for Better Results
             for category in categories:
@@ -142,11 +144,10 @@ class GeolocationView(APIView):
                         },
                     },
                 }
-
                 headers = {
                     "Content-Type": "application/json",
                     "X-Goog-Api-Key": places_api_key,
-                    "X-Goog-FieldMask": "displayName,formattedAddress,googleMapsUri, regularOpeningHours,rating,userRatingCount,websiteUri",
+                    "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.googleMapsUri,places.regularOpeningHours,places.rating,places.userRatingCount,places.websiteUri,places.location",
                 }
 
                 try:

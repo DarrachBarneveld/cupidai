@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { fetchGooglePlaces } from "../lib/api";
 import { useContext, useState } from "react";
+import { GooglePlacesApiResponse } from "../classes/GoogleApiResponse";
 
 const RecommendationCard = ({
   recommendation,
@@ -12,10 +13,8 @@ const RecommendationCard = ({
   fetchLocation,
   location,
   setErrorMessage,
+  index,
 }) => {
-  console.log(drink);
-  console.log(food);
-  console.log(activity);
   const navigate = useNavigate();
   const { setPlaces } = useContext(PlacesContext);
   const [loading, setLoading] = useState(false);
@@ -25,8 +24,6 @@ const RecommendationCard = ({
       setLoading(true);
       const places = await fetchGooglePlaces(location, drink, food, activity);
 
-      console.log(places);
-
       if (places.length === 0) {
         alert("No places found. Please try again.");
         setLoading(false);
@@ -35,6 +32,7 @@ const RecommendationCard = ({
 
       if (places) {
         setPlaces(places);
+
         setLoading(false);
         navigate("/places");
       }
@@ -50,6 +48,7 @@ const RecommendationCard = ({
         <blockquote className="blockquote bg-white blockquote-custom">
           <div className="blockquote-custom-icon bg-info shadow-sm">
             <i className="fa fa-quote-left text-white"></i>
+            <span className="text-white ms-1">{index + 1}</span>
           </div>
           <p className="mb-0 mt-2 font-italic bg-light">{recommendation}</p>
         </blockquote>

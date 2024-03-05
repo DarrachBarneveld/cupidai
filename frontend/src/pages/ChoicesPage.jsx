@@ -8,15 +8,18 @@ import { ChoiceContext, DEFAULT_CHOICE } from "../context/ChoiceContext";
 import { useNavigate } from "react-router-dom";
 import HeadingText from "../components/ui/HeadingText";
 
-import drinksImage from "../../public/images/drinks.png";
-import foodImage from "../../public/images/foods.png";
-import activityImage from "../../public/images/activity.png";
 import { getRandomElements } from "../lib/utils";
 import ErrorMessage from "../components/ui/ErrorMessage";
 import MainWrapper from "../layout/MainWrapper";
+import useLocationStorage from "../hooks/useLocationStorage";
+
+import drinksImage from "../../public/images/drinks.png";
+import foodImage from "../../public/images/foods.png";
+import activityImage from "../../public/images/activity.png";
 
 const ChoicesPage = () => {
   const navigate = useNavigate();
+  const [_, setLocalChoices] = useLocationStorage("choices");
   const [loading, setLoading] = useState(false);
   const { choices, setChoices, handleSelectedChoice, getAIRecommendations } =
     useContext(ChoiceContext);
@@ -60,8 +63,6 @@ const ChoicesPage = () => {
     });
   }
 
-  console.log(choices);
-
   useEffect(() => {
     setRandomOptions();
   }, [choiceCategory]);
@@ -69,14 +70,12 @@ const ChoicesPage = () => {
   async function getRecommendations() {
     try {
       setLoading(true);
+      setLocalChoices(choices);
+
       const result = await getAIRecommendations();
 
       if (result) {
-        navigate(
-          `/recommendations/${choices.drinks.join(" ")}/${choices.food.join(
-            " "
-          )}/${choices.activity.join(" ")}`
-        );
+        navigate("/recommendations");
       }
     } catch (error) {
       setLoading(false);
@@ -118,7 +117,7 @@ const ChoicesPage = () => {
                   key={choice.id}
                   text={choice.name}
                   onClick={() =>
-                    handleSelectedChoice(choice.name + ",", choiceCategory)
+                    handleSelectedChoice(choice.name, choiceCategory)
                   }
                 />
               ))}

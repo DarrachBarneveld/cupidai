@@ -17,3 +17,14 @@
   object-fit: cover;
   border-radius: 100%;
 }
+
+.choice-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.map-container {
+  width: 100%;
+  height: 90vh;
+}

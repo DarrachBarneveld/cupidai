@@ -49,18 +49,18 @@ const PlacesCard = memo(
         <div className="container p-0 text-small my-2">
           <div className="row m-0">
             <div className="col text-center">
-              <i className="fa-solid fa-star text-warning h5"></i>
+              <i className="fa-solid fa-star text-warning h6"></i>
               <p className="card-text fw-bold m-0 text-dark">{rating}</p>
             </div>
             <div className="col text-center">
-              <i className="fa-solid fa-user text-info h5"></i>
+              <i className="fa-solid fa-user text-info h6"></i>
               <p className="card-text fw-bold m-0 text-dark">
                 {userRatingCount}
               </p>
             </div>
             <div className="col text-center">
               <i
-                className={`fa-solid fa-door-open h5 ${
+                className={`fa-solid fa-door-open h6 ${
                   isOpen ? "text-success" : "text-danger"
                 }`}
               ></i>
