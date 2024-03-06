@@ -43,7 +43,7 @@ const RecommendationsPage = () => {
           ) : (
             <div className="d-flex justify-content-center align-items-center flex-column">
               <header>
-                <ul className="d-flex list-unstyled gap-2 justify-content-center flex-wrap">
+                <ul className="d-flex list-unstyled gap-1 justify-content-center flex-wrap">
                   <li>
                     <div className="d-flex align-items-center gap-1 border border-white w-fit px-2 rounded-3 glassmorphism">
                       <img
@@ -100,7 +100,7 @@ const RecommendationsPage = () => {
               <div className="d-flex justify-content-around gap-2">
                 <button
                   onClick={refreshCurrentOptions}
-                  className="btn btn-light w-fit mx-auto"
+                  className="btn btn-light w-fit mb-2"
                 >
                   <i className="fa-solid fa-arrows-rotate"></i> Refresh Options
                 </button>

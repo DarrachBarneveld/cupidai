@@ -27,8 +27,8 @@ const HomePage = () => {
             </h1>
             <p className="lead text-white">
               We bring romance and creativity to your love life, from first
-              dates to special anniversaries and Valentine's surprises. At Date
-              Sparkle, we inspire magical moments for every relationship.
+              dates to special anniversaries and Valentine's surprises. At
+              Sparkle Ai, we inspire magical moments for every relationship.
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <NavLink id="letsPlanBtn" to="/choices">

@@ -71,7 +71,7 @@ main {
 
 .brand-logo {
   color: var(--background);
-  font-size: 40px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-family: "Madimi One", sans-serif;
   text-decoration: none;
   font-weight: 700;

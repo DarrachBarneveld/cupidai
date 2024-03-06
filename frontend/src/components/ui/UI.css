@@ -1,3 +1,7 @@
+.heading-text {
+  font-size: clamp(1.6rem, 4vw, 4rem);
+}
+
 .choice-btn {
   align-items: center;
   background-color: #fff;

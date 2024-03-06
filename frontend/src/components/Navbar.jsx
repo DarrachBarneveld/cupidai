@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark-gradient border-bottom">
       <div className="container-fluid">
         <NavLink className="brand-logo" to="/">
-          Date Sparkle
+          Sparkle Ai
         </NavLink>
         <button
           className="navbar-toggler"
